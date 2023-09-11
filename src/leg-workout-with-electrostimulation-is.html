@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EMS Shop | EasyMotionSkin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="top-menu" class="top-menu">
+            <div id="menu-wrapper" class="menu-wrapper">
+                <div id="menu-bar" class="menu-bar"> <!-- Updated class name -->
+                    <a class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
+                        <i class="fa fa-bars fa-2x"></i>
+                    </a>
+                </div>
+                <a href="index-is.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
+            </div>
+
+            <div id="nav-wrapper" class="nav-wrapper">
+                <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+                    <ul>
+                        <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                        <li><a href="ems-suit-shop-is.html">Búðu</a></li>
+                        <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                        <li><a href="ems-blog-is.html">Blogg</a></li>
+                        <li><a href="contact-is.html">Stuðningur</a></li>
+                    </ul>
+                </nav>
+                <div class="actions menu-actions">
+                    <a id="openModalBtn" class="sign-up free-consultation">Ókeypis ráðgjöf</a>
+                </div>
+                <div class="switch">
+                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <label for="language-toggle"></label>
+                    <span class="on">IS</span>
+                    <span class="off">EN</span>
+                </div>
+            </div>
+
+            <div class="menu-bg" id="menu-bg"></div>
+        </div>
+    </header>
+
+        <div id="modalform" class="modal">
+            <div class="modal-content consultation-form">
+                <span class="close">&times;</span>
+                <h2>Contact Us</h2>
+                <p>Do You have questions about EMS Suit? You want to see the EasyMotionSkin in action? If the answer is
+                    yes, feel free to leave Your data. We will contact You in the next 2 days. </p>
+                <form class="contact-form" action="getconsultation.php" method="post">
+                    <div class="form-floating">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="tel" id="phone" placeholder=" " required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <button class="cons-sub" type="submit">Get Consultation</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="ems-blog-div bckg blue">
+            <div class="blog-grid-headline white">
+                <h1>EMS Blog</h1>
+            </div>
+            <div id="welcome-blog" class="get-consultation article-header flex">
+                <div id="img-blog-slider" class="article-header">
+                    <img src="/src/images/article-leg-workout-ems.jpg">
+                </div>
+                <div class="article-body flex">
+                    <p class="tagline white">EMS Effects</p>
+                    <h2>Hámarksæfingar á fótum með
+                        EMS</h2>
+                    <p class="text white">Leiðbeiningar fyrir
+                        líkamsræktina þína heima Þegar það kemur að því að ná sterkum og tónuðum fótum, leitast mörg okkar eftir
+                        árangursríkum og skilvirkari æfingum. Ein nýstárleg nálgun sem nýtur vinsælda
+                        er innleiðing rafmagns vöðvaörvun (EMS) inn í líkamsræktarrútínuna heima hjá
+                        þér.</br></br></p>
+                    <div class="actions">
+                        <a href="blog-text" class="sign-up">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="blog-text" class="blog-text">
+
+            <p>Leiðbeiningar fyrir líkamsræktina þína heima Þegar það kemur að því að ná sterkum og tónuðum fótum, leitast mörg okkar eftir
+                árangursríkum og skilvirkari æfingum. Ein nýstárleg nálgun sem nýtur vinsælda
+                er innleiðing rafmagns vöðvaörvun (EMS) inn í líkamsræktarrútínuna heima hjá
+                þér.</p>
+
+            <h2>Skilningur á EMS fyrir fótaæfingar</h2>
+            <p>EMS, eða Electrical Muscle Stimulation, felur í sér notkun stjórnaðra rafboða til að örva
+                vöðvasamdrátt. Þessi tækni hefur verið notuð fyrir ýmsa líkamsrækt og að ná settum
+                markmiðum og þegar það er notað á fótaæfingar getur það leitt til aukinnar vöðvavirkni,
+                styrk og þrek. Með því að miða á fótvöðvana með EMS getur þú á áhrifaríkan hátt bættu
+                við hefðbundnum æfingum og tekið líkamsræktartímana þína í nýjar hæðir.</p>
+
+            <h2>Byrjað: Að setja upp
+                EMS líkamsþjálfun þína</h2>
+            <p><strong>Að velja réttan EMS búnað:</strong> Byrjaðu á því að velja EMS
+                æfingafatnað eða tæki hannað til notkunar heima. Leitaðu að eiginleikum
+                sem innihalda fótaskaut til að tryggðu bestu vöðvaörvun í neðri hluta
+                líkamans.</p>
+            <p><strong>Undirbúningur fötin þín:</strong> Þegar þú hefur EMS búnaðinn þinn skaltu
+                fara varlega í æfingaföt samkvæmt leiðbeiningum framleiðanda. Gakktu úr
+                skugga um að rafskautin eru rétt staðsett á læri og kálfum.</p>
+            <p><strong>Upphitun:</strong> Eins og með allar
+                æfingar er upphitun mikilvæg. Byrjaðu á upphitunarrútína sem felur í
+                sér fótasveiflur, ökklahringi og létta þolþjálfun auka blóðflæði og
+                undirbúa vöðvana fyrir komandi æfingar.</p>
+
+            <h2>Auktu fótaþjálfunarrútínuna þína með EMS</h2>
+            <p><strong>Squats with a Twist:</strong> Settu hnébeygjur inn í rútínuna
+                þína á meðan þú ert með í EMS gallanum. Þegar þú lækkar í hnébeygjustöðuna og
+                rís aftur upp, fá EMS hvatirnar vöðvasamdrætti, sem gerir hverja hnébeygju erfiðari
+                og áhrifarík.</p>
+            <p><strong>Styrktu framstig:</strong> Framkvæmdu framstig á meðan þú klæðist EMS
+                gallanum til að hámarka æfinguna. Finndu aukna mótstöðu þegar stígur fram og ýtir aftur upp.</p>
+            <p><strong>Kraftmikil fótaupphækkun:</strong> Leggstu á bakið og lyftu til skiptis hvorum fæti
+                af jörðu á meðan þeim er haldið beinum. EMS tæknin eykur virkni
+                vöðvanna á meðan á æfingum stendur, sem gerir þessa einföldu hreyfingu
+                áhrifameiri.</p>
+            <p><strong>Kálfalyftur:</strong> Styrktu kálfavöðvana með því að gera kálfalyftur í EMS gallanum. Þegar þú lyftir þér upp á
+                tærnar og lækkar hælana, það reynir meira á vöðvana í EMS gallanum.</p>
+
+            <h2>Fínstilltu EMS fótaæfinguna þína</h2>
+            <p><strong>Stilling á styrkleika:</strong>Flest EMS tæki bjóða upp á stillanlega styrkleika. Byrjaðu með
+                lægri styrkleika og auktu það smám saman eftir því sem þú venst því.</p>
+            <p><strong>Forgangsraða formi:</strong> Einbeittu þér að því að viðhalda
+                réttu formi í gegnum hverja æfingu. Leggðu áherslu á stöðugleika og
+                stjórn sem þú ert að vinna með.</p>
+            <p><strong>Endurtekningar og sett:</strong> Miðaðu við 10-
+                15 endurtekningar af hverri æfingu, kláraðu 2-3 sett fyrir alhliða fótaæfingu.</p>
+            <p><strong>Kæling og teygjur: Þegar</strong>Þegar þú klárar
+                fótaæfinguna skaltu teygja vel á fótvöðvum. Teygjur auka liðleika og draga úr
+                vöðvaspennu.</p>
+
+            <h2>Ávinningurinn</h2>
+            <p>Að gera EMS fótaæfingar heima eða í líkamsræktarstöðinni getur veitt fjölmarga kosti,
+                eins og aukin vöðvavirkni, markviss styrking og tímanýting.</p>
+            <p>Mundu að EMS er viðbótarverkfæri og góð líkamsrækt sem ætti að gera og
+                felur í sér hjarta- og æðavirkni, styrktarþjálfun fyrir allan líkamann og liðleika.
+                Síðast en ekki síst, hlustaðu á líkama þinn og ráðfærðu þig við heilbrigðisstarfsmann eða
+                einkaþjálfara ef þú ert nýr í EMS eða finnur fyrir óþægindum. Með því að sameina EMS
+                tækni með stöðugri hollustu, getur þú tekið fótaæfingar þínar á nýtt stig og náð
+                líkamsræktarmarkmiðum þínum með þægindum heimaræktarinnar.</p>
+
+        </div>
+
+        <h3 style="margin-left: 2.3rem">Read more articles</h3>
+
+        <div class="grid blog">
+
+            <div class="article-grid">
+                <div class="article-header">
+                    <a href="history-of-ems-workouts-is.html"><img src="/src/images/article-history-of-ems.jpg" alt="card-image" class="card-image" width="600"></a>
+                </div>
+                <div class="article-body">
+                    <span class="tag tag-blue">EMS Effects</span>
+                    <h4>History of EMS training</h4>
+                    <p>Electrical Muscle Stimulation (EMS) has emerged as a revolutionary training technique, redefining
+                        the
+                        way we approach physical fitness. This article traces the historical development of EMS-based
+                        training, exploring its origins, milestones, and transformation into a modern fitness
+                        phenomenon.
+                    </p>
+                </div>
+                <div class="readmore">
+                    <a href="history-of-ems-workouts-is.html" class="sign-up">Read More</a>
+                </div>
+            </div>
+
+            <div class="article-grid">
+                <div class="article-header">
+                    <a href="Is-EMS-training-effective-is.html"><img src="/src/images/article-ems-effective.jpeg" alt="card-image" class="card-image" width="600">
+                    </a></div>
+                <div class="article-body">
+                    <span class="tag tag-brown">EMS Effects</span>
+                    <h4>Is EMS effective?</h4>
+                    <p>EMS training is not a one-size-fits-all solution, but it does offer tangible benefits when used
+                        appropriately. It's a tool that can amplify muscle activation, enhance time efficiency, and
+                        contribute to strength gains and endurance improvement. Check out for more why ems is so
+                        effective.</p>
+                </div>
+                <div class="readmore">
+                    <a href="Is-EMS-training-effective-is.html" class="sign-up">Read More</a>
+                </div>
+            </div>
+
+            <div class="article-grid">
+                <div class="article-header">
+                    <a href="leg-workout-with-electrostimulation-is.html"><img
+                            src="/src/images/article-leg-workout-ems.jpg" alt="card-image" class="card-image"
+                            width="600"></a>
+                </div>
+                <div class="article-body">
+                    <span class="tag tag-red">Home Gym</span>
+                    <h4>Improving Leg Workouts with EMS</h4>
+                    <p>In this article, we'll explore how you can harness the power of EMS technology to elevate your
+                        leg
+                        workouts and achieve impressive results. Check exercises which You can do from the comfort of
+                        Your home or outside. Exercise Your legs properly and effectively.</p>
+                </div>
+                <div class="readmore">
+                    <a href="leg-workout-with-electrostimulation-is.html" class="sign-up">Read More</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="Contact" class="normal-div div-contact">
+            <div id="contact-chat" class="diagonal blue">
+                <div class="left-content contact-div">
+                    <h2 class="white">Let's Chat</h2>
+                    <p class="text white">Whether you have a question, want to start a project, or simply want to
+                        connect.</br>Feel free to
+                        send me a message in the contact form</p>
+                    <div class="contact-info">
+                        <div class="tabcard">
+                            <i class="icon fas fa-envelope"></i>
+                            <div id="email" class="tab-content">
+                                <h3>Email</h3>
+                                <span>email@address.com</span>
+                            </div>
+                        </div>
+    
+                        <div class="tabcard">
+                            <i class="icon fas fa-phone"></i>
+                            <div class="tab-content">
+                                <h3>Phone</h3>
+                                <span>+00000000000</span>
+                            </div>
+                        </div>
+    
+                        <div class="tabcard">
+                            <i class="icon fas fa-map-marker-alt"></i>
+                            <div class="tab-content">
+                                <h3>Location</h3>
+                                <span>Iceland</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="right-content contact-div">
+                    <div>
+                        <h2 class="white">Write to Us</h2>
+                    </div>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <form style="form" action="sendform.php" method="post">
+                        <p class="text white">*Required</p>
+                        <input type="text" placeholder="Name *" />
+                        <input type="email" placeholder="Email *" />
+                        <input type="tel" placeholder="Phone" />
+                        <textarea rows="4" placeholder="Message"></textarea>
+                        <div class="actions">
+                            <a href="#" class="sign-up submit">Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <div class="footer-row">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+
+                <div class="footer-row">
+                    <ul>
+                        <li><a href="index-is.html">Heim</a></li>
+                        <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                        <li><a href="ems-suit-shop-is.html">Búðu</a></li>
+                        <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                        <li><a href="ems-blog-is.html">Blogg</a></li>
+                        <li><a href="contact-is.html">Stuðningur</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-row">
+                    EasyMotion Skin Copyright © 2023 EMS Training - All rights reserved || Designed By: Piotr Effler
+                </div>
+            </div>
+        </footer>
+        <div id="cookie-popup">
+            <p>Cookie Policy</p>
+            <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+                <br><a href="https://" class="link">LINK &#10148;</a>
+            </p>
+            <button class="cookie-popup__button">OK</button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="is" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EMS Blog | EasyMotionSkin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div id="top-menu" class="top-menu">
+            <div id="menu-wrapper" class="menu-wrapper">
+                <div id="menu-bar" class="menu-bar"> <!-- Updated class name -->
+                    <a class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
+                        <i class="fa fa-bars fa-2x"></i>
+                    </a>
+                </div>
+                <a href="index-is.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
+            </div>
+
+            <div id="nav-wrapper" class="nav-wrapper">
+                <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+                    <ul>
+                        <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                        <li><a href="ems-suit-shop-is.html">Búðu</a></li>
+                        <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                        <li><a href="ems-blog-is.html">Blogg</a></li>
+                        <li><a href="contact-is.html">Stuðningur</a></li>
+                    </ul>
+                </nav>
+                <div class="actions menu-actions">
+                    <a id="openModalBtn" class="sign-up free-consultation">Ókeypis ráðgjöf</a>
+                </div>
+                <div class="switch">
+                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <label for="language-toggle"></label>
+                    <span class="on">IS</span>
+                    <span class="off">EN</span>
+                </div>
+            </div>
+
+            <div class="menu-bg" id="menu-bg"></div>
+        </div>
+    </header>
+
+    <div id="modalform" class="modal">
+        <div class="modal-content consultation-form">
+            <span class="close">&times;</span>
+            <h2>Taktu samband</h2>
+            <p>Áttu spurningar um EMS-búnaðinn? Viltu sjá EasyMotionSkin í gangi? Ef svarið er já, skaltu ekki
+                hika við að skilja okkur skilaboð. Við höfum samband við þig innan tveggja daga.</p>
+            <form class="contact-form" action="getconsultation.php" method="post">
+                <div class="form-floating">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">Nafn</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Netfang</label>
+                </div>
+                <div class="form-floating">
+                    <input type="tel" id="phone" name="phone" placeholder=" " required>
+                    <label for="phone">Símanúmer</label>
+                </div>
+                <button class="cons-sub" type="submit">Fá ráðgjöf</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="ems-blog-div bckg blue">
+        <div class="blog-grid-headline white">
+            <h1>EMS Blogg</h1>
+        </div>
+        <div id="welcome-blog" class="get-consultation article-header flex">
+            <div id="img-blog-slider" class="article-header">
+                <img src="/src/images/article-ems-gym-workout.jpg">
+            </div>
+            <div class="article-body flex">
+                <p class="tagline white">Heimiliðitt gym</p>
+                <h2>Hvernig á að hámarka æfingar í heimiliðnum með EMS</h2>
+                <p class="text white">Ánægjan af því að æfa sig heima er óneitanleg. Hvort sem þú ert áhugamaður í
+                    líkamsrækt eða byrjar á ferðinni, veitir heimiliðurinn þér þægindi og sveigjanleika. </br></br>
+                    Hugsanlegar þættir heimilisæfinga þínar þú ættir að ætla þér, er með EMS-þjálfunarbúnaði sem getur
+                    breytt hliðstu árangrinum þínum.</p>
+                <div class="actions">
+                    <a href="gym-workout-ems.html" class="sign-up">Lesa meira</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-headline">
+        <p class="tagline blue">Lærðu hvernig á að þjálfa með EMS-þjálfunarbúnaði</p>
+        <h2>Lesa meira um EMS-þjálfunarbúnað</h2>
+    </div>
+
+    <div class="grid blog">
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="Is-EMS-training-effective-is.html"><img src="/src/images/article-ems-effective.jpeg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-blue">Áhrif EMS-þjálfunar</span>
+                <h4>Er EMS-þjálfun árangursrík?</h4>
+                <p>EMS (Rafmagns vöðvahreyfing) þjálfun er viðurkennd sem árangursrík þjálfunaraðferð sem getur
+                    gefið jákvæða niðurstöðu fyrir mörgum einstaklingum.</p>
+            </div>
+            <div class="readmore">
+                <a href="Is-EMS-training-effective-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="diet-in-ems-training-is.html"><img src="/src/images/article-ems-worth.jpg" alt="card-image"
+                        class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-brown">Áhrif EMS-þjálfunar</span>
+                <h4>Hvenær er það hagkvæmt að nota EMS?</h4>
+                <p>EMS-þjálfun hentar mismunandi hópum fólks, með mismunandi stig áherslu og þjálfunarmarkmið. Hér eru
+                    nokkrir dæmigerðir hópar.</p>
+            </div>
+            <div class="readmore">
+                <a href="diet-in-ems-training-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="ems-training-for-woman-is.html"><img src="/src/images/article-ems-for-women.jpg" alt="card-image"
+                        class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-red">Áhrif EMS-þjálfunar</span>
+                <h4>Horfur kvenna af EMS-þjálfun</h4>
+                <p>Í þessari grein skoðum við það hvernig EMS-þjálfun er framúrskarandi valkostur fyrir konur sem
+                    vilja ná fram hreyfigerðarmarkmiðum sínum á skiljanlegan hátt.</p>
+            </div>
+            <div class="readmore">
+                <a href="ems-training-for-woman-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="leg-workout-with-electrostimulation-is.html"><img src="/src/images/article-leg-workout-ems.jpg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-red">Heimiliðitt gym</span>
+                <h4>Að bæta fótumyndarþjálfun með EMS</h4>
+                <p>Í þessari grein rannsökum við hvernig þú getur nýtt þér kraftinn í EMS-heimilisþjálfunarbúnaði
+                    til að lyfta þjálfunum fótanna á hæð og ná mjög árangursríkum niðurstöðum án þess að þurfa að
+                    láta heimilið.</p>
+            </div>
+            <div class="readmore">
+                <a href="leg-workout-with-electrostimulation-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="gym-workout-ems-is.html"><img src="/src/images/article-ems-gym-workout.jpg" alt="card-image"
+                        class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-red">Heimiliðitt gym</span>
+                <h4>Að hámarka gymþjálfanir heima með EMS</h4>
+                <p>Hugsaðu þér að taka gymþjálfanir þínar heima upp á hæðina með EMS-þjálfunarfatnaði – nýjung
+                    sem breytir þjálfunarhætti þínum og gefur framúrskarandi árangur.</p>
+            </div>
+            <div class="readmore">
+                <a href="gym-workout-ems-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="ems-traditional-trainings-comparision-is.html"><img src="/src/images/article-history-of-ems.jpg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-red">Heimiliðitt gym</span>
+                <h4>EMS vs. Hefðbundinni þjálfun</h4>
+                <p>Hefðbundin gymþjálfun og EMS-þjálfun eru tvisvar mismunandi æfingaaðferðir sem leyfa að ná
+                    sömu markmiðum varðandi vöðvastyrk og fituminnkun.</p>
+            </div>
+            <div class="readmore">
+                <a href="ems-traditional-trainings-comparision-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="make-home-training-effective-is.html"><img src="/src/images/article-ems-effective-workout.jpg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-blue">Hvernig á að æfa sig?</span>
+                <h4>Að hámarka árangur heimilisæfinga</h4>
+                <p>Ertu að leita að árangursríkri þjálfunarlausn sem sparar þér tíma? Hika þig ekki við að skoða
+                    heimiliðar-EMS-þjálfun sem gæti verið rétta leiðin fyrir þig.</p>
+            </div>
+            <div class="readmore">
+                <a href="make-home-training-effective-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="diet-in-ems-training-is.html"><img src="/src/images/article-diet-gym-workout.jpg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-blue">Hvernig á að æfa sig?</span>
+                <h4>Fæði og EMS-þjálfun</h4>
+                <p>Er þú að leita að árangursríkri þjálfunarlausn sem sparar þér tíma? Hika þig ekki við að skoða
+                    heimiliðar-EMS-þjálfun sem gæti verið rétta leiðin fyrir þig.</p>
+            </div>
+            <div class="readmore">
+                <a href="diet-in-ems-training-is.html" class="sign-up">Lesa meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="end-back-pain-with-ems-is.html"><img src="/src/images/article-back-pain-ems.jpg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-blue">Hvernig á að æfa sig?</span>
+                <h4>Getur EMS veitt lind af bakverki?</h4>
+                <p>EMS berst sem spennandi möguleiki til að meðhöndla bakverki. Það veltur á markvissri vöðvastímingu.</p>
+            </div>
+            <div class="readmore">
+                <a href="end-back-pain-with-ems-is.html" class="sign-up">Lesa meira</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="Contact" class="normal-div div-contact">
+        <div id="contact-chat" class="diagonal blue">
+            <div class="left-content contact-div">
+                <h2 class="white">Hafa samband</h2>
+                <p class="text white">Óháðu því hvort þú hafir spurningar, vilt hefja verkefni eða einfaldlega viljir
+                    tengjast.</br> Ekki hika við að senda mér skilaboð í samskiptavélina hér fyrir neðan.</p>
+                <div class="contact-info">
+                    <div class="tabcard">
+                        <i class="icon fas fa-envelope"></i>
+                        <div id="email" class="tab-content">
+                            <h3>Tölvupóstur</h3>
+                            <span>email@address.com</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-phone"></i>
+                        <div class="tab-content">
+                            <h3>Sími</h3>
+                            <span>+00000000000</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-map-marker-alt"></i>
+                        <div class="tab-content">
+                            <h3>Staðsetning</h3>
+                            <span>Ísland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-content contact-div">
+                <div>
+                    <h2 class="white">Skrifaðu okkur</h2>
+                </div>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <form style="form" action="sendform.php" method="post">
+                    <p class="text white">*Skilyrði</p>
+                    <input type="text" placeholder="Nafn *" />
+                    <input type="email" placeholder="Netfang *" />
+                    <input type="tel" placeholder="Sími" />
+                    <textarea rows="4" placeholder="Skilaboð"></textarea>
+                    <div class="actions">
+                        <a href="#" class="sign-up submit">Senda</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-row">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <div class="footer-row">
+                <ul>
+                    <li><a href="index-is.html">Heim</a></li>
+                    <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                    <li><a href="ems-suit-shop-is.html">Búðu</a></li>
+                    <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                    <li><a href="ems-blog-is.html">Blogg</a></li>
+                    <li><a href="contact-is.html">Stuðningur</a></li>
+                </ul>
+            </div>
+            <div class="footer-row">
+                EasyMotion Skin Copyright © 2023 EMS Training - All rights reserved || Designed By: Piotr Effler
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

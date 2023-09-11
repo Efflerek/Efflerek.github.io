@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Edition | EasyMotionSkin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="top-menu" class="top-menu">
+            <div id="menu-wrapper" class="menu-wrapper">
+                <div id="menu-bar" class="menu-bar"> <!-- Updated class name -->
+                    <a class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
+                        <i class="fa fa-bars fa-2x"></i>
+                    </a>
+                </div>
+                <a href="index.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
+            </div>
+
+            <div id="nav-wrapper" class="nav-wrapper">
+                <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+                    <ul>
+                        <li><a href="how-ems-works.html">How it works?</a></li>
+                        <li><a href="ems-suit-shop.html">Shop</a></li>
+                        <li><a href="home-edition.html">Home Edition</a></li>
+                        <li><a href="ems-blog.html">Blog</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="actions menu-actions">
+                    <a id="openModalBtn" class="sign-up free-consultation">Free Consultation</a>
+                </div>
+                <div class="switch">
+                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <label for="language-toggle"></label>
+                    <span class="off">IS</span>
+                    <span class="on">EN</span>
+                </div>
+            </div>
+
+            <div class="menu-bg" id="menu-bg"></div>
+        </div>
+    </header>
+
+    <div id="modalform" class="modal">
+        <div class="modal-content consultation-form">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Do You have questions about EMS Suit? You want to see the EasyMotionSkin in action? If the answer is yes,
+                feel free to leave Your data. We will contact You in the next 2 days. </p>
+            <form class="contact-form" action="getconsultation.php" method="post">
+                <div class="form-floating">
+                    <input type="text" id="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="tel" id="phone" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                <button class="cons-sub" type="submit">Get Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="he-welcome" class="he-welcome-div">
+        <div class="he-left-content">
+            <p class="tagline white">The Smallest Gym in The World</p>
+            <h1>EMS Home Studio Edition</h1>
+            <p class="tagline black small">Revolution in Your Daily Exercises</p>
+            <p class="text white">Experience the ultimate home workout efficiency with EMS technology! Our EMS suit
+                enhances your exercise routine by engaging more muscles simultaneously, maximizing your results in less
+                time. Say goodbye to long hours at the gym – with EMS, you can achieve strength, tone, and endurance
+                right from the comfort of your home. Unleash the power of technology to transform your fitness journey
+                today!</p>
+            <div class="actions">
+                <a href="#he-elements" class="sign-up">Read More</a>
+            </div>
+        </div>
+        <div id="he-welcome-img" class="he-right-content"></div>
+    </div>
+
+    <div id="he-elements" class="elements-headline">
+        <p class="tagline blue">Put It On And Boost Your Training</p>
+        <h2>What does the EMS suit have?</h2>
+        <p>The EMS Suit is a set of three basic accessories that are necessary to make your training really effective.
+        </p>
+    </div>
+
+    <div class="elements home-edition">
+        <div class="box row-div shop">
+            <div class="element-shop elements-small">
+                <img class="img-elements" src="/src/images/fitness-z-ems-suit-2.png">
+
+                <h3>EMS Suit</h3>
+                <p class="text">The suit integrates all electrodes and sensors into the fabric. Patented dry electrodes
+                    in the Suit make moisture on the
+                    skin a conductor. Thanks to that, You are able to carry out EMS training without additional
+                    wetting and without extra clothing. Moreover, It remains flexible,
+                    durable and easy to care for.
+                </p>
+            </div>
+
+            <div class="element-shop elements-small">
+                <img class="img-elements" src="/src/images/conector-ems.webp">
+                <h3 class="sign-up">EMS Connector</h3>
+                <p class="text">The connector is the heart of the entire system. It's a device that connects the
+                    suit to your mobile. This little device controls
+                    the power and flow of electrical impulses that make EMS training so effective. It connects via
+                    Bluetooth with iOS and Android systems.</p>
+            </div>
+
+            <div class="element-shop elements-small">
+                <img class="img-elements" src="/src/images/ems-mobile-app.png">
+
+                <h3>App for Mobile/Tablet</h3>
+                <p class="text">The intuitive user interface on the iOS and Android app makes it easy to control
+                    your EMS training with EasyMotionSkin. From the moment of logging in to the end of the training,
+                    the application focuses on the most important elements and its setting is child's play.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bckg blue app-div">
+        <div class="app-functions-headline">
+            <p class="tagline white">Training Management Center in Your Mobile</p>
+            <h2>EMS Mobile App</h2>
+        </div>
+
+        <div class="app-functions">
+            <div class="functions-img">
+                <img src="/src/images/mobile-app-ems-functions.png">
+            </div>
+            <div class="functions-explanation">
+                <h3>Intuitive App's Interface</h3>
+                <p class="text white">The intuitive user interface on the iOS and Android app makes it easy to control
+                    your EMS training with EasyMotionSkin. From the moment of logging in to the end of the training, the
+                    application focuses on the most important elements and its setting is child's play.</p>
+
+                <h3>Multiple Training Programs</h3>
+                <p class="text white">
+                    There are over thirty different training programs available in the application. The different
+                    workout categories range from 'Strength', 'Metabolism/Cellulite', 'Advanced', 'Fat Burn' and
+                    'Endurance' to 'Relaxation'. Individual frequencies and time sequences are assigned to each
+                    category. This provides a wide range of conveniently arranged training programs.</p>
+
+                <h3>Electrodes Power Control</h3>
+                <p class="text white">
+                    The main screen of the application is used for precise adjustment of individual groups of
+                    electrodes. You can choose
+                    all eight zones at once, individually or combine several of them together. Change between pause
+                    phase and
+                    stimulation is always visible. Thanks to the intelligently created and easy to understand the
+                    application EMS training becomes a unique experience. The updates will let you
+                    take advantage of the constantly improved app.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="functions-headline">
+            <p class="tagline blue">EMS MOBILE APP FUNCTIONS</p>
+            <h2>Discover what You get with the Application</h2>
+        </div>
+        <div class="functions-div">
+            <div class="grid-app-functions-1">
+                <div class="grid-box"><i class="fa-brands fa-elementor fa-2x grid-icon"></i>Intuitive Interface</div>
+                <div class="grid-box"><i class="fa-solid fa-wrench fa-2x grid-icon"></i>Regular Updates</div>
+                <div class="grid-box"><i class="fa-brands fa-android fa-2x grid-icon"></i>Android & iOS</div>
+                <div class="grid-box"><i class="fa-solid fa-spinner fa-2x grid-icon"></i>min. 30 training programs</div>
+            </div>
+            <div class="grid-app-functions-2">
+                <div class="grid-box"><i class="fa-solid fa-file-medical fa-2x grid-icon"></i>Medical Aproval</div>
+                <div class="grid-box"><i class="fa-solid fa-signal fa-2x grid-icon"></i>Training Stats</div>
+                <div class="grid-box"><i class="fa-solid fa-bolt fa-2x grid-icon"></i>Electric Impulses Control</div>
+                <div class="grid-box"><i class="fa-solid fa-puzzle-piece fa-2x grid-icon"></i>Training Tips</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="diagonal blue">
+    </div>
+
+    <div></div>
+    <div id="hiw-contact-form-div" class="normal-div blue consultation-div home">
+        <div class="get-consultation">
+            <div class="consultation-form">
+                <h2>Contact Us</h2>
+                <p id="consultation-form-p">Do You have questions about EMS Suit? You want to see the EasyMotionSkin in action? If the
+                    answer is
+                    yes, feel free to leave Your data. We will contact You in the next 2 days. </p>
+                <form class="contact-form">
+                    <div class="form-floating">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="tel" id="phone" placeholder=" " required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <button class="cons-sub" type="submit">Get Consultation</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="hiw-consultation-text" class="get-consultation-text">
+            <p class="tagline white">Contact with Us</p>
+            <h1>Have a question about EMS Suit?</h1>
+            <p class="text white">Write to us using the contact form at the bottom of the page or sign to the
+                free
+                consultation, during which we will show you how the suit works.</p>
+            <img class="align" src="/src/images/fitness-z-ems-suit.jpg" height="350px">
+        </div>
+    </div>
+
+    <div id="Shop" class="diagonal">
+        <div id="shop-left-content" class="left-content">
+            <p class="tagline">EasyMotionSkin Shop</p>
+            <h2>Buy Your EMS Suit now and start effective trainings</h2>
+            <p class="text excluded">
+                That's what we need right now.
+            </p>
+            <div class="actions">
+                <a href="ems-suit-shop.html" class="sign-up">Go to Shop</a>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="img-slider">
+                <img class="img-persp" src="/src/images/easymotionskin-suit-men.jpeg" alt="">
+                <img class="img-persp" src="/src/images/ems-suit.webp" alt="">
+                <img class="img-persp" src="/src/images/ems-suit-short.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="Contact" class="normal-div div-contact">
+        <div id="contact-chat" class="diagonal blue">
+            <div class="left-content contact-div">
+                <h2 class="white">Let's Chat</h2>
+                <p class="text white">Whether you have a question, want to start a project, or simply want to
+                    connect.</br>Feel free to
+                    send me a message in the contact form</p>
+                <div class="contact-info">
+                    <div class="tabcard">
+                        <i class="icon fas fa-envelope"></i>
+                        <div id="email" class="tab-content">
+                            <h3>Email</h3>
+                            <span>email@address.com</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-phone"></i>
+                        <div class="tab-content">
+                            <h3>Phone</h3>
+                            <span>+00000000000</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-map-marker-alt"></i>
+                        <div class="tab-content">
+                            <h3>Location</h3>
+                            <span>Iceland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-content contact-div">
+                <div>
+                    <h2 class="white">Write to Us</h2>
+                </div>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <form style="form" action="sendform.php" method="post">
+                    <p class="text white">*Required</p>
+                    <input type="text" placeholder="Name *" />
+                    <input type="email" placeholder="Email *" />
+                    <input type="tel" placeholder="Phone" />
+                    <textarea rows="4" placeholder="Message"></textarea>
+                    <div class="actions">
+                        <a href="#" class="sign-up submit">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-row">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <div class="footer-row">
+                <ul>
+                    <li><a href="contact.html">Support</a></li>
+                    <li><a href="ems-home-edition.html">Home Edition</a></li>
+                    <li><a href="ems-suit-shop.html">Shop</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-row">
+                EasyMotion Skin Copyright © 2023 EMS Training - All rights reserved || Designed By: Piotr Effler
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-popup">
+        <p>Cookie Policy</p>
+        <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+            <br><a href="https://" class="link">LINK &#10148;</a>
+        </p>
+        <button class="cookie-popup__button">OK</button>
+    </div>
+
+    <div id="ModalForm" class="modal">
+
+        <!-- Modal content -->
+        <div class="modalForm-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

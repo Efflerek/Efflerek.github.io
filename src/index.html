@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Motion Skin | Your new way to train</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="top-menu" class="top-menu">
+          <div id="menu-wrapper" class="menu-wrapper">
+            <div id="menu-bar" class="menu-bar"> <!-- Updated class name -->
+              <a class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
+                <i class="fa fa-bars fa-2x"></i>
+              </a>
+            </div>
+            <a href="index.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
+          </div>
+      
+          <div id="nav-wrapper" class="nav-wrapper">
+            <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+              <ul>
+                <li><a href="how-ems-works.html">How it works?</a></li>
+                <li><a href="ems-suit-shop.html">Shop</a></li>
+                <li><a href="home-edition.html">Home Edition</a></li>
+                <li><a href="ems-blog.html">Blog</a></li>
+                <li><a href="contact.html">Support</a></li>
+              </ul>
+            </nav>
+
+            <div class="actions menu-actions">
+              <a id="openModalBtn" class="sign-up free-consultation">Free Consultation</a>
+            </div>
+            <div class="switch">
+              <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+              <label for="language-toggle"></label>
+              <span class="off">IS</span>
+              <span class="on">EN</span>
+            </div>
+          </div>
+          <div class="menu-bg" id="menu-bg"></div>
+        </div>
+      </header>
+
+
+    <div id="Welcome" class="diagonal index">
+        <div id="Welcome-left" class="left-content">
+            <p class="tagline">Build Your Muscles With Our EMS Suit</p>
+            <h1>EMS - Faster Way to Better Shape</h1>
+            <p class="text">
+                Find out more about the world's smallest gym - in the form of a suit based on electrostimulation.
+                You can take it everywhere on a trip or work out at your home.
+            </p>
+            <div class="actions">
+                <a href="#" class="sign-up free-consultation">Free Consultation</a>
+            </div>
+        </div>
+        <div id="model3d" class="right-content">
+            <model-viewer class="model3D" src="images/motionskin_web-1.glb" ar ar-modes="webxr scene-viewer quick-look"
+                camera-controls poster="images/suite_3_1920x1920.png" shadow-intensity="1" autoplay>
+                <div class="progress-bar hide" slot="progress-bar">
+                </div>
+            </model-viewer>
+        </div>
+    </div>
+    <div></div>
+
+    <div id="How-it-works" class="diagonal">
+
+        <div id="video-first" class="left-content">
+            <iframe width="460" height="315" src="https://www.youtube.com/embed/-H6zWXJbVRo"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div id="hiw-video"class="right-content">
+            <p class="tagline white">How the EMS Suit works?</p>
+            <h2>What is EMS Training?</h2>
+            <p class="text white">The most important thing about EMS training is that thanks to muscle
+                electrostimulation you achieve results faster, regardless of whether you train at home or in the
+                gym. Ditch traditional training and put on an EMS suit equipped with special electrodes. And if you
+                want to know more about how electrostimulation training works, click here.
+            </p>
+            <div class="actions">
+                <a href="how-ems-works.html" class="sign-up">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Benefits" class="benefits">
+        <div class="benefits-headline">
+            <p class="tagline">What gives You EMS?</p>
+            <h2>Benefits of training in an EMS suit</h2>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="cover item-a">
+                    <h3 class="gallery-title first">35% Higher endurance</h3>
+                    <div class="card-back a">
+                        <a>
+                            <p class="text white">EMS training uses electrical impulses to stimulate the muscles, which
+                                leads to intense contraction and work of the muscles. Thanks to this, it is possible to
+                                achieve greater muscle activation compared to traditional exercises.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="cover item-b">
+                    <h3 class="gallery-title">33% Higher strength</h3>
+                    <div class="card-back b">
+                        <a>
+                            <p class="text white">In a conventional workout, only 30% of the muscles are being activated
+                                each time, however, with EasyMotionSkin, between 70%-80% of the muscle groups are
+                                activated simultaneously.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="cover item-c">
+                    <h3 class="gallery-title">3 x more calories burned</h3>
+                    <div class="card-back c">
+                        <a>
+                            <p class="text white">EMS training can help reduce body fat through increased calorie
+                                burning and metabolic activation. The intensity of training allows for effective use of
+                                energy and stimulation of fat burning processes.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Shop" class="diagonal">
+        <div id="shop-ems" class="left-content">
+            <p class="tagline">EasyMotionSkin Shop</p>
+            <h2>Buy Your EMS Suit now and start effective trainings</h2>
+            <p class="text excluded">
+                Lightweight and comfortable suit to electrostimulating traing is waiting for You
+            </p>
+            <div class="actions">
+                <a href="ems-suit-shop.html" class="sign-up">Go to Shop</a>
+            </div>
+        </div>
+        <div id="gallery-perspective" class="right-content">
+            <div class="img-slider">
+                <img class="img-persp" src="/src/images/easymotionskin-suit-men.jpeg" alt="">
+                <img class="img-persp" src="/src/images/ems-suit.webp" alt="">
+                <img class="img-persp" src="/src/images/ems-suit-short.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="Features-HomeEdition" class="normal-div offers">
+        <div id="video" class="left-content">
+            <div>
+                <p class="tagline">The best features of EMS Suit</p>
+                <h2>What EMS Suit offers You?</h2>
+            </div>
+            <div>
+                <p>MotionSkin is a representative of a completely new, advanced generation of EMS suits. By creating it,
+                    we focused on the convenience of users. MotionSkin integrates electrodes and sensors into the
+                    fabric,
+                    while remaining flexible, durable and easy to care for. The suit does not restrict movement, thanks
+                    so the user can do conventional training while giving up at the same time
+                    electrical stimulation.</p>
+                <div>
+                    <iframe width="460" height="315" src="https://www.youtube.com/embed/BGx-ht2Gnfg"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="card-list-features" class="right-content">
+            <div class="cards-list">
+                <div class="card">
+                    <div class="card_image">
+                        <img src="/src/images/Mayor-Gym-icon_30305.png" alt="muscle-flexing" />
+                    </div>
+                    <p class="card_title">Exercise everywhere You want</p>
+                </div>
+
+                <div class="card">
+                    <div class="card_image">
+                        <img src="/src/images/wifi_signal_wireless_icon_146877.png" />
+                    </div>
+                    <p class="card_title">Wireless system that doesn't limit You</p>
+                </div>
+
+                <div class="card">
+                    <div class="card_image">
+                        <img src="/src/images/washing-machine_icon-icons.com_63114.png" />
+                    </div>
+                    <p class="card_title">Suitable for washing</p>
+                </div>
+
+                <div class="card">
+                    <div class="card_image">
+                        <img src="/src/images/gym-icon_30328.png" />
+                    </div>
+                    <p class="card_title">Perfect staff for home gym</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home" class="diagonal">
+        <div class="left-content">
+            <img class="couple" src="/src/images/Couple-using-EasyMotionSkin.webp">
+        </div>
+        <div class="right-content">
+            <p class="tagline white">Suit for EMS training in Your home</p>
+            <h2>EasyMotionSkin Home Edition</h2>
+            <p class="text white">Get your own personal EasyMotionSkin and turn yourself from a competitive athlete into
+                a top athlete or from a couch potato into a fitness fan. You continue to decide which training is good
+                for you - strength, endurance, speed, dynamic, etc. The principle of the training remains the same, but
+                it becomes more efficient and more intensive!
+                Acquire your own EasyMotionSkin HomeEdition and enjoy EMS training at home or anywhere in the world,
+                just as you wish.
+            </p>
+            <div class="actions">
+                <a href="ems-home-edition.html" class="sign-up">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials-headline">
+        <p class="tagline">Check what others say</p>
+        <h2>Opinions of Our Clients</h2>
+    </div>
+    <div id="Testimonials" class="testimonials-div">
+        <div class="testimonials">
+            <!-- CARD 1 START-->
+            <div class="testimonial-card">
+                <div class="layer"></div>
+                <div class="cardcontent">
+                    <p>For me, training in EasyMotionSkin is a revolution. Despite post-traumatic problems, I am able to
+                        safely and effectively carry out full body training.
+                    </p>
+                    <div class="image">
+                        <img src="/src/images/maciek-zabicki-opinion.jpeg" alt="">
+                    </div>
+                    <div class="details">
+                        <h2>Maciej Żabicki<br>
+                            <span>EasyMotionSkin Customer</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 1 end-->
+
+            <!-- CARD 2 START-->
+            <div class="testimonial-card">
+                <div class="layer"></div>
+                <div class="cardcontent">
+                    <p>Spending a lot of time in the car, I felt pain in the lumbar spine. Thanks to 20-minute workouts
+                        twice a week with EasyMotionSkin, the ailments have disappeared</p>
+                    <div class="image">
+                        <img src="/src/images/piotr-wrona-opinion.jpeg" alt="">
+                    </div>
+                    <div class="details">
+                        <h2>Piotr Wrona<br>
+                            <span>EasyMotionSkin Customer</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 2 end-->
+
+            <!-- CARD 3 START-->
+            <div class="testimonial-card">
+                <div class="layer"></div>
+                <div class="cardcontent">
+                    <p>During the season I use EasyMotionSkin twice a week. Two sessions of 20 minutes each. It's
+                        convenient because I can do it at home. The whole system is very easy to use.</p>
+                    <div class="image">
+                        <img src="/src/images/Peter-Stoeger-opinion.jpeg" alt="">
+                    </div>
+                    <div class="details">
+                        <h2>Peter Stöger<br>
+                            <span>EasyMotionSkin Customer</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 3 end-->
+
+            <!-- CARD 4 START-->
+            <div class="testimonial-card">
+                <div class="layer"></div>
+                <div class="cardcontent">
+                    <p>Thanks to EasyMotionSkin, being on frequent business trips, I am able to train regularly. Time is
+                        crucial for me and training in EasyMotionSkin is only 20 minutes!</p>
+                    <div class="image">
+                        <img src="/src/images/przemyslaw-polechonski-opinion.jpg" alt="">
+                    </div>
+                    <div class="details">
+                        <h2>Przemysław Polechoński<br>
+                            <span>EasyMotionSkin Customer</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 4 end-->
+        </div>
+    </div>
+
+    <div id="Contact" class="normal-div div-contact">
+        <div id="contact-chat" class="diagonal blue">
+            <div class="left-content contact-div">
+                <h2 class="white">Let's Chat</h2>
+                <p class="text white">Whether you have a question, want to start a project, or simply want to
+                    connect.</br>Feel free to
+                    send me a message in the contact form</p>
+                <div class="contact-info">
+                    <div class="tabcard">
+                        <i class="icon fas fa-envelope"></i>
+                        <div id="email" class="tab-content">
+                            <h3>Email</h3>
+                            <span>email@address.com</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-phone"></i>
+                        <div class="tab-content">
+                            <h3>Phone</h3>
+                            <span>+00000000000</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-map-marker-alt"></i>
+                        <div class="tab-content">
+                            <h3>Location</h3>
+                            <span>Iceland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-content contact-div">
+                <div>
+                    <h2 class="white">Write to Us</h2>
+                </div>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <form style="form" action="sendform.php" method="post">
+                    <p class="text white">*Required</p>
+                    <input type="text" placeholder="Name *" />
+                    <input type="email" placeholder="Email *" />
+                    <input type="tel" placeholder="Phone" />
+                    <textarea rows="4" placeholder="Message"></textarea>
+                    <div class="actions">
+                        <a href="#" class="sign-up submit">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-row">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <div class="footer-row">
+                <ul>
+                    <li><a href="contact.html">Support</a></li>
+                    <li><a href="ems-home-edition.html">Home Edition</a></li>
+                    <li><a href="ems-suit-shop.html">Shop</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-row">
+                EasyMotion Skin Copyright © 2023 EMS Training - All rights reserved || Designed By: Piotr Effler
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-popup">
+        <p>Cookie Policy</p>
+        <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+            <br><a href="https://" class="link">LINK &#10148;</a>
+        </p>
+        <button class="cookie-popup__button">OK</button>
+    </div>
+
+
+    <div id="modalform" class="modal">
+        <div class="modal-content consultation-form">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Do You have questions about EMS Suit? You want to see the EasyMotionSkin in action? If the answer is yes,
+                feel free to leave Your data. We will contact You in the next 2 days. </p>
+            <form class="contact-form" action="getconsultation.php" method="post">
+                <div class="form-floating">
+                    <input type="text" id="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="tel" id="phone" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                <button class="cons-sub" type="submit">Get Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

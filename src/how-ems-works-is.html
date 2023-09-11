@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hvernig virkar EMS? | EasyMotionSkin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="top-menu" class="top-menu">
+            <div id="menu-wrapper" class="menu-wrapper">
+                <div id="menu-bar" class="menu-bar"> <!-- Updated class name -->
+                    <a class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
+                        <i class="fa fa-bars fa-2x"></i>
+                    </a>
+                </div>
+                <a href="index-is.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
+            </div>
+
+            <div id="nav-wrapper" class="nav-wrapper">
+                <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+                    <ul>
+                        <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                        <li><a href="ems-suit-shop-is.html">Búðu</a></li>
+                        <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                        <li><a href="ems-blog-is.html">Blogg</a></li>
+                        <li><a href="contact-is.html">Stuðningur</a></li>
+                    </ul>
+                </nav>
+                <div class="actions menu-actions">
+                    <a id="openModalBtn" class="sign-up free-consultation">Ókeypis ráðgjöf</a>
+                </div>
+                <div class="switch">
+                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <label for="language-toggle"></label>
+                    <span class="on">IS</span>
+                    <span class="off">EN</span>
+                </div>
+            </div>
+
+            <div class="menu-bg" id="menu-bg"></div>
+        </div>
+    </header>
+
+    <div id="modalform" class="modal">
+        <div class="modal-content consultation-form">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Do You have questions about EMS Suit? You want to see the EasyMotionSkin in action? If the answer is yes,
+                feel free to leave Your data. We will contact You in the next 2 days. </p>
+            <form class="contact-form" action="getconsultation.php" method="post">
+                <div class="form-floating">
+                    <input type="text" id="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="tel" id="phone" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                <button class="cons-sub" type="submit">Get Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="hiw-welcome" class="hiw-welcome-div">
+        <div class="hiw-left-content">
+            <p class="tagline white">EasyMotion Skin</p>
+            <h1>Hvernig virkar EMS?</h1>
+            <p class="tagline black small">Raförvun vöðva meðan á þjálfun stendur er algjör leikbreyting</p>
+            <p class="text white">Gerðu gjörbyltingu á æfingum þínum þar sem EMS beitir krafti stjórnaðs rafmagns til að
+                hámarka vöðvasamdrætti. Með því að setja rafskaut markvisst á markvöðva, EMS notar hærra hlutfall
+                vöðvaþráða og hámarkar vöðvasamdrætti.</p>
+            <div class="actions">
+                <a href="#How-it-works" class="sign-up">Lestu meira</a>
+            </div>
+        </div>
+
+        <div id="hiw-welcome-img" class="hiw-right-content">
+        </div>
+    </div>
+
+    <div id="how-it-works" class="diagonal white-bckg">
+
+        <div id="img-muscles" class="left-content">
+            <div class="image-hiw">
+                <img src="/src/images/straching-with-ems-suit.jpg">
+            </div>
+        </div>
+
+        <div class="right-content">
+            <p class="tagline">Örvaðu vöðvana þína</p>
+            <h2>Hvað er raförvunarþjálfun?</h2>
+            <p class="p-margin">EMS þjálfun notar rafboð til að örva vöðvana, sem gerir æfinguna áhrifaríkari ástyrkingu
+                vöðva og fitubrennslu. Við þjálfun eru rafskaut sett á líkama þess sem æfir, sem senda rafboð til vöðva.
+                Viðbrögð við þessum hvötum munu vöðvarnir dragast saman og slaka á, sem er mjög svipað náttúruleg
+                hreyfing vöðva meðan á æfingu stendur. EMS þjálfun gerir þér kleift að skila árangri á stuttum tíma, sem
+                er sérstaklega gagnlegt fyrir fólk sem vill til að draga úr umframþyngd.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="bckg blue app-div">
+        <div class="app-functions-headline">
+            <p class="tagline white">All electrodes in one Suit</p>
+            <h2> Hvernig EasyMotion Skin er smíðað?
+            </h2>
+        </div>
+
+        <div class="grid-colored-boxes">
+            <div class="colored-box white">
+                <div class="colored-box-content white">
+                    <img src="/src/images/ems-suit-lightweight.jpg">
+                </div>
+            </div>
+            <div class="colored-box blue-box">
+                <div class="colored-box-content">
+                    <h3 class="">Fyllt með þurrum rafskautum</h3>
+                    <p class="text white">Leiðandi notendaviðmótið á iOS og Android appinu gerir það auðvelt að stjórna
+                        þínum EMS þjálfun með EasyMotionSkin. Frá því augnabliki sem þú skráir þig inn til loka
+                        þjálfunnar, forritið einbeitir sér að mikilvægustu þáttunum og umgjörð þess er barnaleikur.
+                    </p>
+                </div>
+            </div>
+            <div class="colored-box white">
+                <div class="colored-box-content white">
+                    <img src="/src/images/ems-suit-suitable.jpg">
+                </div>
+            </div>
+            <div class="colored-box left-box">
+                <div class="colored-box-content">
+                    <h3 class="">Létt og tæknivædd</h3>
+                    <p class="text white">
+                        Upplifðu MotionSkin: efnið sem inniheldur rafskaut og skynjara óaðfinnanlega en viðhalda
+                        sveigjanleika, endingu, hreinlæti og auðveldri umönnun.
+                        Rafskaut hafa samskipti við raka í húðinni og útiloka þörfina fyrir auka raka eða grunn lög á
+                        EMS þjálfun. Njóttu óviðjafnanlegrar þæginda á meðan þú nærð markmiðum þínum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="colored-box white">
+                <div class="colored-box-content white">
+                    <img src="/src/images/ems-suti-sensors.jpg">
+                </div>
+            </div>
+            <div class="colored-box right-box">
+                <div class="colored-box-content">
+                    <h3 class="">Hentar & Góð gæði</h3>
+                    <p class="text white">EasyMotionSkin er svo þægilegt að það er ekki hægt að bera það saman, á sama
+                        tíma og það gefur jákvæða líkams ímynd. Þrátt fyrir flókna, háþróaða tækni geislar varan af
+                        léttleika og orku. Létt og þæginlegt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="Shop" class="diagonal" style="background: white">
+        <div id="shop-left-content" class="left-content">
+            <p class="tagline">EasyMotionSkin verslun</p>
+            <h2 style="color:black">Kauptu EMS fötin þín núna og byrjaðu árangursríkar æfingar</h2>
+            <p class="text excluded">
+                Léttur og þægilegur gallinn fyrir raförvandi þjálfun bíður þín
+            </p>
+            <div class="actions">
+                <a href="ems-suit-shop-is.html" class="sign-up">Farðu í versla</a>
+            </div>
+        </div>
+
+        <div id="shop-gallery" class="right-content">
+            <div class="img-slider">
+                <img class="img-persp" src="/src/images/easymotionskin-suit-men.jpeg" alt="">
+                <img class="img-persp" src="/src/images/ems-suit.webp" alt="">
+                <img class="img-persp" src="/src/images/ems-suit-short.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="diagonal blue">
+    </div>
+    <div></div>
+
+    <div id="hiw-contact-form-div" class="normal-div blue consultation-div home">
+        <div class="get-consultation">
+            <div class="consultation-form">
+                <h2>Contact Us</h2>
+                <p id="consultation-form-p">Do You have questions about EMS Suit? You want to see the EasyMotionSkin in
+                    action? If the
+                    answer is
+                    yes, feel free to leave Your data. We will contact You in the next 2 days. </p>
+                <form class="contact-form">
+                    <div class="form-floating">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="tel" id="phone" placeholder=" " required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <button class="cons-sub" type="submit">Get Consultation</button>
+                </form>
+            </div>
+        </div>
+        <div id="hiw-consultation-text" class="get-consultation-text">
+            <p class="tagline white">Hafðu samband við okkur</p>
+            <h1>Hefur þú spurningu um EMS Suit?
+            </h1>
+            <p class="text white"> Skrifaðu okkur með því að nota tengiliðaeyðublaðið neðst á síðunni eða skráðu þig í ókeypis ráðgjöf, þar sem við munum sýna þér hvernig fötin virka.
+            </p>
+            <img class="align" src="/src/images/fitness-z-ems-suit.jpg" height="350px">
+        </div>
+    </div>
+
+    <div class="blog-headline">
+        <p class="tagline blue"> Lærðu hvernig á að æfa með EMS Suit</p>
+        <h2>Lestu meira um EMS Suit</h2>
+    </div>
+
+    <div id="hiw-grid-blog" class="grid blog">
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="Is-EMS-training-effective-is.html"><img src="/src/images/article-ems-effective.jpeg"
+                        alt="card-image" class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-blue">EMS Effects</span>
+                <h4>Er EMS þjálfun árangursrík?</h4>
+                <p>EMS (Electrical Muscle Stimulation) þjálfun er viðurkennd sem árangursrík þjálfunnar aðferð sem getur
+                    skilað jákvæðum árangri fyrir marga.
+                </p>
+            </div>
+            <div class="readmore">
+                <a href="Is-EMS-training-effective-is.html" class="sign-up">Lestu meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="diet-in-ems-training-is.html"><img src="/src/images/article-ems-worth.jpg" alt="card-image"
+                        class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-brown">EMS Effects</span>
+                <h4>Mataræði í EMS þjálfun</h4>
+                <p>EMS þjálfun hentar mismunandi hópum fólks, með mismunandi áherslur framfara- og þjálfunarmarkmið. Hér
+                    eru nokkur dæmi.</p>
+            </div>
+            <div class="readmore">
+                <a href="diet-in-ems-training-is.html" class="sign-up">Lestu meira</a>
+            </div>
+        </div>
+
+        <div class="article-grid">
+            <div class="article-header">
+                <a href="ems-training-for-woman-is.html"><img src="/src/images/article-ems-for-women.jpg" alt="card-image"
+                        class="card-image" width="600"></a>
+            </div>
+            <div class="article-body">
+                <span class="tag tag-red">EMS Effects</span>
+                <h4>Kostir EMS fyrir konur</h4>
+                <p>Í þessari grein munum við kafa ofan í hvers vegna EMS þjálfun er frábær kostur fyrir konur leitast
+                    við að ná líkamsræktarmarkmiðum sínum á áhrifaríkan og skilvirkan hátt.</p>
+            </div>
+            <div class="readmore">
+                <a href="ems-training-for-woman-is.html" class="sign-up">Lestu meira</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="Contact" class="normal-div div-contact">
+        <div id="contact-chat" class="diagonal blue">
+            <div class="left-content contact-div">
+                <h2 class="white">Spjall</h2>
+                <p class="text white">Hvort sem þú ert með spurningu þá endilega senda skilaboð í tengiliðaforminu
+                </p>
+                <div class="contact-info">
+                    <div class="tabcard">
+                        <i class="icon fas fa-envelope"></i>
+                        <div id="email" class="tab-content">
+                            <h3>Netfang</h3>
+                            <span>email@address.com</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-phone"></i>
+                        <div class="tab-content">
+                            <h3>Simi</h3>
+                            <span>+00000000000</span>
+                        </div>
+                    </div>
+
+                    <div class="tabcard">
+                        <i class="icon fas fa-map-marker-alt"></i>
+                        <div class="tab-content">
+                            <h3>Staðsetning</h3>
+                            <span>Ísland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-content contact-div">
+                <div>
+                    <h2 class="white">Skrifaðu okkur</h2>
+                </div>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <form style="form" action="sendform.php" method="post">
+                    <p class="text white">*Áskilið</p>
+                    <input type="text" placeholder="Name *" />
+                    <input type="email" placeholder="Email *" />
+                    <input type="tel" placeholder="Phone" />
+                    <textarea rows="4" placeholder="Message"></textarea>
+                    <div class="actions">
+                        <a href="#" class="sign-up submit">Sendu inn</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-row">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <div class="footer-row">
+                <ul>
+                    <li><a href="index-is.html">Heim</a></li>
+                    <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                    <li><a href="ems-suit-shop-is.html">Búðu</a></li>
+                    <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                    <li><a href="ems-blog-is.html">Blogg</a></li>
+                    <li><a href="contact-is.html">Stuðningur</a></li>
+                </ul>
+            </div>
+            <div class="footer-row">
+                EasyMotion Skin Copyright © 2023 EMS Training - All rights reserved || Designed By: Piotr Effler
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-popup">
+        <p>Cookie Policy</p>
+        <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+            <br><a href="https://" class="link">LINK &#10148;</a>
+        </p>
+        <button class="cookie-popup__button">OK</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
