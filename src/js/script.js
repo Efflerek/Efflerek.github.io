@@ -58,24 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 200); // 200 milisekund (0,2 sekundy)
   });
 
-  // MODEL 3D
-  // Find all occurrences of the Model Viewer component on the page
-  const modelViewers = document.querySelectorAll('model-viewer');
-
-  // Iterate through each Model Viewer component
-  modelViewers.forEach(function (modelViewer) {
-    // Check if the component is loaded
-    modelViewer.addEventListener('load', function () {
-      // Perform any actions after the model is loaded
-      console.log('Model has been loaded!');
-    });
-
-    // Check if an error occurred during model loading
-    modelViewer.addEventListener('error', function (event) {
-      // Display an error message
-      console.error('An error occurred during model loading:', event);
-    });
-  });
+  //COOKIE POPUP //
 
 // Sprawdź, czy użytkownik już zaakceptował ciastko
 if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
@@ -117,6 +100,26 @@ if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
     cookiePopup.style.display = 'none';
   });
 }
+
+  // MODEL 3D
+  // Find all occurrences of the Model Viewer component on the page
+  const modelViewers = document.querySelectorAll('model-viewer');
+
+  // Iterate through each Model Viewer component
+  modelViewers.forEach(function (modelViewer) {
+    // Check if the component is loaded
+    modelViewer.addEventListener('load', function () {
+      // Perform any actions after the model is loaded
+      console.log('Model has been loaded!');
+    });
+
+    // Check if an error occurred during model loading
+    modelViewer.addEventListener('error', function (event) {
+      // Display an error message
+      console.error('An error occurred during model loading:', event);
+    });
+  });
+
 
 
   // SEND FORM
