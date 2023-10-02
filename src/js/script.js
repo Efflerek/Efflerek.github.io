@@ -77,26 +77,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // COOKIE POLICY
-  // Check if the session cookie is set
-  if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
-    // Cookie policy not accepted, show the popup
-    const cookiePopup = document.getElementById('cookie-popup');
-    cookiePopup.style.display = 'block';
+// Sprawdź, czy użytkownik już zaakceptował ciastko
+if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
+  // Ciastko nie jest jeszcze ustawione, utwórz pop-up
+
+  const isIcelandicVersion = window.location.pathname.endsWith('-is.html');
+  const cookiePopup = document.createElement('div');
+  cookiePopup.id = 'cookie-popup';
+
+  if (isIcelandicVersion) {
+    // Wersja islandzka
+    cookiePopup.innerHTML = `
+      <p>Vafrakökurstefna</p>
+      <p>Þessi vefsíða notar vafrakökur til að auka upplifun þína. Með því að halda áfram samþykkir þú stefnu okkar um vafrakökur.
+        <br><a href="cookie-policy-ems-is.html" class="link">LINK &#10148;</a>
+      </p>
+      <button class="cookie-popup__button">OK</button>
+    `;
+  } else {
+    // Wersja angielska lub inna wersja
+    cookiePopup.innerHTML = `
+      <p>Cookie Policy</p>
+      <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+        <br><a href="cookie-policy-ems.html" class="link">LINK &#10148;</a>
+      </p>
+      <button class="cookie-popup__button">OK</button>
+    `;
   }
 
-  // Get the button inside the cookie popup
-  const cookieButton = document.querySelector('#cookie-popup button');
+  document.body.appendChild(cookiePopup);
 
-  // Add a click event listener to the button
+  // Obsługa kliknięcia przycisku "OK"
+  const cookieButton = document.querySelector('#cookie-popup button');
   cookieButton.addEventListener('click', function () {
-    // Set a session cookie to remember the user's choice
+    // Ustaw ciastko jako zaakceptowane
     document.cookie = 'cookiePolicyAccepted=true; path=/';
 
-    // Hide the cookie policy popup
-    const cookiePopup = document.getElementById('cookie-popup');
+    // Ukryj pop-up
     cookiePopup.style.display = 'none';
   });
+}
+
 
   // SEND FORM
   const contactForm = document.getElementById('contact-form');

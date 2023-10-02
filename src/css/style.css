@@ -1894,7 +1894,8 @@ textarea:focus {
 }
 
 .blog-text-pp {
-  padding: 7rem 20rem;
+  margin: 7rem 3rem 2rem 3rem;
+  padding: 7rem 20rem 2rem 20rem;
   line-height: 1.6rem;
 }
 
@@ -1914,7 +1915,7 @@ textarea:focus {
   }
 
   .blog-text-pp {
-    padding: 5rem 2rem 2rem 2rem;
+    padding: 7rem 2rem 2rem 2rem;
   }
 }
 
