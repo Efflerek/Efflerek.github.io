@@ -1893,6 +1893,11 @@ textarea:focus {
   line-height: 1.6rem;
 }
 
+.blog-text-pp {
+  padding: 5rem 20rem;
+  line-height: 1.6rem;
+}
+
 @media (min-width: 821px max-width: 1200px) {
   #welcome-blog {
       flex-direction: column-reverse;
@@ -1906,6 +1911,10 @@ textarea:focus {
     }
   .blog-text {
     padding: 2rem 1rem;
+  }
+
+  .blog-text-pp {
+    padding: 6rem 2rem 2rem 2rem;
   }
 }
 
@@ -1922,6 +1931,10 @@ textarea:focus {
     }
   .blog-text {
     padding: 2rem 1rem;
+  }
+
+  .blog-text-pp {
+    padding: 6rem 2rem 2rem 2rem;
   }
 }
 

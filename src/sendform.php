@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     $message = $_POST["message"];
 
-    $to = "email@email.pl"; // Adres e-mail docelowy
+    $to = "support@easymotionskin.is"; // Adres e-mail docelowy
     $subject = "New Customer";
     $headers = "From: $email";
 
