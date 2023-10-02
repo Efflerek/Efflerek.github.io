@@ -29,12 +29,18 @@ h1 {
   margin: 0;
 }
 
-h1.white {
+h1.white, h2.white, p.white {
   color: white;
 }
 
-h2.white {
-  color: white;
+#formMessage {
+ padding-top: 1.5rem;
+ padding-left: 0;
+ margin-left: 0;
+}
+
+.messagehidden {
+  display: none;
 }
 
 .logo {
@@ -116,6 +122,14 @@ h2.white {
   padding: 0.5rem 1rem;
   box-shadow: 0 0.0625rem 0.1875rem #2e2e2e;
   text-transform: capitalize;
+}
+
+.actions .sign-up.submit {
+  display: inline-block;
+  color: white;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 .readmore .sign-up {

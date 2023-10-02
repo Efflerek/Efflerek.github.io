@@ -175,4 +175,21 @@ if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
       }
     }
   });
+
+  function validateForm() {
+    const name = document.forms["myForm"]["name"].value;
+    const email = document.forms["myForm"]["email"].value;
+    const message = document.forms["myForm"]["message"].value;
+
+    if (name == "" || email == "" || message == "") {
+        alert("Please fill in all required fields.");
+        return false;
+    }
+
+    // Wyświetl komunikat po pomyślnym wysłaniu
+    const formMessage = document.getElementById("formMessage");
+    formMessage.style.display = "block";
+
+    return false; // Zapobiegaj faktycznemu wysłaniu formularza
+}
 });

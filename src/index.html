@@ -362,16 +362,18 @@
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <form style="form" action="sendform.php" method="post">
-                    <p class="text white">*Required</p>
-                    <input type="text" placeholder="Name *" />
-                    <input type="email" placeholder="Email *" />
-                    <input type="tel" placeholder="Phone" />
-                    <textarea rows="4" placeholder="Message"></textarea>
-                    <div class="actions">
-                        <a href="#" class="sign-up submit">Submit</a>
-                    </div>
-                </form>
+        <form style="form" action="sendform.php" method="post" onsubmit="return validateForm()">
+        <p class="text white">*Required</p>
+        <input type="text" name="name" placeholder="Name *" required />
+        <input type="email" name="email" placeholder="Email *" required />
+        <input type="tel" name="phone" placeholder="Phone" />
+        <textarea name="message" rows="4" placeholder="Message" required></textarea>
+        <div class="actions">
+            <button class="sign-up submit" type="submit">Submit</button>
+        </div>
+        <p id="formMessage" class="p white messagehidden">Your form has been sent. Thank You!</p>
+    </form>
+
             </div>
         </div>
     </div>
