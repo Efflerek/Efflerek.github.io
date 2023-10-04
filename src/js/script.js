@@ -46,15 +46,11 @@ switcher.addEventListener('change', function () {
     newPageName = currentPageName.replace('.html', '-is.html');
   }
 
-  if (currentPageName === 'index-is.html') {
+  if (currentPageName === 'easymotionskin.is' || currentPageName === 'index-is.html') {
     // Jeśli strona to 'easymotionskin.is' lub 'index-is.html', przekieruj na 'easymotionskin.is/index.html'
     window.location.href = 'https://easymotionskin.is/index.html';
   }
-
-  if (currentPageName === 'https://easymotionskin.is') {
-    // Jeśli strona to 'easymotionskin.is' lub 'index-is.html', przekieruj na 'easymotionskin.is/index.html'
-    window.location.href = 'https://easymotionskin.is/index.html';
-  }
+  
     // W przeciwnym razie przekieruj użytkownika na nową stronę
     // Opóźnij przekierowanie o 200 milisekund (0,2 sekundy)
     setTimeout(function () {
@@ -62,13 +58,11 @@ switcher.addEventListener('change', function () {
       const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
 
       // Przekieruj użytkownika na nową stronę
-      // Przekieruj użytkownika na nową stronę
       window.location.href = newURL;
     }, 200);
   }
-    }, 200);
-  }
 });
+
 
 
   //COOKIE POPUP //
