@@ -62,11 +62,13 @@ switcher.addEventListener('change', function () {
       const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
 
       // Przekieruj użytkownika na nową stronę
+      // Przekieruj użytkownika na nową stronę
       window.location.href = newURL;
     }, 200);
   }
+    }, 200);
+  }
 });
-
 
 
   //COOKIE POPUP //
