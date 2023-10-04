@@ -38,7 +38,7 @@ switcher.addEventListener('change', function () {
   let newPageName; // Deklarujemy zmienną poza blokami if/else
 
   // Sprawdź, czy strona jest już w formacie "-is.html"
-  if (currentPageName === 'easymotionskin.is' || currentPageName === 'index-is.html') {
+  if (currentPageName === 'https://easymotionskin.is' || currentPageName === 'https://easymotionskin.is/index-is.html') {
     // Jeśli tak, przekieruj użytkownika na stronę "easymotionskin.is/index.html"
     newPageName = 'index.html';
   } else if (currentPageName.endsWith('-is.html')) {
