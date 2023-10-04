@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menu-bar');
   menuBar.addEventListener('click', toggleMenu);
 
-  // SWITCHER JĘZYKOWY //
+// SWITCHER JĘZYKOWY //
 const switcher = document.getElementById('language-toggle');
     
 switcher.addEventListener('change', function () {
@@ -38,17 +38,16 @@ switcher.addEventListener('change', function () {
   let newPageName; // Deklarujemy zmienną poza blokami if/else
 
   // Sprawdź, czy strona jest już w formacie "-is.html"
-  if (currentPageName.endsWith('-is.html')) {
+  if (currentPageName === 'easymotionskin.is') {
+    // Jeśli jest to strona główna, przekieruj na easymotionskin.is/index.html
+    newPageName = 'index.html';
+  } else if (currentPageName.endsWith('-is.html')) {
     // Jeśli tak, usuń końcówkę "-is.html" z nazwy strony
     newPageName = currentPageName.replace('-is.html', '.html');
   } else {
     // W przeciwnym razie, dodaj końcówkę "-is.html" do nazwy strony
     newPageName = currentPageName.replace('.html', '-is.html');
   }
-
-  if (currentPageName === 'easymotionskin.is') {
-    // Jeśli jest to strona główna, przekieruj na easymotionskin.is/index.html
-    newPageName = 'index.html';
 
   // Opóźnij przekierowanie o 0,2 sekundy
   setTimeout(function() {
