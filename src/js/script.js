@@ -46,21 +46,21 @@ switcher.addEventListener('change', function () {
     newPageName = currentPageName.replace('.html', '-is.html');
   }
 
-  // Opóźnij przekierowanie o 200 milisekund (0,2 sekundy)
-  setTimeout(function () {
-    // Buduj nowy URL na podstawie nazw stron
-    const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
+  if (currentPageName === 'easymotionskin.is' || currentPageName === 'index-is.html') {
+    // Jeśli strona to 'easymotionskin.is' lub 'index-is.html', przekieruj na 'easymotionskin.is/index.html'
+    window.location.href = 'https://easymotionskin.is/index.html';
+  } else {
+    // W przeciwnym razie przekieruj użytkownika na nową stronę
+    // Opóźnij przekierowanie o 200 milisekund (0,2 sekundy)
+    setTimeout(function () {
+      // Buduj nowy URL na podstawie nazw stron
+      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
 
-    // Jeśli nowa nazwa strony jest ".is" lub "index-is.html", przekieruj na "easymotionskin.is/index.html"
-    if (newPageName === '.is' || newPageName === 'index.html') {
-      window.location.href = 'https://easymotionskin.is/index.html';
-    } else {
-      // W przeciwnym razie przekieruj użytkownika na nową stronę
+      // Przekieruj użytkownika na nową stronę
       window.location.href = newURL;
-    }
-  }, 200);
+    }, 200);
+  }
 });
-
 
 
   //COOKIE POPUP //
