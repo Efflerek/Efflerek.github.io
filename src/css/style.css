@@ -119,7 +119,7 @@ p.white {
 }
 
 .actions .sign-up.submit {
-  display: inline-block;
+  display: block;
   color: white;
   color: white;
   justify-content: center;
@@ -2197,14 +2197,14 @@ input.check-toggle-round-flat:checked+label:after {
 
   .actions .sign-up {
     display: block; /* Change from inline-block to block */
-    margin: 0 1rem; /* Center horizontally using margin */
+    margin: 0 2rem; /* Center horizontally using margin */
     text-align: center; /* Center text within the block */
     float: none; /* Remove float */
   }
 
   .readmore .sign-up {
     display: block; /* Change from inline-block to block */
-    margin: 0 auto; /* Center horizontally using margin */
+    margin: 0 2rem; /* Center horizontally using margin */
     text-align: center; /* Center text within the block */
   }
 
