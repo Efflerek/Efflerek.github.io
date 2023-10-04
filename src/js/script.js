@@ -39,14 +39,13 @@ switcher.addEventListener('change', function () {
 
   // Sprawdź, czy strona jest już w formacie "-is.html"
   if (currentPageName === 'easymotionskin.is' || currentPageName === 'index-is.html') {
-    // Przekieruj użytkownika na stronę "easymotionskin.is/index.html"
-    window.location.href = 'easymotionskin.is/index.html';
-    return; // Przerwij dalsze wykonywanie kodu
+    // Jeśli tak, przekieruj użytkownika na stronę "easymotionskin.is/index.html"
+    newPageName = 'index.html';
   } else if (currentPageName.endsWith('-is.html')) {
-    // Jeśli tak, usuń końcówkę "-is.html" z nazwy strony
+    // Jeśli strona jest w formacie "-is.html", zmień ją na ".html"
     newPageName = currentPageName.replace('-is.html', '.html');
   } else {
-    // W przeciwnym razie, dodaj końcówkę "-is.html" do nazwy strony
+    // W przeciwnym razie, zmień na "-is.html"
     newPageName = currentPageName.replace('.html', '-is.html');
   }
 
@@ -59,6 +58,7 @@ switcher.addEventListener('change', function () {
     window.location.href = newURL;
   }, 200);
 });
+
 
   //COOKIE POPUP //
 
