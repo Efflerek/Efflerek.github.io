@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menu-bar');
   menuBar.addEventListener('click', toggleMenu);
 
+
+
 // SWITCHER JĘZYKOWY //
 const switcher = document.getElementById('language-toggle');
 
@@ -37,32 +39,36 @@ switcher.addEventListener('change', function () {
   const currentPageName = window.location.pathname.split('/').pop();
   let newPageName; // Deklarujemy zmienną poza blokami if/else
 
+  // Dodaj nowy warunek sprawdzający, czy użytkownik jest na jednej z wymienionych stron
+  if (
+    currentPageName === 'index-is.html' ||
+    currentPageName === 'https://easymotionskin.is'
+  ) {
+    // Jeśli tak, przekieruj użytkownika na stronę https://easymotionskin.is/index.html
+    window.location.href = 'https://easymotionskin.is/index.html';
+    return; // Zakończ funkcję, aby uniknąć wykonywania dalszego kodu
+  }
+
   // Sprawdź, czy strona jest już w formacie "-is.html"
   if (currentPageName.endsWith('-is.html')) {
-    // Jeśli strona jest w formacie "-is.html" lub "index-is.html", zmień ją na ".html"
-    newPageName = currentPageName.replace('-is.html', '.html').replace('index-is.html', 'index.html');
+    // Jeśli tak, usuń końcówkę "-is.html" z nazwy strony
+    newPageName = currentPageName.replace('-is.html', '.html');
   } else {
-    // W przeciwnym razie, zmień na "-is.html"
+    // W przeciwnym razie, dodaj końcówkę "-is.html" do nazwy strony
     newPageName = currentPageName.replace('.html', '-is.html');
   }
 
-  if (currentPageName === 'easymotionskin.is' || currentPageName === 'index-is.html') {
-    // Jeśli strona to 'easymotionskin.is' lub 'index-is.html', przekieruj na 'easymotionskin.is/index.html'
-    window.location.href = 'https://easymotionskin.is/index.html';
-  }
-  
-    // W przeciwnym razie przekieruj użytkownika na nową stronę
-    // Opóźnij przekierowanie o 200 milisekund (0,2 sekundy)
-    setTimeout(function () {
-      // Buduj nowy URL na podstawie nazw stron
-      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
+  // Opóźnij przekierowanie o 1 sekundę
+  setTimeout(function () {
+    // Buduj nowy URL na podstawie nazw stron
+    const newURL =
+      window.location.origin +
+      window.location.pathname.replace(currentPageName, newPageName);
 
-      // Przekieruj użytkownika na nową stronę
-      window.location.href = newURL;
-    }, 200);
-  }
+    // Przekieruj użytkownika na nową stronę
+    window.location.href = newURL;
+  }, 200); // 200 milisekund (0,2 sekundy)
 });
-
 
 
   //COOKIE POPUP //
