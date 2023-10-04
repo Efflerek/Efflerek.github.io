@@ -38,9 +38,9 @@ switcher.addEventListener('change', function () {
   let newPageName; // Deklarujemy zmienną poza blokami if/else
 
   // Sprawdź, czy strona jest już w formacie "-is.html"
- if (currentPageName.endsWith('-is.html')) {
-    // Jeśli strona jest w formacie "-is.html", zmień ją na ".html"
-    newPageName = currentPageName.replace('-is.html', '.html');
+  if (currentPageName.endsWith('-is.html') || currentPageName === 'index-is.html') {
+    // Jeśli strona jest w formacie "-is.html" lub "index-is.html", zmień ją na ".html"
+    newPageName = currentPageName.replace('-is.html', '.html').replace('index-is.html', 'index.html');
   } else {
     // W przeciwnym razie, zmień na "-is.html"
     newPageName = currentPageName.replace('.html', '-is.html');
@@ -51,10 +51,16 @@ switcher.addEventListener('change', function () {
     // Buduj nowy URL na podstawie nazw stron
     const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
 
-    // Przekieruj użytkownika na nową stronę
-    window.location.href = newURL;
+    // Jeśli nowa nazwa strony jest ".is" lub "index-is.html", przekieruj na "easymotionskin.is/index.html"
+    if (newPageName === '.is' || newPageName === 'index.html') {
+      window.location.href = 'https://easymotionskin.is/index.html';
+    } else {
+      // W przeciwnym razie przekieruj użytkownika na nową stronę
+      window.location.href = newURL;
+    }
   }, 200);
 });
+
 
 
   //COOKIE POPUP //
