@@ -29,34 +29,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menu-bar');
   menuBar.addEventListener('click', toggleMenu);
 
-
-
   // SWITCHER JĘZYKOWY //
-  const switcher = document.getElementById('language-toggle');
+const switcher = document.getElementById('language-toggle');
     
-  switcher.addEventListener('change', function () {
-    // Pobierz nazwę aktualnej strony
-    const currentPageName = window.location.pathname.split('/').pop();
-    let newPageName; // Deklarujemy zmienną poza blokami if/else
-    
-    // Sprawdź, czy strona jest już w formacie "-is.html"
-    if (currentPageName.endsWith('-is.html')) {
-      // Jeśli tak, usuń końcówkę "-is.html" z nazwy strony
-      newPageName = currentPageName.replace('-is.html', '.html');
-    } else {
-      // W przeciwnym razie, dodaj końcówkę "-is.html" do nazwy strony
-      newPageName = currentPageName.replace('.html', '-is.html');
-    }
+switcher.addEventListener('change', function () {
+  // Pobierz nazwę aktualnej strony
+  const currentPageName = window.location.pathname.split('/').pop();
+  let newPageName; // Deklarujemy zmienną poza blokami if/else
 
-     // Opóźnij przekierowanie o 1 sekundę
-     setTimeout(function() {
-      // Buduj nowy URL na podstawie nazw stron
-      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
-      
-      // Przekieruj użytkownika na nową stronę
-      window.location.href = newURL;
-    }, 200); // 200 milisekund (0,2 sekundy)
-  });
+  // Sprawdź, czy strona jest już w formacie "-is.html"
+  if (currentPageName.endsWith('-is.html')) {
+    // Jeśli tak, usuń końcówkę "-is.html" z nazwy strony
+    newPageName = currentPageName.replace('-is.html', '.html');
+  } else {
+    // W przeciwnym razie, dodaj końcówkę "-is.html" do nazwy strony
+    newPageName = currentPageName.replace('.html', '-is.html');
+  }
+
+  if (currentPageName === 'easymotionskin.is') {
+    // Jeśli jest to strona główna, przekieruj na easymotionskin.is/index.html
+    newPageName = 'index.html';
+
+  // Opóźnij przekierowanie o 0,2 sekundy
+  setTimeout(function() {
+    // Buduj nowy URL na podstawie nazw stron
+    const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
+    
+    // Przekieruj użytkownika na nową stronę
+    window.location.href = newURL;
+  }, 200); // 200 milisekund (0,2 sekundy)
+});
 
   //COOKIE POPUP //
 
