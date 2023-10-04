@@ -38,7 +38,7 @@ switcher.addEventListener('change', function () {
   let newPageName; // Deklarujemy zmienną poza blokami if/else
 
   // Sprawdź, czy strona jest już w formacie "-is.html"
-  if (currentPageName.endsWith('-is.html') || currentPageName === 'index-is.html') {
+  if (currentPageName.endsWith('-is.html')) {
     // Jeśli strona jest w formacie "-is.html" lub "index-is.html", zmień ją na ".html"
     newPageName = currentPageName.replace('-is.html', '.html').replace('index-is.html', 'index.html');
   } else {
