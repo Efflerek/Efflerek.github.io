@@ -1,30 +1,47 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Obsługa otwierania i zamykania modalu
-  const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
-  const modal = document.getElementById("modalform");
-  const closeModal = document.querySelector(".close");
+     // Pobierz wszystkie tabcardy
+  const tabcards = document.querySelectorAll('.tabcard');
 
-  openModalBtns.forEach(openModalBtn => {
-    openModalBtn.addEventListener('click', function () {
-      modal.style.display = "flex";
+  // Iteruj przez każdy tabcard
+  tabcards.forEach(function (tabcard) {
+    // Dodaj obsługę zdarzenia kliknięcia
+    tabcard.addEventListener('click', function () {
+      // Pobierz treść z elementu <span> wewnątrz tabcard
+      const tabContent = tabcard.querySelector('.tabcard .tab-content span');
+      const textToCopy = tabContent.textContent;
+
+      // Utwórz schowek (Clipboard API)
+      navigator.clipboard.writeText(textToCopy)
+        .then(function () {
+          // Opcjonalnie: Wyświetl komunikat o skopiowaniu do schowka
+          alert('Skopiowano do schowka: ' + textToCopy);
+        })
+        .catch(function (err) {
+          console.error('Błąd kopiowania do schowka: ', err);
+        });
     });
   });
 
-  closeModal.addEventListener('click', function () {
-    modal.style.display = "none";
+  const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
+  const modal = document.getElementById("modalform");
+  const closeModal = document.getElementsByClassName("close")[0];
+
+  openModalBtns.forEach(openModalBtn => {
+    openModalBtn.onclick = function () {
+      modal.style.display = "flex";
+    };
   });
 
-  window.addEventListener('click', function (event) {
-    if (event.target === modal) {
+  closeModal.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
       modal.style.display = "none";
     }
-  });
+  };
 
-  // Obsługa przycisku menu
-  const menuBar = document.querySelector('.menu-bar');
-  menuBar.addEventListener('click', function () {
-    toggleMenu();
-  });
 
   function toggleMenu() {
     document.getElementById("menu-bar").classList.toggle("change");
@@ -32,72 +49,102 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("menu-bg").classList.toggle("change-bg");
   }
 
-  // Obsługa przełącznika językowego
-  const switcher = document.getElementById('language-toggle');
+  const menuBar = document.querySelector('.menu-bar');
+  menuBar.addEventListener('click', toggleMenu);
 
-  switcher.addEventListener('change', function () {
-    const currentPageName = window.location.pathname.split('/').pop();
-    let newPageName;
+// SWITCHER JĘZYKOWY //
+const switcher = document.getElementById('language-toggle');
 
-    if (currentPageName.endsWith('-is.html')) {
-      newPageName = currentPageName.replace('-is.html', '.html');
-    } else {
-      newPageName = currentPageName.replace('.html', '-is.html');
-    }
+switcher.addEventListener('change', function () {
+  // Pobierz nazwę aktualnej strony
+  const currentPageName = window.location.pathname.split('/').pop();
+  let newPageName; // Deklarujemy zmienną poza blokami if/else
 
-    setTimeout(function () {
-      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
-      window.location.href = newURL;
-    }, 200);
+  // Sprawdź, czy strona jest już w formacie "-is.html"
+ if (currentPageName.endsWith('-is.html')) {
+    // Jeśli strona jest w formacie "-is.html", zmień ją na ".html"
+    newPageName = currentPageName.replace('-is.html', '.html');
+  } else {
+    // W przeciwnym razie, zmień na "-is.html"
+    newPageName = currentPageName.replace('.html', '-is.html');
+  }
+
+  // Opóźnij przekierowanie o 200 milisekund (0,2 sekundy)
+  setTimeout(function () {
+    // Buduj nowy URL na podstawie nazw stron
+    const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
+
+    // Przekieruj użytkownika na nową stronę
+    window.location.href = newURL;
+  }, 200);
+});
+
+
+  //COOKIE POPUP //
+
+// Sprawdź, czy użytkownik już zaakceptował ciastko
+if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
+  // Ciastko nie jest jeszcze ustawione, utwórz pop-up
+
+  const isIcelandicVersion = window.location.pathname.endsWith('-is.html');
+  const cookiePopup = document.createElement('div');
+  cookiePopup.id = 'cookie-popup';
+
+  if (isIcelandicVersion) {
+    // Wersja islandzka
+    cookiePopup.innerHTML = `
+      <p>Vafrakökurstefna</p>
+      <p>Þessi vefsíða notar vafrakökur til að auka upplifun þína. Með því að halda áfram samþykkir þú stefnu okkar um vafrakökur.
+        <br><a href="cookie-policy-ems-is.html" class="link">LINK &#10148;</a>
+      </p>
+      <button class="cookie-popup__button">OK</button>
+    `;
+  } else {
+    // Wersja angielska lub inna wersja
+    cookiePopup.innerHTML = `
+      <p>Cookie Policy</p>
+      <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+        <br><a href="cookie-policy-ems.html" class="link">LINK &#10148;</a>
+      </p>
+      <button class="cookie-popup__button">OK</button>
+    `;
+  }
+
+  document.body.appendChild(cookiePopup);
+
+  // Obsługa kliknięcia przycisku "OK"
+  const cookieButton = document.querySelector('#cookie-popup button');
+  cookieButton.addEventListener('click', function () {
+    // Ustaw ciastko jako zaakceptowane
+    document.cookie = 'cookiePolicyAccepted=true; path=/';
+
+    // Ukryj pop-up
+    cookiePopup.style.display = 'none';
   });
+}
 
-  // Obsługa pop-upa ciasteczkowego
-  if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
-    const isIcelandicVersion = window.location.pathname.endsWith('-is.html');
-    const cookiePopup = document.createElement('div');
-    cookiePopup.id = 'cookie-popup';
-
-    if (isIcelandicVersion) {
-      cookiePopup.innerHTML = `
-        <p>Vafrakökurstefna</p>
-        <p>Þessi vefsíða notar vafrakökur til að auka upplifun þína. Með því að halda áfram samþykkir þú stefnu okkar um vafrakökur.
-          <br><a href="cookie-policy-ems-is.html" class="link">LINK &#10148;</a>
-        </p>
-        <button class="cookie-popup__button">OK</button>
-      `;
-    } else {
-      cookiePopup.innerHTML = `
-        <p>Cookie Policy</p>
-        <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
-          <br><a href="cookie-policy-ems.html" class="link">LINK &#10148;</a>
-        </p>
-        <button class="cookie-popup__button">OK</button>
-      `;
-    }
-
-    document.body.appendChild(cookiePopup);
-
-    const cookieButton = document.querySelector('#cookie-popup button');
-    cookieButton.addEventListener('click', function () {
-      document.cookie = 'cookiePolicyAccepted=true; path=/';
-      cookiePopup.style.display = 'none';
-    });
-  });
-
-  // Obsługa Model Viewer
+  // MODEL 3D
+  // Find all occurrences of the Model Viewer component on the page
   const modelViewers = document.querySelectorAll('model-viewer');
 
+  // Iterate through each Model Viewer component
   modelViewers.forEach(function (modelViewer) {
+    // Check if the component is loaded
     modelViewer.addEventListener('load', function () {
+      // Perform any actions after the model is loaded
       console.log('Model has been loaded!');
     });
 
+    // Check if an error occurred during model loading
     modelViewer.addEventListener('error', function (event) {
+      // Display an error message
       console.error('An error occurred during model loading:', event);
     });
   });
 
-  // Obsługa formularza kontaktowego
+
+
+  // SEND FORM
   const contactForm = document.getElementById('contact-form');
 
   contactForm.addEventListener('submit', function (e) {
@@ -110,29 +157,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     xhr.onload = function () {
       if (xhr.status === 200) {
-        console.log(xhr.responseText);
+        // Handle success (display a thank you message, for example)
+        console.log(xhr.responseText); // Log the response from the server
       } else {
+        // Handle error
         console.error('An error occurred:', xhr.statusText);
       }
     };
 
     xhr.onerror = function () {
+      // Handle network error
       console.error('Network error occurred');
     };
 
     xhr.send(formData);
   });
 
-  // Ograniczenie liczby wyświetlanych słów w artykule
+  // Max number of words
+  // Get all elements with the class "article"
   const articles = document.querySelectorAll('.article-body');
+
+  // Define the maximum number of words to display
   const maxWords = 25;
 
+  // Loop through each article
   articles.forEach(article => {
+    // Find the <p> element within the article
     const paragraph = article.querySelector('p');
 
+    // Check if the paragraph exists
     if (paragraph) {
+      // Split the text into words
       const words = paragraph.textContent.trim().split(' ');
 
+      // Limit the number of words if it exceeds the maximum
       if (words.length > maxWords) {
         const truncatedText = words.slice(0, maxWords).join(' ') + '...';
         paragraph.textContent = truncatedText;
@@ -140,72 +198,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Funkcja do walidacji formularza
   function validateForm() {
     const name = document.forms["myForm"]["name"].value;
     const email = document.forms["myForm"]["email"].value;
     const message = document.forms["myForm"]["message"].value;
 
     if (name == "" || email == "" || message == "") {
-      alert("Please fill in all required fields.");
-      return false;
+        alert("Please fill in all required fields.");
+        return false;
     }
 
+    // Wyświetl komunikat po pomyślnym wysłaniu
     const formMessage = document.getElementById("formMessage");
     formMessage.style.display = "block";
 
-    return false;
-  }
-
-  // Funkcja do otwierania adresu na mapie
-  function openAddressOnMap(address) {
-    const googleMapsURL = `https://www.google.com/maps/search/?q=${encodeURIComponent(address)}`;
-    const appleMapsURL = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
-
-    // Sprawdź, czy urządzenie jest iOS (iPhone/iPad)
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-    // Otwórz odpowiednią aplikację map w zależności od urządzenia
-    if (isIOS) {
-      window.open(appleMapsURL, "_blank");
-    } else {
-      window.open(googleMapsURL, "_blank");
-    }
-  }
-
-  // Funkcja do kopiowania tekstu do schowka
-  function copyToClipboard(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    alert("Skopiowano do schowka: " + text);
-  }
-
-  // Znajdź wszystkie elementy tabcard
-  const tabcards = document.querySelectorAll(".tabcard");
-
-  // Iteruj przez tabcardy i dodaj obsługę kliknięcia
-  tabcards.forEach((tabcard) => {
-    const header = tabcard.querySelector("h3");
-    const content = tabcard.querySelector(".tab-content span");
-
-    // Sprawdź, czy istnieją wymagane elementy
-    if (header && content) {
-      tabcard.addEventListener("click", function () {
-        const text = content.textContent;
-        if (header.textContent.includes("Netfang")) {
-          // Jeśli kliknięto na tabcard z adresem email, skopiuj go do schowka
-          copyToClipboard(text);
-        } else if (header.textContent.includes("Simi")) {
-          // Jeśli kliknięto na tabcard z numerem telefonu, skopiuj go do schowka
-          copyToClipboard(text);
-        } else if (header.textContent.includes("Staðsetning")) {
-          // Jeśli kliknięto na tabcard z adresem, otwórz go na mapie
-          openAddressOnMap(text);
-        }
-      });
-    }
-  });
+    return false; // Zapobiegaj faktycznemu wysłaniu formularza
+}
+});
