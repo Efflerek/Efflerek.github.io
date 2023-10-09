@@ -459,7 +459,7 @@ justify-content: center;
 
 .app-functions-headline {
   padding-top: 2rem;
-  margin-left: 2rem;
+  margin-left: 0;
 }
 
 .gallery {
@@ -1403,9 +1403,8 @@ textarea:focus {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  margin: 0 1rem;
-  max-width: 100%; /* Ensure the element doesn't exceed the screen width */
-  overflow-x: hidden; /* Hide horizontal overflow */
+  margin: 0 0rem;
+
 }
 
 .app-functions {
@@ -1886,7 +1885,7 @@ input.check-toggle-round-flat:checked+label:after {
 
   .app-functions-headline {
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 0rem;
   }
 
   .app-functions {
@@ -2262,7 +2261,7 @@ input.check-toggle-round-flat:checked+label:after {
 @media screen and (max-width: 820px) {
 
   .bckg.blue.app-div {
-    margin: 0 auto;
+    margin: 0 0;
     padding: 0;
   }
 
