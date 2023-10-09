@@ -462,8 +462,7 @@ justify-content: center;
   align-items: left;
   text-align: left;
   padding-top: 2rem;
-  margin-right: 0;
-  margin-left: 0;
+  margin: 0 0;
 }
 
 .gallery {
@@ -1405,17 +1404,16 @@ textarea:focus {
 .app-div {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   margin: 0 0rem;
-
 }
 
 .app-functions {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 1rem 1rem;;
+  padding: 1rem 1rem;
   margin: 0 1rem;
   justify-content: center;
   align-items: center;
@@ -1432,7 +1430,7 @@ textarea:focus {
   flex: 2;
   padding-top: 0;
   margin-left: 1rem;
-  padding: 0 1cm;
+  padding: 0 1rem;
 }
 
 @media screen and (max-width 820px) {
@@ -2203,16 +2201,23 @@ input.check-toggle-round-flat:checked+label:after {
   }
 
   .actions .sign-up {
-    display: block; /* Change from inline-block to block */
-    margin: 0 2rem; /* Center horizontally using margin */
-    text-align: center; /* Center text within the block */
-    float: none; /* Remove float */
+    display: block;
+    /* Change from inline-block to block */
+    margin: 0 2rem;
+    /* Center horizontally using margin */
+    text-align: center;
+    /* Center text within the block */
+    float: none;
+    /* Remove float */
   }
 
   .readmore .sign-up {
-    display: block; /* Change from inline-block to block */
-    margin: 0 2rem; /* Center horizontally using margin */
-    text-align: center; /* Center text within the block */
+    display: block;
+    /* Change from inline-block to block */
+    margin: 0 2rem;
+    /* Center horizontally using margin */
+    text-align: center;
+    /* Center text within the block */
   }
 
   .button-white {
@@ -2260,8 +2265,12 @@ input.check-toggle-round-flat:checked+label:after {
 @media screen and (max-width: 820px) {
 
   .bckg.blue.app-div {
-    margin: 0 0;
+    margin: 0 0rem;
     padding: 0 0;
+  }
+
+  .app-div {
+    margin: 0 0rem;
   }
 
   .elements-headline {
