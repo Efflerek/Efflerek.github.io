@@ -167,14 +167,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const tabcards = document.querySelectorAll(".tabcard");
 
   // Iteruj przez tabcardy i dodaj obsługę kliknięcia
-  tabcards.forEach(tabcard => {
-    const icon = tabcard.querySelector(".icon");
-    const header = tabcard.querySelector("h3");
-    const content = tabcard.querySelector(".tab-content span");
+  tabcards.forEach((tabcard, index) => {
+    tabcard.addEventListener("click", function () {
+      const icon = tabcard.querySelector(".icon");
+      const header = tabcard.querySelector("h3");
+      const content = tabcard.querySelector(".tab-content span");
 
-    // Sprawdź, czy istnieją wymagane elementy
-    if (icon && header && content) {
-      tabcard.addEventListener("click", function () {
+      // Sprawdź, czy istnieją wymagane elementy
+      if (icon && header && content) {
         const text = content.textContent;
         if (header.textContent.includes("Netfang")) {
           // Jeśli kliknięto na tabcard z adresem email, skopiuj go do schowka
@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', function () {
           // Jeśli kliknięto na tabcard z adresem, otwórz go na mapie
           openAddressOnMap(text);
         }
-      });
-    }
+      }
+    });
   });
 
   // Funkcja do kopiowania tekstu do schowka
