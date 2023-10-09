@@ -79,6 +79,14 @@ switcher.addEventListener('change', function () {
   }, 200);
 });
 
+document.getElementById("form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Zapobiega domyślnemu zachowaniu przycisku Submit
+  recaptchaCallback();
+});
+
+function recaptchaCallback() {
+  document.getElementById("form").submit(); // Wysyła formularz po weryfikacji reCAPTCHA
+}
 
   //COOKIE POPUP //
 
@@ -199,9 +207,9 @@ if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
   });
 
   function validateForm() {
-    const name = document.forms["myForm"]["name"].value;
-    const email = document.forms["myForm"]["email"].value;
-    const message = document.forms["myForm"]["message"].value;
+    const name = document.forms["form"]["name"].value;
+    const email = document.forms["form"]["email"].value;
+    const message = document.forms["form"]["message"].value;
 
     if (name == "" || email == "" || message == "") {
         alert("Please fill in all required fields.");
@@ -214,4 +222,8 @@ if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
 
     return false; // Zapobiegaj faktycznemu wysłaniu formularza
 }
+document.getElementById("form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Zatrzymaj domyślne przesłanie formularza
+
+  // Wywołaj reCAPTCHA v3 i przekaż odpowiedź do ukrytego pola formularza
 });
