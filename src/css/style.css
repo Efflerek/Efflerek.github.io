@@ -458,6 +458,7 @@ justify-content: center;
 }
 
 .app-functions-headline {
+  justify-content: left;
   padding-top: 2rem;
   margin-left: 0;
 }
