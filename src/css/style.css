@@ -1410,10 +1410,8 @@ textarea:focus {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 0rem;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  margin: 0 0;
+  padding: 1rem 0;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
 }
@@ -2256,6 +2254,7 @@ input.check-toggle-round-flat:checked+label:after {
 
   .bckg.blue.app-div {
     margin: 0;
+    padding: 0;
   }
 
   .elements-headline {
