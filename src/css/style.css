@@ -460,6 +460,7 @@ justify-content: center;
 .app-functions-headline {
   justify-content: left;
   align-items: left;
+  text-align: left;
   padding-top: 2rem;
   margin-right: 0;
   margin-left: 0;
@@ -1884,11 +1885,6 @@ input.check-toggle-round-flat:checked+label:after {
   .image-hiw img {
     height: 10rem;
     width: auto;
-  }
-
-  .app-functions-headline {
-    padding: 0 0rem;
-    margin: 3rem 0;
   }
 
   .app-functions {
