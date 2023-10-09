@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.cookie = 'cookiePolicyAccepted=true; path=/';
       cookiePopup.style.display = 'none';
     });
-  }
+  });
 
   // Obsługa Model Viewer
   const modelViewers = document.querySelectorAll('model-viewer');
@@ -159,36 +159,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Funkcja do otwierania adresu na mapie
   function openAddressOnMap(address) {
-    const geoURL = `geo:0,0?q=${encodeURIComponent(address)}`;
-    window.open(geoURL, "_blank");
+    const googleMapsURL = `https://www.google.com/maps/search/?q=${encodeURIComponent(address)}`;
+    const appleMapsURL = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
+
+    // Sprawdź, czy urządzenie jest iOS (iPhone/iPad)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    // Otwórz odpowiednią aplikację map w zależności od urządzenia
+    if (isIOS) {
+      window.open(appleMapsURL, "_blank");
+    } else {
+      window.open(googleMapsURL, "_blank");
+    }
   }
-
-  // Znajdź wszystkie elementy tabcard
-  const tabcards = document.querySelectorAll(".tabcard");
-
-  // Iteruj przez tabcardy i dodaj obsługę kliknięcia
-  tabcards.forEach((tabcard, index) => {
-    tabcard.addEventListener("click", function () {
-      const icon = tabcard.querySelector(".icon");
-      const header = tabcard.querySelector("h3");
-      const content = tabcard.querySelector(".tab-content span");
-
-      // Sprawdź, czy istnieją wymagane elementy
-      if (icon && header && content) {
-        const text = content.textContent;
-        if (header.textContent.includes("Netfang")) {
-          // Jeśli kliknięto na tabcard z adresem email, skopiuj go do schowka
-          copyToClipboard(text);
-        } else if (header.textContent.includes("Simi")) {
-          // Jeśli kliknięto na tabcard z numerem telefonu, skopiuj go do schowka
-          copyToClipboard(text);
-        } else if (header.textContent.includes("Staðsetning")) {
-          // Jeśli kliknięto na tabcard z adresem, otwórz go na mapie
-          openAddressOnMap(text);
-        }
-      }
-    });
-  });
 
   // Funkcja do kopiowania tekstu do schowka
   function copyToClipboard(text) {
@@ -200,4 +183,29 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.removeChild(textarea);
     alert("Skopiowano do schowka: " + text);
   }
+
+  // Znajdź wszystkie elementy tabcard
+  const tabcards = document.querySelectorAll(".tabcard");
+
+  // Iteruj przez tabcardy i dodaj obsługę kliknięcia
+  tabcards.forEach((tabcard) => {
+    const header = tabcard.querySelector("h3");
+    const content = tabcard.querySelector(".tab-content span");
+
+    // Sprawdź, czy istnieją wymagane elementy
+    if (header && content) {
+      tabcard.addEventListener("click", function () {
+        const text = content.textContent;
+        if (header.textContent.includes("Netfang")) {
+          // Jeśli kliknięto na tabcard z adresem email, skopiuj go do schowka
+          copyToClipboard(text);
+        } else if (header.textContent.includes("Simi")) {
+          // Jeśli kliknięto na tabcard z numerem telefonu, skopiuj go do schowka
+          copyToClipboard(text);
+        } else if (header.textContent.includes("Staðsetning")) {
+          // Jeśli kliknięto na tabcard z adresem, otwórz go na mapie
+          openAddressOnMap(text);
+        }
+      });
+    }
   });
