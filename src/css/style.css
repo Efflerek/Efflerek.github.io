@@ -1402,10 +1402,8 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .app-functions {
@@ -2200,23 +2198,16 @@ input.check-toggle-round-flat:checked+label:after {
   }
 
   .actions .sign-up {
-    display: block;
-    /* Change from inline-block to block */
-    margin: 0 2rem;
-    /* Center horizontally using margin */
-    text-align: center;
-    /* Center text within the block */
-    float: none;
-    /* Remove float */
+    display: block; /* Change from inline-block to block */
+    margin: 0 2rem; /* Center horizontally using margin */
+    text-align: center; /* Center text within the block */
+    float: none; /* Remove float */
   }
 
   .readmore .sign-up {
-    display: block;
-    /* Change from inline-block to block */
-    margin: 0 2rem;
-    /* Center horizontally using margin */
-    text-align: center;
-    /* Center text within the block */
+    display: block; /* Change from inline-block to block */
+    margin: 0 2rem; /* Center horizontally using margin */
+    text-align: center; /* Center text within the block */
   }
 
   .button-white {
@@ -2258,12 +2249,10 @@ input.check-toggle-round-flat:checked+label:after {
     align-items: center;
     text-align: center;
   }
+}
 
-  .app-functions-headline {
-    align-items: left;
-    text-align: left;
-  }
 
+@media screen and (max-width: 820px) {
 
   .bckg.blue.app-div {
     margin: 0;
