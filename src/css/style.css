@@ -457,13 +457,6 @@ justify-content: center;
 
 }
 
-.app-functions-headline {
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-  padding-top: 2rem;
-  margin: 0 0;
-}
 
 .gallery {
   display: flex;
@@ -2251,8 +2244,7 @@ input.check-toggle-round-flat:checked+label:after {
   .blog-headline,
   .opinion-headline,
   .elements-headline,
-  .functions-headline,
-  .app-functions-headline {
+  .functions-headline {
     margin: 3rem 0;
     padding: 0 2rem;
     justify-content: center;
