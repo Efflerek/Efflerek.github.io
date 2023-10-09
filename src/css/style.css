@@ -1894,8 +1894,8 @@ input.check-toggle-round-flat:checked+label:after {
   .app-functions {
     flex-direction: column;
     justify-content: center;
-    padding: 0 0 0 0;
-    margin: 0 auto;
+    padding: 0 1rem 0 1rem;
+    margin: 0 0;
   }
 
   .functions-img {
