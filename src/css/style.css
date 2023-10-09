@@ -1009,6 +1009,12 @@ textarea:focus {
   margin-right: auto;
 }
 
+@media screen and (max-width: 820px) {
+.align {
+  display: none;
+}
+}
+
 .consultation-form {
   flex: 1;
   background-color: #f0f0f0;
