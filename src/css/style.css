@@ -794,13 +794,13 @@ justify-content: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 
 .tabcard {
   position: relative;
   flex: 1;
-  width: 1.6rem;
+  width: 1.7rem;
   height: 8rem;
   background-color: #444;
   margin: 0.3rem;
@@ -822,7 +822,7 @@ justify-content: center;
 }
 
 .tab-content {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -2432,14 +2432,17 @@ input.check-toggle-round-flat:checked+label:after {
   .contact-info {
     margin-top: 1rem;
     /* Add margin for better spacing */
+    width: 9rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .contact-info .tabcard {
-    width: 100%;
+    width: 110%;
+    justify-content: center;
     /* Take up full width on mobile */
-    max-width: none;
-    /* Remove max-width on mobile */
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     /* Adjust margins for better spacing */
   }
 
@@ -2452,26 +2455,6 @@ input.check-toggle-round-flat:checked+label:after {
   textarea {
     font-size: 1rem;
     /* Increase font size for better mobile readability */
-  }
-}
-
-@media screen and (max-width: 468px) {
-  .contact-info {
-    margin-top: 1rem;
-    /* Add margin for better spacing */
-    width: 9rem;
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .contact-info .tabcard {
-    width: 100%;
-    /* Take up full width on mobile */
-    max-width: none;
-    /* Remove max-width on mobile */
-    margin: 0.5rem 0;
-    /* Adjust margins for better spacing */
   }
 }
 
