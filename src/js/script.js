@@ -157,38 +157,47 @@ document.addEventListener('DOMContentLoaded', function () {
     return false;
   }
 
-  // Obsługa kliknięć w tabcard
-  const emailTab = document.querySelector(".tabcard i.fa-envelope");
-  const phoneTab = document.querySelector(".tabcard i.fa-phone");
-  const addressTab = document.querySelector(".tabcard i.fa-map-marker-alt");
-
-  emailTab.addEventListener("click", function () {
-    const email = document.querySelector("#email span").textContent;
-    copyToClipboard(email);
+    // Funkcja do otwierania adresu na mapie
+    function openAddressOnMap(address) {
+      const geoURL = `geo:0,0?q=${encodeURIComponent(address)}`;
+      window.open(geoURL, "_blank");
+    }
+  
+    // Znajdź wszystkie elementy tabcard
+    const tabcards = document.querySelectorAll(".tabcard");
+  
+    // Iteruj przez tabcardy i dodaj obsługę kliknięcia
+    tabcards.forEach(tabcard => {
+      const icon = tabcard.querySelector(".icon");
+      const header = tabcard.querySelector("h3");
+      const content = tabcard.querySelector(".tab-content span");
+  
+      // Sprawdź, czy istnieją wymagane elementy
+      if (icon && header && content) {
+        tabcard.addEventListener("click", function () {
+          const text = content.textContent;
+          if (header.textContent.includes("Netfang")) {
+            // Jeśli kliknięto na tabcard z adresem email, skopiuj go do schowka
+            copyToClipboard(text);
+          } else if (header.textContent.includes("Simi")) {
+            // Jeśli kliknięto na tabcard z numerem telefonu, skopiuj go do schowka
+            copyToClipboard(text);
+          } else if (header.textContent.includes("Staðsetning")) {
+            // Jeśli kliknięto na tabcard z adresem, otwórz go na mapie
+            openAddressOnMap(text);
+          }
+        });
+      }
+    });
+  
+    // Funkcja do kopiowania tekstu do schowka
+    function copyToClipboard(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("Skopiowano do schowka: " + text);
+    }
   });
-
-  phoneTab.addEventListener("click", function () {
-    const phone = document.querySelector(".tabcard h3:contains('Simi') + span").textContent;
-    copyToClipboard(phone);
-  });
-
-  addressTab.addEventListener("click", function () {
-    const address = document.querySelector(".tabcard h3:contains('Staðsetning') + span").textContent;
-    openGoogleMaps(address);
-  });
-
-  function copyToClipboard(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    alert("Skopiowano do schowka: " + text);
-  }
-
-  function openGoogleMaps(address) {
-    const googleMapsUrl = "https://www.google.com/maps/search/?q=" + encodeURIComponent(address);
-    window.open(googleMapsUrl, "_blank");
-  }
-});
