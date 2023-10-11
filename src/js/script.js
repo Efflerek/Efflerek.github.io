@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('An error occurred during model loading:', event);
     });
   });
-  
+
   const articles = document.querySelectorAll('.article-body');
   const maxWords = 25;
 
@@ -129,22 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-
-  function validateForm() {
-    const name = document.forms['form']['name'].value;
-    const email = document.forms['form']['email'].value;
-    const message = document.forms['form']['message'].value;
-
-    if (name == '' || email == '' || message == '') {
-      alert('Please fill in all required fields.');
-      return false;
-    }
-
-    const formMessage = document.getElementById('formMessage');
-    formMessage.style.display = 'block';
-
-    return false;
-  }
 
   function onSubmit(token, formId) {
     document.getElementById(formId).submit();
@@ -200,4 +184,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     xhr.send(formData);
   });
+  function validateForm() {
+    const name = document.forms['form']['name'].value;
+    const email = document.forms['form']['email'].value;
+    const message = document.forms['form']['message'].value;
+
+    if (name == '' || email == '' || message == '') {
+      alert('Please fill in all required fields.');
+      return false;
+    }
+
+    const formMessage = document.getElementById('formMessage');
+    formMessage.style.display = 'block';
+
+    return false;
+  }
 });
