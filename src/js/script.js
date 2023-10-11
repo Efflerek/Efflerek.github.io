@@ -184,19 +184,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     xhr.send(formData);
   });
-  function validateForm() {
-    const name = document.forms['form']['name'].value;
-    const email = document.forms['form']['email'].value;
-    const message = document.forms['form']['message'].value;
 
-    if (name == '' || email == '' || message == '') {
-      alert('Please fill in all required fields.');
-      return false;
-    }
-
-    const formMessage = document.getElementById('formMessage');
-    formMessage.style.display = 'block';
-
-    return false;
-  }
 });
