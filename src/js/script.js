@@ -228,4 +228,10 @@ function validateForm() {
   function onSubmit(token) {
     document.getElementById("form").submit();
   }
+
+  function onSubmit(token) {
+    document.getElementById("consultation").submit();
+  }
+
+
 });
