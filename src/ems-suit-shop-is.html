@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 </head>
 
@@ -294,10 +295,9 @@
                 <form id="form" method="post" action="sendform.php">
                     <p class="text white">*Áskilið</p>
                     <input type="text" placeholder="Nafn *" name="name" required />
-                    <input type="email" placeholder="Netfang *" name "email" required />
+                    <input type="email" placeholder="Netfang *" name name="email" required />
                     <input type="tel" placeholder="Símanúmer" name="phone" />
                     <textarea rows="4" placeholder="Skilaboð" name="message"></textarea>
-                    <div class="g-recaptcha" data-sitekey="TWÓJ_KLUCZ_PUBLICZNY"></div>
                     <div class="checkbox">
                         <div class="checkbox-cell">
                             <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
@@ -307,7 +307,7 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <button class="sign-up submit" type="submit" name="submit">Senda</button>
+                        <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmit' data-action='submit' type="submit" name="submit">Senda</button>
                     </div>
                 </form>
             </div>

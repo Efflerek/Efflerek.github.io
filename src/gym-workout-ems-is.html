@@ -255,14 +255,22 @@
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <form style="form" action="sendform.php" method="post">
+                    <form id="form" method="post" action="sendform.php">
                         <p class="text white">*Áskilið</p>
-                        <input type="text" placeholder="Name *" />
-                        <input type="email" placeholder="Email *" />
-                        <input type="tel" placeholder="Phone" />
-                        <textarea rows="4" placeholder="Message"></textarea>
+                        <input type="text" placeholder="Nafn *" name="name" required />
+                        <input type="email" placeholder="Netfang *" name name="email" required />
+                        <input type="tel" placeholder="Símanúmer" name="phone" />
+                        <textarea rows="4" placeholder="Skilaboð" name="message"></textarea>
+                        <div class="checkbox">
+                            <div class="checkbox-cell">
+                                <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+                            </div>
+                            <div class="checkbox-cell">
+                                <label for="privacy-policy" class="text white">Ég samþykk persónuverndar- og vafrakökustefnu vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
+                            </div>
+                        </div>
                         <div class="actions">
-                            <a href="#" class="sign-up submit">Sendu inn</a>
+                            <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmit' data-action='submit' type="submit" name="submit">Senda</button>
                         </div>
                     </form>
                 </div>

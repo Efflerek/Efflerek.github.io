@@ -1817,6 +1817,7 @@ input.check-toggle-round-flat:checked+label:after {
   cursor: pointer; /* Zmień kursor na wskaźnik podczas najechania na etykietę */
 }
 
+
 @media screen and (min-width: 821px, max-width: 1000px) {
   #ContactTabs {
     display: none;
@@ -2477,11 +2478,11 @@ input.check-toggle-round-flat:checked+label:after {
     margin: 0 auto;
   }
 
+
   .diagonal.blue.shop-adv.wide p {
     padding-bottom: 2rem;
   }
 }
-
 
 @media screen and (max-width: 820px) {
   .normal-div.blue.consultation-div.form {
