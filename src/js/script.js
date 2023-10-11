@@ -232,30 +232,5 @@ function validateForm() {
   function onSubmit(token) {
     document.getElementById("consultation").submit();
   }
-  
-  $(document).ready(function() {
-    $("#consultation").submit(function(e) {
-      e.preventDefault(); // Zapobiega domyślnemu przekierowaniu formularza
-      
-      // Pobieranie danych z formularza
-      var name = $("#name").val();
-      var email = $("#email").val();
-      var phone = $("#phone").val();
-  
-      // Wykonaj żądanie AJAX
-      $.ajax({
-        type: "POST",
-        url: "getconsultation.php",
-        data: { name: name, email: email, phone: phone },
-        success: function(response) {
-          // Tutaj możesz obsłużyć odpowiedź z getconsultation.php, np. wyświetlić komunikat na stronie
-          alert("Formularz został pomyślnie wysłany");
-        },
-        error: function() {
-          alert("Wystąpił błąd podczas wysyłania formularza");
-        }
-      });
-    });
-  });
 
 });
