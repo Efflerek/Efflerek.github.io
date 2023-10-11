@@ -229,7 +229,7 @@ function validateForm() {
     document.getElementById("form").submit();
   }
 
-  function onSubmit1(token) {
+  function onSubmit(token) {
     document.getElementById("consultation").submit();
   }
 
