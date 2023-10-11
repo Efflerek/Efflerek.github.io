@@ -884,7 +884,6 @@ justify-content: center;
   flex: 2;
 }
 
-
 input,
 textarea {
   background-color: #eee;
@@ -1804,6 +1803,18 @@ input.check-toggle-round-flat:checked+label:after {
 .image-hiw img {
   flex: 2;
   height: 30rem;
+}
+
+.checkbox {
+  display: table; /* Ustaw kontener na tabelę */
+  width: 100%; /* Szerokość 100% */
+}
+
+.checkbox-cell {
+  display: table-cell; /* Umieść etykietę w komórce tabeli */
+  padding-right: 0.4rem;
+  text-align: left;
+  cursor: pointer; /* Zmień kursor na wskaźnik podczas najechania na etykietę */
 }
 
 @media screen and (min-width: 821px, max-width: 1000px) {

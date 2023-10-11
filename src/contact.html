@@ -325,20 +325,16 @@
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <form method="post" action="sendform.php">
-                    <p class="text white">*Áskilið</p>
-                    <input type="text" placeholder="Nafn *" name="name" required />
-                    <input type="email" placeholder="Netfang *" name="email" required />
-                    <input type="tel" placeholder="Símanúmer" name="phone" />
-                    <textarea rows="4" placeholder="Skilaboð" name="message"></textarea>
-                    
-                    <!-- Bættu við ósýnilegu reCAPTCHA -->
-                    <div class="g-recaptcha" data-sitekey="6LcwtIsoAAAAABw7KXj7-ozvUO83_A7OCwY5q_qG" data-callback="recaptchaCallback"></div>
-                    
+                <form style="form" action="sendform.php" method="post" onsubmit="return validateForm()">
+                    <p class="text white">*Required</p>
+                    <input type="text" name="name" placeholder="Name *" required />
+                    <input type="email" name="email" placeholder="Email *" required />
+                    <input type="tel" name="phone" placeholder="Phone" />
+                    <textarea name="message" rows="4" placeholder="Message" required></textarea>
                     <div class="actions">
-                        <!-- Zachowaj istniejący kod przycisku i dodaj atrybut "type" -->
-                        <a href="#" class="sign-up submit" type="submit" name="submit">Senda</a>
+                        <button class="sign-up submit" type="submit">Submit</button>
                     </div>
+                    <p id="formMessage" class="p white messagehidden">Your form has been sent. Thank You!</p>
                 </form>
             </div>
         </div>
