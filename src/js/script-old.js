@@ -185,8 +185,5 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
   });
 
-  // Callback function for reCAPTCHA
-  function onSubmit(token) {
-    document.getElementById("form").submit();
-  }
+
 });
