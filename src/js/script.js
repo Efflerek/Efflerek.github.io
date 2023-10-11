@@ -208,9 +208,9 @@ articles.forEach(article => {
 });
 
 function validateForm() {
- const name = document.forms["myForm"]["name"].value;
- const email = document.forms["myForm"]["email"].value;
- const message = document.forms["myForm"]["message"].value;
+ const name = document.forms["form"]["name"].value;
+ const email = document.forms["form"]["email"].value;
+ const message = document.forms["form"]["message"].value;
 
  if (name == "" || email == "" || message == "") {
      alert("Please fill in all required fields.");
@@ -225,38 +225,90 @@ function validateForm() {
 }
 
   // Callback function for reCAPTCHA
-  function onSubmit(token) {
-    document.getElementById("form").submit();
+  function onSubmit(token, formId) {
+    document.getElementById(formId).submit();
   }
 
-  function onSubmit(token) {
-    document.getElementById("consultation").submit();
-  }
-
-document.getElementById("consultation").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Get form data
-  const formData = new FormData(this);
-
-  // Send the data to getconsultation.php using AJAX
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "getconsultation.php", true);
-
-  // Set up the callback function to handle the response (if needed)
-  xhr.onload = function () {
+  document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+  
+    // Get form data
+    const formData = new FormData(this);
+  
+    // Send the data to sendform.php using AJAX
+    // Modify the URL to match your desired PHP script
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "sendform.php", true);
+  
+    // Set up the callback function to handle the response (if needed)
+    xhr.onload = function () {
       // Handle the response here (e.g., display a thank you message)
       if (xhr.status === 200) {
-          // Successful request
-          console.log("Form submitted successfully.");
-          // You can add code to display a success message to the user if needed.
+        // Successful request
+        console.log("Form submitted successfully.");
+        // You can add code to display a success message to the user if needed.
       } else {
-          // Request failed
-          console.log("Form submission failed.");
-          // You can add code to handle errors here.
+        // Request failed
+        console.log("Form submission failed.");
+        // You can add code to handle errors here.
       }
-  };
-
-  xhr.send(formData);
-});
+    };
+  
+    xhr.send(formData);
+  });
+  
+  document.getElementById("consultation").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+  
+    // Get form data
+    const formData = new FormData(this);
+  
+    // Send the data to getconsultation.php using AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "getconsultation.php", true);
+  
+    // Set up the callback function to handle the response (if needed)
+    xhr.onload = function () {
+      // Handle the response here (e.g., display a thank you message)
+      if (xhr.status === 200) {
+        // Successful request
+        console.log("Form submitted successfully.");
+        // You can add code to display a success message to the user if needed.
+      } else {
+        // Request failed
+        console.log("Form submission failed.");
+        // You can add code to handle errors here.
+      }
+    };
+  
+    xhr.send(formData);
+  });
+  
+  document.getElementById("form3").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+  
+    // Get form data
+    const formData = new FormData(this);
+  
+    // Send the data to the appropriate PHP script using AJAX
+    // Modify the URL to match your desired PHP script
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "getconsultation.php", true);
+  
+    // Set up the callback function to handle the response (if needed)
+    xhr.onload = function () {
+      // Handle the response here (e.g., display a thank you message)
+      if (xhr.status === 200) {
+        // Successful request
+        console.log("Form submitted successfully.");
+        // You can add code to display a success message to the user if needed.
+      } else {
+        // Request failed
+        console.log("Form submission failed.");
+        // You can add code to handle errors here.
+      }
+    };
+  
+    xhr.send(formData);
+  });
 });
