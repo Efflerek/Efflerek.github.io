@@ -115,32 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('An error occurred during model loading:', event);
     });
   });
-
-  const contactForm = document.getElementById('contact-form');
-
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('POST', contactForm.getAttribute('action'), true);
-
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log(xhr.responseText);
-      } else {
-        console.error('An error occurred:', xhr.statusText);
-      }
-    };
-
-    xhr.onerror = function () {
-      console.error('Network error occurred');
-    };
-
-    xhr.send(formData);
-  });
-
+  
   const articles = document.querySelectorAll('.article-body');
   const maxWords = 25;
 
