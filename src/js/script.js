@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
-   } // Use `requestSubmit()` for extra features like browser input validation.
-
      // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
@@ -232,3 +228,6 @@ document.getElementById("form").addEventListener("submit", function(event) {
   // Wywołaj reCAPTCHA v3 i przekaż odpowiedź do ukrytego pola formularza
 });
 });
+function onSubmit(token) {
+  document.getElementById("demo-form").submit();
+} // Use `requestSubmit()` for extra features like browser input validation.
