@@ -12,9 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mailBody .= "Phone: $phone\n";
 
     // Wysyłanie e-maila
-    if (mail($to, $subject, $mailBody, $headers)) {
-        // Po wysłaniu formularza ukryj formularz i pokaż komunikat
-        echo '<script>document.getElementById("confirmation-message").style.display = "block";</script>';
-    }
+    mail($to, $subject, $mailBody, $headers)
 }
+
 ?>
