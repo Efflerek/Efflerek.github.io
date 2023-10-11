@@ -61,7 +61,7 @@ switcher.addEventListener('change', function () {
   let newPageName; // Deklarujemy zmienną poza blokami if/else
 
   // Dodaj nowy warunek sprawdzający, czy użytkownik jest na stronie głównej
-  if (currentPageName === '' || currentPageName === 'index.html') {
+  if (currentPageName === '') {
     // Jeśli tak, przekieruj użytkownika na stronę główną https://easymotionskin.is/index.html
     window.location.href = 'https://easymotionskin.is/index.html';
     return; // Zakończ funkcję, aby uniknąć wykonywania dalszego kodu
