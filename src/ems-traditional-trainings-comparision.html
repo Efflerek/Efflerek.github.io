@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 </head>
 
@@ -228,14 +229,22 @@
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <form style="form" action="sendform.php" method="post">
+                    <form id="form" method="post" action="sendform.php">
                         <p class="text white">*Required</p>
-                        <input type="text" placeholder="Name *" />
-                        <input type="email" placeholder="Email *" />
-                        <input type="tel" placeholder="Phone" />
-                        <textarea rows="4" placeholder="Message"></textarea>
+                        <input type="text" placeholder="Name *" name="name" required />
+                        <input type="email" placeholder="Email *" name="email" required />
+                        <input type="tel" placeholder="Phone" name="phone" />
+                        <textarea rows="4" placeholder="Message" name="message"></textarea>
+                        <div class="checkbox">
+                            <div class="checkbox-cell">
+                                <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+                            </div>
+                            <div class="checkbox-cell">
+                                <label for="privacy-policy" class="text white">I consent to the privacy and cookie policy of the website and the processing of personal data to send me offers.</label>
+                            </div>
+                        </div>
                         <div class="actions">
-                            <a href="#" class="sign-up submit">Submit</a>
+                            <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmit' data-action='submit' type="submit" name="submit">Send it</button>
                         </div>
                     </form>
                 </div>
