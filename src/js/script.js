@@ -134,55 +134,27 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById(formId).submit();
   }
 
-  document.getElementById('form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'sendform.php', true);
-
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log('Form submitted successfully.');
-      } else {
-        console.log('Form submission failed.');
-      }
-    };
-
-    xhr.send(formData);
-  });
-
-  document.getElementById('consultation').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'getconsultation.php', true);
-
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log('Form submitted successfully.');
-      } else {
-        console.log('Form submission failed.');
-      }
-    };
-
-    xhr.send(formData);
-  });
-
-  document.getElementById('form3').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'getconsultation.php', true);
-
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log('Form submitted successfully.');
-      } else {
-        console.log('Form submission failed.');
-      }
-    };
-
-    xhr.send(formData);
-  });
+  function handleForm(formId, action) {
+    document.getElementById(formId).addEventListener('submit', function (event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', action, true);
+  
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          console.log('Form submitted successfully.');
+        } else {
+          console.log('Form submission failed.');
+        }
+      };
+  
+      xhr.send(formData);
+    });
+  }
+  
+  handleForm('form', 'sendform.php');
+  handleForm('consultation', 'getconsultation.php');
+  handleForm('form3', 'getconsultation.php');
 
 });
