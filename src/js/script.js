@@ -224,6 +224,33 @@ function validateForm() {
  return false; // Zapobiegaj faktycznemu wysłaniu formularza
 }
 
+document.getElementById("consultation").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get form data
+  const formData = new FormData(this);
+
+  // Send the data to getconsultation.php using AJAX
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "getconsultation.php", true);
+
+  // Set up the callback function to handle the response (if needed)
+  xhr.onload = function () {
+      // Handle the response here (e.g., display a thank you message)
+      if (xhr.status === 200) {
+          // Successful request
+          console.log("Form submitted successfully.");
+          // You can add code to display a success message to the user if needed.
+      } else {
+          // Request failed
+          console.log("Form submission failed.");
+          // You can add code to handle errors here.
+      }
+  };
+
+  xhr.send(formData);
+});
+
   // Callback function for reCAPTCHA
   function onSubmit(token) {
     document.getElementById("form").submit();
