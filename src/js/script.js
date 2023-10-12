@@ -20,17 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
   const modal = document.getElementById('modalform');
   const closeModal = modal.querySelector('.close');
-
+  
   openModalBtns.forEach(openModalBtn => {
     openModalBtn.onclick = function () {
       modal.style.display = 'flex';
+  
+      // Po otwarciu okna modalnego, uruchom funkcję onSubmitForm dla formularza "form2" i skryptu "getconsultation.php"
+      onSubmitForm('form2', 'getconsultation.php');
     };
   });
-
+  
   closeModal.onclick = function () {
-    modal.style.display = 'none';
+    modal.style display = 'none';
   };
-
+  
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = 'none';
