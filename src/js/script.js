@@ -130,31 +130,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  function onSubmit(token, formId) {
-    document.getElementById(formId).submit();
-  }
+  function onSubmit(formId) {
+    let form = document.getElementById(formId);
+    let formData = new FormData(form);
 
-  function handleForm(formId, action) {
-    document.getElementById(formId).addEventListener('submit', function (event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', action, true);
-  
-      xhr.onload = function () {
-        if (xhr.status === 200) {
-          console.log('Form submitted successfully.');
-        } else {
-          console.log('Form submission failed.');
+    let phpScript;
+    
+    if (formId === 'form') {
+        phpScript = 'sendform.php';
+    } else {
+        phpScript = 'getconsultation.php';
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", phpScript, true);
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Obsłuż odpowiedź serwera, jeśli to konieczne
+            console.log(xhr.responseText);
+        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+            // Obsłuż błąd
+            console.error("Wystąpił błąd podczas przetwarzania formularza.");
         }
-      };
-  
-      xhr.send(formData);
-    });
-  }
-  
-  handleForm('form', 'sendform.php');
-  handleForm('consultation', 'getconsultation.php');
-  handleForm('form3', 'getconsultation.php');
+    };
+
+    xhr.send(formData);
+}
+
 
 });
