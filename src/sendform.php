@@ -1,10 +1,11 @@
 <?php
+error_log(print_r($_POST, true));
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pobierz dane z formularza
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $message = $_POST['message'];
+    $userMessage = $_POST['message']; // Zmieniłem nazwę zmiennej na userMessage
 
     // Adres docelowy
     $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = "Imię: $name\n";
     $message .= "Email: $email\n";
     $message .= "Telefon: $phone\n";
-    $message .= "Wiadomość: $message";
+    $message .= "Wiadomość: $userMessage"; // Użyj zmiennej $userMessage
 
     // Nagłówki e-maila
     $headers = "From: $email" . "\r\n" .

@@ -1,4 +1,5 @@
 <?php
+error_log(print_r($_POST, true));
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pobierz dane z formularza (zmień nazwy pól, jeśli to konieczne)
     $name = $_POST['name'];
