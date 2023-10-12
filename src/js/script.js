@@ -109,6 +109,38 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+  const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
+  const modal = document.getElementById('modalform');
+  const closeModal = modal.querySelector('.close');
+  const form2 = document.getElementById('form2'); // Pobierz formularz "form2"
+  
+  openModalBtns.forEach(openModalBtn => {
+    openModalBtn.onclick = function () {
+      modal.style.display = 'flex';
+  
+      // Po otwarciu okna modalnego, możesz dodać obsługę przesyłania formularza "form2"
+      form2.addEventListener('submit', function (e) {
+        e.preventDefault();
+        onSubmitForm('form2', 'getconsultation.php');
+      });
+    };
+  });
+  
+  closeModal.onclick = function () {
+    modal.style.display = 'none';
+  };
+  
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+  
+  // Obsługa formularza 2 (id="form2")
+  form2.addEventListener('submit', function (e) {
+    e.preventDefault();
+    onSubmitForm('form2', 'getconsultation.php');
+  });
 
  // Obsługa formularza 1 (id="form")
  document.getElementById('form').addEventListener('submit', function(e) {
@@ -157,25 +189,5 @@ function onSubmitForm(formId, phpScript) {
     });
   });
 }
-
-const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
-const modal = document.getElementById('modalform');
-const closeModal = modal.querySelector('.close');
-
-openModalBtns.forEach(openModalBtn => {
-  openModalBtn.onclick = function () {
-    modal.style.display = 'flex';
-  };
-});
-
-closeModal.onclick = function () {
-  modal.style.display = 'none';
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-};
 
 });
