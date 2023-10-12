@@ -717,20 +717,22 @@ justify-content: center;
 
 
 .testimonials-div {
-  margin-top: 3rem;
   height: auto;
+  margin-top: 3rem;
+  text-align: center; /* Wyśrodkuj zawartość w poziomie */
+  padding: 0 2rem 3rem 2rem; /* Dodaj równe marginesy po lewej i prawej stronie */
 }
 
 .testimonials {
-  margin: 1rem 0 2rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Wyśrodkuj zawartość w poziomie */
+  gap: 2.5rem; /* Dodaj odstęp między kartami */
 }
 
 .testimonials .testimonial-card {
   position: relative;
-  width: 20rem;
+  width: 18rem;
   margin: 1rem 1rem;
   background: #4D77FF;
   padding: 20px;
