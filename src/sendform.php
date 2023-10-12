@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $userMessage = $_POST['message']; // Zmieniłem nazwę zmiennej na userMessage
+    $userMessage = $_POST['userMessage']; // Zmieniłem nazwę zmiennej na userMessage
 
     // Adres docelowy
     $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
