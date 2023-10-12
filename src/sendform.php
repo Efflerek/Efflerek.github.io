@@ -1,20 +1,34 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $message = $_POST["message"];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Pobierz dane z formularza
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
 
-    $to = "support@easymotionskin.is"; // Adres e-mail docelowy
-    $subject = "New Customer";
-    $headers = "From: $email";
+    // Adres docelowy
+    $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
 
-    $mailBody = "Name: $name\n";
-    $mailBody .= "Email: $email\n";
-    $mailBody .= "Phone: $phone\n";
-    $mailBody .= "Message: $message\n";
+    // Temat wiadomości
+    $subject = "Formularz kontaktowy od $name";
 
-    // Wysyłanie e-maila
-    mail($to, $subject, $mailBody, $headers);
+    // Treść wiadomości
+    $message = "Imię: $name\n";
+    $message .= "Email: $email\n";
+    $message .= "Telefon: $phone\n";
+    $message .= "Wiadomość: $message";
+
+    // Nagłówki e-maila
+    $headers = "From: $email" . "\r\n" .
+               "Reply-To: $email" . "\r\n";
+
+    // Wyślij e-mail
+    mail($to, $subject, $message, $headers);
+
+    // Zwróć potwierdzenie sukcesu
+    echo "Formularz został wysłany.";
+} else {
+    // Zabezpiecz przed bezpośrednim dostępem
+    echo "Nieprawidłowe żądanie.";
 }
 ?>

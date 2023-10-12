@@ -130,33 +130,56 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  function onSubmit(formId) {
-    let form = document.getElementById(formId);
-    let formData = new FormData(form);
+  function onSubmitForm(formId, phpScript) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
 
-    let phpScript;
-    
-    if (formId === 'form') {
-        phpScript = 'sendform.php';
-    } else {
-        phpScript = 'getconsultation.php';
-    }
+    grecaptcha.execute(); // Uruchom reCAPTCHA
 
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", phpScript, true);
+    const recaptchaCallback = function(response) {
+        // Pobierz odpowiedź reCAPTCHA i dodaj ją do danych formularza
+        formData.append("g-recaptcha-response", response);
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // Obsłuż odpowiedź serwera, jeśli to konieczne
-            console.log(xhr.responseText);
-        } else if (xhr.readyState === 4 && xhr.status !== 200) {
-            // Obsłuż błąd
-            console.error("Wystąpił błąd podczas przetwarzania formularza.");
-        }
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", phpScript, true);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Obsłuż odpowiedź serwera, jeśli to konieczne
+                console.log(xhr.responseText);
+                alert("Formularz został wysłany."); // Powiadom użytkownika
+            } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                // Obsłuż błąd
+                console.error("Wystąpił błąd podczas przetwarzania formularza.");
+                alert("Wystąpił błąd podczas przetwarzania formularza.");
+            }
+        };
+
+        xhr.send(formData);
     };
 
-    xhr.send(formData);
+    grecaptcha.ready(function() {
+        grecaptcha.execute(); // Wykonaj reCAPTCHA w momencie gotowości
+    });
 }
+
+// Obsługa formularza 1 (id="form")
+document.getElementById('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    onSubmitForm('form', 'sendform.php');
+});
+
+// Obsługa formularza 2 (id="form2")
+document.getElementById('form2').addEventListener('submit', function(e) {
+    e.preventDefault();
+    onSubmitForm('form2', 'getconsultation.php');
+});
+
+// Obsługa formularza 3 (id="form3")
+document.getElementById('form3').addEventListener('submit', function(e) {
+    e.preventDefault();
+    onSubmitForm('form3', 'getconsultation3.php');
+});
 
 
 });

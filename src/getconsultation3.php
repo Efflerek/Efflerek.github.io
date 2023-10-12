@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
 
     // Temat wiadomości
-    $subject = "Formularz konsultacyjny od $name";
+    $subject = "Formularz konsultacyjny od $name (form3)";
 
     // Treść wiadomości
     $message = "Imię: $name\n";
@@ -29,4 +29,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Zabezpiecz przed bezpośrednim dostępem
     echo "Nieprawidłowe żądanie.";
 }
-?>
