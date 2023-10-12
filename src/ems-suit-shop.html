@@ -131,20 +131,28 @@
             <div class="consultation-form">
                 <h2>Order Suit Here</h2>
                 <p>Fill-up the form and We will respond You as soon as possible.</p>
-                <form class="contact-form">
+                <form id="form3" class="contact-form" action="#">
                     <div class="form-floating">
-                        <input type="text" id="name" placeholder=" " required>
+                        <input type="text" name="name" placeholder=" " required>
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating">
-                        <input type="email" id="email" placeholder=" " required>
+                        <input type="email" name="email" placeholder=" " required>
                         <label for="email">Email</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" id="phone" placeholder=" " required>
+                        <input type="tel" name="phone" placeholder=" " required>
                         <label for="phone">Phone Number</label>
                     </div>
-                    <button class="cons-sub" type="submit">Order Suit / Ask for price</button>
+                    <div class="checkbox">
+                        <div class="checkbox-cell">
+                            <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+                        </div>
+                        <div class="checkbox-cell">
+                            <label for="privacy-policy" class="text">I consent to the privacy and cookie policy of the website and the processing of personal data to send me offers.</label>
+                        </div>
+                    </div>
+                    <button class="cons-sub g-recaptcha" data-callback="onSubmitForm3('form3')" data-action="submit" type="submit">Get Consultation</button>
                 </form>
             </div>
         </div>
@@ -312,12 +320,12 @@
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <form id="form" method="post" action="sendform.php">
+                <form id="form" method="post" action="#">
                     <p class="text white">*Required</p>
                     <input type="text" placeholder="Name *" name="name" required />
                     <input type="email" placeholder="Email *" name="email" required />
                     <input type="tel" placeholder="Phone" name="phone" />
-                    <textarea rows="4" placeholder="Message" name="message"></textarea>
+                    <textarea rows="4" placeholder="Message" name="userMessage"></textarea>
                     <div class="checkbox">
                         <div class="checkbox-cell">
                             <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
@@ -327,7 +335,7 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmit' data-action='submit' type="submit" name="submit">Send it</button>
+                        <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="onSubmitForm('form')" data-action="submit" type="submit" name="submit">Send it</button>
                     </div>
                 </form>
             </div>

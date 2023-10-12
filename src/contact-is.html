@@ -78,26 +78,34 @@
         </div>
     </div>
 
-    <div id="Contact Welcome" class="normal-div blue consultation-div form">
+    <div id="contactwelcome" class="normal-div blue consultation-div form">
         <div class="get-consultation">
             <div class="consultation-form">
                 <h2>Taktu samband</h2>
                 <p>Hefur þú spurningar um EMS-búnaðinn? Viltu sjá EasyMotionSkin í notkun? Ef svarid er já,
                     skaltu sleppa okkur upplýsingum þínum. Við höfum samband við þig innan næstu tveimur dögum. </p>
-                <form class="contact-form">
+                <form id="form3" class="contact-form" action="#">
                     <div class="form-floating">
-                        <input type="text" id="name" placeholder=" " required>
+                        <input type="text" name="name" placeholder=" " required>
                         <label for="name">Nafn</label>
                     </div>
                     <div class="form-floating">
-                        <input type="email" id="email" placeholder=" " required>
+                        <input type="email" name="email" placeholder=" " required>
                         <label for="email">Netfang</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" id="phone" placeholder=" " required>
+                        <input type="tel" name="phone" placeholder=" " required>
                         <label for="phone">Símanúmer</label>
                     </div>
-                    <button class="cons-sub" type="submit">Fá ráðgjöf</button>
+                    <div class="checkbox">
+                        <div class="checkbox-cell">
+                            <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+                        </div>
+                        <div class="checkbox-cell">
+                            <label for="privacy-policy" class="text">Ég samþyki persónuverndar- og vafrakökuvernd vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
+                        </div>
+                    </div>                    
+                    <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="onSubmitForm2('form2')" data-action="submit" type="submit" name="submit">Fá ráðgjöf</button>
                 </form>
             </div>
         </div>
@@ -337,12 +345,12 @@
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <form id="form" method="post" action="sendform.php">
+                <form id="form" method="post" action="#">
                     <p class="text white">*Áskilið</p>
                     <input type="text" placeholder="Nafn *" name="name" required />
-                    <input type="email" placeholder="Netfang *" name name="email" required />
+                    <input type="email" placeholder="Netfang *" name="email" required />
                     <input type="tel" placeholder="Símanúmer" name="phone" />
-                    <textarea rows="4" placeholder="Skilaboð" name="message"></textarea>
+                    <textarea rows="4" placeholder="Skilaboð" name="userMessage"></textarea>
                     <div class="checkbox">
                         <div class="checkbox-cell">
                             <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
@@ -352,7 +360,7 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmit' data-action='submit' type="submit" name="submit">Senda</button>
+                        <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmitForm' data-action='submit' type="submit" name="submit">Senda</button>
                     </div>
                 </form>
             </div>
