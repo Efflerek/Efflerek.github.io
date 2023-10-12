@@ -1129,11 +1129,13 @@ textarea:focus {
   border: none;
   border-radius: 5px;
   padding: 10px;
+  margin: -1.2rem 0 0 0;
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
   animation: pulse 2s infinite;
 }
+
 
 .cons-sub:hover {
   background-color: #2980b9;
