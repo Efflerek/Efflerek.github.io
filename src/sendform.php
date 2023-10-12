@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
 
     // Temat wiadomości
-    $subject = "Formularz kontaktowy od $name";
+    $subject = "Stopka: Formularz kontaktowy od $name";
 
     // Treść wiadomości
     $message = "Imię: $name\n";

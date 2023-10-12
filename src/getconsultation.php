@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
 
     // Temat wiadomości
-    $subject = "Formularz konsultacyjny od $name";
+    $subject = "Okienko: Formularz konsultacyjny od $name";
 
     // Treść wiadomości
     $message = "Imię: $name\n";
