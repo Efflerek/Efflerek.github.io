@@ -148,12 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
   onSubmitForm('form', 'sendform.php');
 });
 
-// Obsługa formularza 2 (id="form2")
-document.getElementById('form2').addEventListener('submit', function(e) {
-  e.preventDefault();
-  onSubmitForm('form2', 'getconsultation.php');
-});
-
 // Obsługa formularza 3 (id="form3")
 document.getElementById('form3').addEventListener('submit', function(e) {
   e.preventDefault();
