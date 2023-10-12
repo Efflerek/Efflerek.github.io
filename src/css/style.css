@@ -2576,6 +2576,11 @@ input.check-toggle-round-flat:checked+label:after {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .tabcard.tab-contact {
+    display: none;
+  }
+}
 
 @media screen and (min-width: 821px, max-width: 1200px) {
   #welcome-blog {
