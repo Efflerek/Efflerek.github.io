@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+  
   const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
   const modal = document.getElementById('modalform');
   const closeModal = modal.querySelector('.close');
