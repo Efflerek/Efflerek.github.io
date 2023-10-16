@@ -4,19 +4,27 @@ document.addEventListener('DOMContentLoaded', function () {
   switcher.addEventListener('change', function () {
     const currentPageName = window.location.pathname.split('/').pop();
     let newPageName;
-  
-    if (currentPageName === '' || currentPageName === 'index.html') {
-      newPageName = 'index-is.html';
-    } else {
-      newPageName = currentPageName.endsWith('-is.html')
-        ? currentPageName.replace('-is.html', '.html')
-        : currentPageName.replace('.html', '-is.html');
+
+    if (currentPageName === '') {
+      window.location.href = 'https://easymotionskin.is/index.html';
+      return;
     }
-  
-    window.location.href = `${window.location.origin}/${newPageName}`;
+
+    if (currentPageName === 'index.html') {
+      window.location.href = 'https://easymotionskin.is/index-is.html';
+      return;
+    }
+
+    if (currentPageName.endsWith('-is.html')) {
+      newPageName = currentPageName.replace('-is.html', '.html');
+    } else {
+      newPageName = currentPageName.replace('.html', '-is.html');
+    }
+
+    const newURL = window.location.origin + '/' + newPageName;
+    window.location.href = newURL;
   });
   
-
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
