@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // SWITCHER JĘZYKOWY
   const switcher = document.getElementById('language-toggle');
-
   switcher.addEventListener('change', function () {
     const currentPageName = window.location.pathname.split('/').pop();
     let newPageName;
@@ -38,16 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    if (currentPageName === 'index.html') {
+      window.location.href = 'https://easymotionskin.is/index-is.html';
+      return;
+    }
+
     if (currentPageName.endsWith('-is.html')) {
       newPageName = currentPageName.replace('-is.html', '.html');
     } else {
       newPageName = currentPageName.replace('.html', '-is.html');
     }
 
-    setTimeout(function () {
-      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
-      window.location.href = newURL;
-    }, 200);
+    const newURL = window.location.origin + '/' + newPageName;
+    window.location.href = newURL;
   });
 
   // COOKIE POPUP
