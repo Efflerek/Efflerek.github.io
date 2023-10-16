@@ -9,9 +9,9 @@ function toggleMenu() {
     menuBg.classList.toggle('change-bg');
   }
 }
-
-const menuToggle = document.getElementById('id-toggle');
+const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
+
 
 // SWITCHER JĘZYKOWY
 const switcher = document.getElementById('language-toggle');

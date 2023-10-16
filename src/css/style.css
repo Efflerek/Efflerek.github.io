@@ -2107,6 +2107,7 @@ input.check-toggle-round-flat:checked+label:after {
   }
 
   #nav-menu.change {
+    z-index: 9;
     display: block;
     position: absolute;
     /* Ustaw pozycję absolutną */
@@ -2114,11 +2115,11 @@ input.check-toggle-round-flat:checked+label:after {
     /* Przesuń menu do dołu top-menu */
     left: 0;
     /* Wyrównaj do lewej strony */
-    width: 40%;
+    width: 45%;
     /* Szerokość 100% ekranu */
     flex-direction: column;
     /* Ustaw kierunek kolumny */
-    z-index: 10;
+  
     /* Ensure that nav-menu appears on top */
   }
 
