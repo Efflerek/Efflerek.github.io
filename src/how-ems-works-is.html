@@ -93,7 +93,7 @@
 
     <div class="bckg blue app-div">
         <div class="app-functions-headline">
-            <p class="tagline white">All electrodes in one Suit</p>
+            <p class="tagline white">ALLAR RAFLINDIR Í EINNI FATTA</p>
             <h2> Hvernig EasyMotion Skin er smíðað?
             </h2>
         </div>
@@ -175,38 +175,44 @@
     <div id="hiw-contact-form-div" class="normal-div blue consultation-div home">
         <div class="get-consultation">
             <div class="consultation-form">
-                <h2>Contact Us</h2>
-                <p id="consultation-form-p">Do You have questions about EMS Suit? You want to see the EasyMotionSkin in
-                    action? If the
-                    answer is
-                    yes, feel free to leave Your data. We will contact You in the next 2 days. </p>
-                <form class="contact-form">
+                <h2>Hafðu samband við okkur</h2>
+                <p id="consultation-form-p">Hefur þú spurningar um EMS Suit? Viltu sjá hvernig EasyMotionSkin virkar? Ef svarið er já, ekki hika við að skilja eftir upplýsingar um þig og við munum hafa samband á næstu 2 dögum. 
+                </p>
+                <form id="form3" class="contact-form" action="#">
                     <div class="form-floating">
-                        <input type="text" id="name" placeholder=" " required>
-                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder=" " required>
+                        <label for="name">Nafn</label>
                     </div>
                     <div class="form-floating">
-                        <input type="email" id="email" placeholder=" " required>
-                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder=" " required>
+                        <label for="email">Netfang</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" id="phone" placeholder=" " required>
-                        <label for="phone">Phone Number</label>
+                        <input type="tel" name="phone" placeholder=" " required>
+                        <label for="phone">Símanúmer</label>
                     </div>
-                    <button class="cons-sub" type="submit">Get Consultation</button>
+                    <div class="checkbox">
+                        <div class="checkbox-cell">
+                            <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+                        </div>
+                        <div class="checkbox-cell">
+                            <label for="privacy-policy" class="text">Ég samþyki persónuverndar- og vafrakökuvernd vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
+                        </div>
+                    </div>                    
+                    <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="onSubmitForm2('form2')" data-action="submit" type="submit" name="submit">Fá ráðgjöf</button>
                 </form>
             </div>
         </div>
+
         <div id="hiw-consultation-text" class="get-consultation-text">
-            <p class="tagline white">Hafðu samband við okkur</p>
-            <h1>Hefur þú spurningu um EMS Suit?
-            </h1>
-            <p class="text white"> Skrifaðu okkur með því að nota tengiliðaeyðublaðið neðst á síðunni eða skráðu þig í
-                ókeypis ráðgjöf, þar sem við munum sýna þér hvernig fötin virka.
-            </p>
+            <p class="tagline white">HAFA SAMBAND VIÐ OKKUR</p>
+            <h1>Hefur þú spurningu um EMS Suit?</h1>
+            <p class="text white">Skrifaðu okkur með því að nota tengiliðaeyðublaðið neðst á síðunni eða skráðu þig á ókeypis
+            samráði, þar sem við munum sýna þér hvernig fötin virka.</p>
             <img class="align" src="/src/images/fitness-z-ems-suit.jpg" height="350px">
         </div>
     </div>
+
 
     <div class="blog-headline">
         <p class="tagline blue"> Lærðu hvernig á að æfa með EMS Suit</p>
