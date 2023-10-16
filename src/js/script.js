@@ -13,7 +13,8 @@ const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
 
-// SWITCHER JĘZYKOWY
+document.addEventListener('DOMContentLoaded', function () {
+  // SWITCHER JĘZYKOWY
 const switcher = document.getElementById('language-toggle');
 
 switcher.addEventListener('change', function () {
@@ -37,8 +38,6 @@ switcher.addEventListener('change', function () {
   }, 200);
 });
 
-
-document.addEventListener('DOMContentLoaded', function () {
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
