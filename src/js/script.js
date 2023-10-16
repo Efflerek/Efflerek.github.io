@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menu-bar');
   menuBar.addEventListener('click', toggleMenu);
 
- // SWITCHER JĘZYKOWY
+  // SWITCHER JĘZYKOWY
   const switcher = document.getElementById('language-toggle');
 
   switcher.addEventListener('change', function () {
     const currentPageName = window.location.pathname.split('/').pop();
     let newPageName;
 
-    if (currentPageName === '' || currentPageName === 'index.html') {
-      window.location.href = 'https://easymotionskin.is/index-is.html';
+    if (currentPageName === '') {
+      window.location.href = 'https://easymotionskin.is/index.html';
       return;
     }
 
