@@ -173,6 +173,7 @@ p.white {
 .menu-toggle {
   cursor: pointer;
   color: #fff;
+  z-index: 10;
   display: none;
 }
 
@@ -2081,11 +2082,13 @@ input.check-toggle-round-flat:checked+label:after {
   }
 
   .menu-toggle {
+    z-index: 10;
+    cursor: pointer;
+    color: #fff;
     padding: 0rem 2rem 0rem 2rem;
-    z-index: 9;
     display: block;
   }
-
+  
   .menu-bg {
     top: 0;
     left: 0;

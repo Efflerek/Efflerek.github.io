@@ -10,7 +10,7 @@ function toggleMenu() {
   }
 }
 
-const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.getElementById('id-toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
 // SWITCHER JĘZYKOWY
@@ -36,6 +36,7 @@ switcher.addEventListener('change', function () {
     window.location.href = newURL;
   }, 200);
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Pobierz wszystkie tabcardy
