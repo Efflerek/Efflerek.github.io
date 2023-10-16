@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const newURL = window.location.origin + '/' + newPageName;
     window.location.href = newURL;
   });
-  
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
@@ -43,16 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  function toggleMenu() {
-    document.getElementById('menu-bar').classList.toggle('change');
-    document.getElementById('nav-menu').classList.toggle('change');
-    document.getElementById('menu-bg').classList.toggle('change-bg');
+ toggleMenu() {
+    const menuBar = document.getElementById('menu-bar');
+    const navMenu = document.getElementById('nav-menu');
+    const menuBg = document.getElementById('menu-bg');
+
+    menuBar.classList.toggle('change');
+    navMenu.classList.toggle('change');
+    menuBg.classList.toggle('change-bg');
   }
 
-  const menuBar = document.querySelector('.menu-bar');
-  menuBar.addEventListener('click', toggleMenu);
-
-  
 
   // COOKIE POPUP
   if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
@@ -113,16 +112,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-  
+
   const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
   const modal = document.getElementById('modalform');
   const closeModal = modal.querySelector('.close');
   const form2 = document.getElementById('form2'); // Pobierz formularz "form2"
-  
+
   openModalBtns.forEach(openModalBtn => {
     openModalBtn.onclick = function () {
       modal.style.display = 'flex';
-  
+
       // Po otwarciu okna modalnego, możesz dodać obsługę przesyłania formularza "form2"
       form2.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -130,63 +129,63 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     };
   });
-  
+
   closeModal.onclick = function () {
     modal.style.display = 'none';
   };
-  
+
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = 'none';
     }
   };
-  
+
   // Obsługa formularza 2 (id="form2")
   form2.addEventListener('submit', function (e) {
     e.preventDefault();
     onSubmitForm('form2', 'getconsultation.php');
   });
 
- // Obsługa formularza 1 (id="form")
- document.getElementById('form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  onSubmitForm('form', 'sendform.php');
-});
-
-// Obsługa formularza 3 (id="form3")
-document.getElementById('form3').addEventListener('submit', function(e) {
-  e.preventDefault();
-  onSubmitForm('form3', 'getconsultation3.php');
-});
-
-// Obsługa formularzy z użyciem reCAPTCHA
-function onSubmitForm(formId, phpScript) {
-  const form = document.getElementById(formId);
-  const formData = new FormData(form);
-
-  grecaptcha.ready(function() {
-    grecaptcha.execute().then(function(response) {
-      // Pobierz odpowiedź reCAPTCHA i dodaj ją do danych formularza
-      formData.append("g-recaptcha-response", response);
-
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", phpScript, true);
-
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          // Obsłuż odpowiedź serwera, jeśli to konieczne
-          console.log(xhr.responseText);
-          alert("Formularz został wysłany."); // Powiadom użytkownika
-        } else if (xhr.readyState === 4 && xhr.status !== 200) {
-          // Obsłuż błąd
-          console.error("Wystąpił błąd podczas przetwarzania formularza.");
-          alert("Wystąpił błąd podczas przetwarzania formularza.");
-        }
-      };
-
-      xhr.send(formData);
-    });
+  // Obsługa formularza 1 (id="form")
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    onSubmitForm('form', 'sendform.php');
   });
-}
+
+  // Obsługa formularza 3 (id="form3")
+  document.getElementById('form3').addEventListener('submit', function (e) {
+    e.preventDefault();
+    onSubmitForm('form3', 'getconsultation3.php');
+  });
+
+  // Obsługa formularzy z użyciem reCAPTCHA
+  function onSubmitForm(formId, phpScript) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute().then(function (response) {
+        // Pobierz odpowiedź reCAPTCHA i dodaj ją do danych formularza
+        formData.append("g-recaptcha-response", response);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", phpScript, true);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            // Obsłuż odpowiedź serwera, jeśli to konieczne
+            console.log(xhr.responseText);
+            alert("Formularz został wysłany."); // Powiadom użytkownika
+          } else if (xhr.readyState === 4 && xhr.status !== 200) {
+            // Obsłuż błąd
+            console.error("Wystąpił błąd podczas przetwarzania formularza.");
+            alert("Wystąpił błąd podczas przetwarzania formularza.");
+          }
+        };
+
+        xhr.send(formData);
+      });
+    });
+  }
 
 });
