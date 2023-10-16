@@ -1,19 +1,43 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded', function () {
-  
-  function toggleMenu() {
-    const navMenu = document.getElementById('nav-menu');
-    const menuBg = document.getElementById('menu-bg');
-  
-    if (navMenu && menuBg) {
-      navMenu.classList.toggle('change');
-      menuBg.classList.toggle('change-bg');
-    }
+function toggleMenu() {
+  const navMenu = document.getElementById('nav-menu');
+  const menuBg = document.getElementById('menu-bg');
+
+  if (navMenu && menuBg) {
+    navMenu.classList.toggle('change');
+    menuBg.classList.toggle('change-bg');
   }
-  
-  const menuToggle = document.querySelector('.menu-toggle');
-  menuToggle.addEventListener('click', toggleMenu);
+}
+
+const menuToggle = document.querySelector('.menu-toggle');
+menuToggle.addEventListener('click', toggleMenu);
+
+// SWITCHER JĘZYKOWY
+const switcher = document.getElementById('language-toggle');
+
+switcher.addEventListener('change', function () {
+  const currentPageName = window.location.pathname.split('/').pop();
+  let newPageName;
+
+  if (currentPageName === '') {
+    window.location.href = 'https://easymotionskin.is/index.html';
+    return;
+  }
+
+  if (currentPageName.endsWith('-is.html')) {
+    newPageName = currentPageName.replace('-is.html', '.html');
+  } else {
+    newPageName = currentPageName.replace('.html', '-is.html');
+  }
+
+  setTimeout(function () {
+    const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
+    window.location.href = newURL;
+  }, 200);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
@@ -30,30 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
           console.error('Błąd kopiowania do schowka: ', err);
         });
     });
-  });
-
-  // SWITCHER JĘZYKOWY
-  const switcher = document.getElementById('language-toggle');
-
-  switcher.addEventListener('change', function () {
-    const currentPageName = window.location.pathname.split('/').pop();
-    let newPageName;
-
-    if (currentPageName === '') {
-      window.location.href = 'https://easymotionskin.is/index.html';
-      return;
-    }
-
-    if (currentPageName.endsWith('-is.html')) {
-      newPageName = currentPageName.replace('-is.html', '.html');
-    } else {
-      newPageName = currentPageName.replace('.html', '-is.html');
-    }
-
-    setTimeout(function () {
-      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
-      window.location.href = newURL;
-    }, 200);
   });
 
   // COOKIE POPUP

@@ -2080,7 +2080,7 @@ input.check-toggle-round-flat:checked+label:after {
     font-weight: bold;
   }
 
-  #menu-toggle {
+  .menu-toggle {
     padding: 0rem 2rem 0rem 2rem;
     z-index: 9;
     display: block;
