@@ -1,4 +1,31 @@
-"use strict";
+document.addEventListener('DOMContentLoaded', function () {
+  // Pobierz wszystkie tabcardy
+  const tabcards = document.querySelectorAll('.tabcard');
+
+  tabcards.forEach(function (tabcard) {
+    tabcard.addEventListener('click', function () {
+      const tabContent = tabcard.querySelector('.tab-content span');
+      const textToCopy = tabContent.textContent;
+
+      navigator.clipboard.writeText(textToCopy)
+        .then(function () {
+          alert('Skopiowano do schowka: ' + textToCopy);
+        })
+        .catch(function (err) {
+          console.error('Błąd kopiowania do schowka: ', err);
+        });
+    });
+  });
+
+  function toggleMenu() {
+    document.getElementById('menu-bar').classList.toggle('change');
+    document.getElementById('nav-menu').classList.toggle('change');
+    document.getElementById('menu-bg').classList.toggle('change-bg');
+  }
+
+  const menuBar = document.querySelector('.menu-bar');
+  menuBar.addEventListener('click', toggleMenu);
+
   // SWITCHER JĘZYKOWY
   const switcher = document.getElementById('language-toggle');
 
@@ -21,39 +48,6 @@
       const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
       window.location.href = newURL;
     }, 200);
-  });
-  
-function toggleMenu() {
-  const navMenu = document.getElementById('nav-menu');
-  const menuBg = document.getElementById('menu-bg');
-
-  if (navMenu && menuBg) {
-    navMenu.classList.toggle('change');
-    menuBg.classList.toggle('change-bg');
-  }
-}
-const menuToggle = document.getElementById('#toggle');
-menuToggle.addEventListener('click', toggleMenu);
-
-document.addEventListener('DOMContentLoaded', function () {
-  
-
-  // Pobierz wszystkie tabcardy
-  const tabcards = document.querySelectorAll('.tabcard');
-
-  tabcards.forEach(function (tabcard) {
-    tabcard.addEventListener('click', function () {
-      const tabContent = tabcard.querySelector('.tab-content span');
-      const textToCopy = tabContent.textContent;
-
-      navigator.clipboard.writeText(textToCopy)
-        .then(function () {
-          alert('Skopiowano do schowka: ' + textToCopy);
-        })
-        .catch(function (err) {
-          console.error('Błąd kopiowania do schowka: ', err);
-        });
-    });
   });
 
   // COOKIE POPUP
@@ -115,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
- /* const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
+  const openModalBtns = document.querySelectorAll('.sign-up.free-consultation');
   const modal = document.getElementById('modalform');
   const closeModal = modal.querySelector('.close');
   const form2 = document.getElementById('form2'); // Pobierz formularz "form2"
@@ -140,13 +134,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.target == modal) {
       modal.style.display = 'none';
     }
-  }; */
+  };
   
-  /* Obsługa formularza 2 (id="form2")
+  // Obsługa formularza 2 (id="form2")
   form2.addEventListener('submit', function (e) {
     e.preventDefault();
     onSubmitForm('form2', 'getconsultation.php');
-  });*/
+  });
 
  // Obsługa formularza 1 (id="form")
  document.getElementById('form').addEventListener('submit', function(e) {
