@@ -26,30 +26,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menu-bar');
   menuBar.addEventListener('click', toggleMenu);
 
- // SWITCHER JĘZYKOWY
- // SWITCHER JĘZYKOWY
- const switcher = document.getElementById('language-toggle');
+  // SWITCHER JĘZYKOWY
+  const switcher = document.getElementById('language-toggle');
 
- switcher.addEventListener('change', function () {
-   const currentPageName = window.location.pathname.split('/').pop();
-   let newPageName;
+  switcher.addEventListener('change', function () {
+    const currentPageName = window.location.pathname.split('/').pop();
+    let newPageName;
 
-   if (currentPageName === '' || currentPageName === 'index.html') {
-     window.location.href = 'https://easymotionskin.is/index-is.html';
-     return;
-   }
+    if (currentPageName === '') {
+      window.location.href = 'https://easymotionskin.is/index.html';
+      return;
+    }
 
-   if (currentPageName.endsWith('-is.html')) {
-     newPageName = currentPageName.replace('-is.html', '.html');
-   } else {
-     newPageName = currentPageName.replace('.html', '-is.html');
-   }
+    if (currentPageName.endsWith('-is.html')) {
+      newPageName = currentPageName.replace('-is.html', '.html');
+    } else {
+      newPageName = currentPageName.replace('.html', '-is.html');
+    }
 
-   setTimeout(function () {
-     const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
-     window.location.href = newURL;
-   }, 200);
- });
+    setTimeout(function () {
+      const newURL = window.location.origin + window.location.pathname.replace(currentPageName, newPageName);
+      window.location.href = newURL;
+    }, 200);
+  });
 
   // COOKIE POPUP
   if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
