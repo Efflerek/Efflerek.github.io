@@ -1,4 +1,56 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // SWITCHER JĘZYKOWY
+  const switcher = document.getElementById('language-toggle');
+  
+  switcher.addEventListener('change', function () {
+    const currentPageName = window.location.pathname.split('/').pop();
+    let newPageName;
+
+    if (currentPageName === '') {
+      window.location.assign('https://easymotionskin.is/index.html');
+      return;
+    }
+
+    if (currentPageName === 'index.html') {
+      window.location.assign('https://easymotionskin.is/index-is.html');
+      return;
+    }
+
+    if (currentPageName.endsWith('-is.html')) {
+      newPageName = currentPageName.replace('-is.html', '.html');
+    } else {
+      newPageName = currentPageName.replace('.html', '-is.html');
+    }
+
+    const newURL = window.location.origin + '/' + newPageName;
+    window.history.pushState({}, '', newURL);
+  });
+
+  // Obsługa zdarzenia click w przypadku, gdy change nie jest obsługiwane
+  switcher.addEventListener('click', function () {
+    const currentPageName = window.location.pathname.split('/').pop();
+    let newPageName;
+
+    if (currentPageName === '') {
+      window.location.assign('https://easymotionskin.is/index.html');
+      return;
+    }
+
+    if (currentPageName === 'index.html') {
+      window.location.assign('https://easymotionskin.is/index-is.html');
+      return;
+    }
+
+    if (currentPageName.endsWith('-is.html')) {
+      newPageName = currentPageName.replace('-is.html', '.html');
+    } else {
+      newPageName = currentPageName.replace('.html', '-is.html');
+    }
+
+    const newURL = window.location.origin + '/' + newPageName;
+    window.history.pushState({}, '', newURL);
+  });
+
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
@@ -26,31 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menu-bar');
   menuBar.addEventListener('click', toggleMenu);
 
-  // SWITCHER JĘZYKOWY
-  const switcher = document.getElementById('language-toggle');
-  switcher.addEventListener('change', function () {
-    const currentPageName = window.location.pathname.split('/').pop();
-    let newPageName;
-
-    if (currentPageName === '') {
-      window.location.href = 'https://easymotionskin.is/index.html';
-      return;
-    }
-
-    if (currentPageName === 'index.html') {
-      window.location.href = 'https://easymotionskin.is/index-is.html';
-      return;
-    }
-
-    if (currentPageName.endsWith('-is.html')) {
-      newPageName = currentPageName.replace('-is.html', '.html');
-    } else {
-      newPageName = currentPageName.replace('.html', '-is.html');
-    }
-
-    const newURL = window.location.origin + '/' + newPageName;
-    window.location.href = newURL;
-  });
+  
 
   // COOKIE POPUP
   if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
