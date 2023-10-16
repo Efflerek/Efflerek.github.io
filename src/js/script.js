@@ -1,6 +1,19 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
+  
+  function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    const menuBg = document.getElementById('menu-bg');
+  
+    if (navMenu && menuBg) {
+      navMenu.classList.toggle('change');
+      menuBg.classList.toggle('change-bg');
+    }
+  }
+  
+  const menuToggle = document.querySelector('.menu-toggle');
+  menuToggle.addEventListener('click', toggleMenu);
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
@@ -18,15 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
   });
-
-  function toggleMenu() {
-    document.getElementById('menu-bar').classList.toggle('change');
-    document.getElementById('nav-menu').classList.toggle('change');
-    document.getElementById('menu-bg').classList.toggle('change-bg');
-  }
-
-  const menuBar = document.querySelector('.menu-bar');
-  menuBar.addEventListener('click', toggleMenu);
 
   // SWITCHER JĘZYKOWY
   const switcher = document.getElementById('language-toggle');

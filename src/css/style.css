@@ -170,7 +170,7 @@ p.white {
   flex-direction: row;
 }
 
-.menu-bar {
+.menu-toggle {
   cursor: pointer;
   color: #fff;
   display: none;
@@ -224,11 +224,6 @@ nav a:hover {
 .switch label {
   cursor: pointer;
   margin-right: 0.5rem;
-}
-
-.menu-bar {
-  cursor: pointer;
-  color: #fff;
 }
 
 /* Diagonals */
@@ -2085,7 +2080,7 @@ input.check-toggle-round-flat:checked+label:after {
     font-weight: bold;
   }
 
-  #menu-bar {
+  #menu-toggle {
     padding: 0rem 2rem 0rem 2rem;
     z-index: 9;
     display: block;
