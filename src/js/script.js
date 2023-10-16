@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
- toggleMenu() {
+ function toggleMenu() {
     const menuBar = document.getElementById('menu-bar');
     const navMenu = document.getElementById('nav-menu');
     const menuBg = document.getElementById('menu-bg');
