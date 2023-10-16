@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener('DOMContentLoaded', function () {
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
