@@ -1,4 +1,5 @@
 "use strict";
+
   // SWITCHER JĘZYKOWY
   const switcher = document.getElementById('language-toggle');
 
@@ -22,7 +23,9 @@
       window.location.href = newURL;
     }, 200);
   });
-  
+
+  /*Toggle Menu */
+
 function toggleMenu() {
   const navMenu = document.getElementById('nav-menu');
   const menuBg = document.getElementById('menu-bg');
@@ -37,7 +40,6 @@ menuToggle.addEventListener('click', toggleMenu);
 
 document.addEventListener('DOMContentLoaded', function () {
   
-
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
@@ -116,26 +118,57 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-function handleForm(formId, action) {
-  document.getElementById(formId).addEventListener('submit', function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', action, true);
 
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log('Form submitted successfully.');
-      } else {
-        console.log('Form submission failed.');
-      }
-    };
+   // Obsługa formularza 1 (id="form")
+ document.getElementById('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  onSubmitForm('form', 'sendform.php');
+});
 
-    xhr.send(formData);
+// Obsługa formularza 2 (id="form2")
+document.getElementById('form2').addEventListener('submit', function(e) {
+  e.preventDefault();
+  onSubmitForm('form2', 'getconsultation.php');
+});
+
+// Obsługa formularza 3 (id="form3")
+document.getElementById('form3').addEventListener('submit', function(e) {
+  e.preventDefault();
+  onSubmitForm('form3', 'getconsultation3.php');
+});
+
+// Obsługa formularzy z użyciem reCAPTCHA
+function onSubmitForm(formId, phpScript) {
+  const form = document.getElementById(formId);
+  const formData = new FormData(form);
+
+  grecaptcha.ready(function() {
+    grecaptcha.execute().then(function(response) {
+      // Pobierz odpowiedź reCAPTCHA i dodaj ją do danych formularza
+      formData.append("g-recaptcha-response", response);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", phpScript, true);
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Obsłuż odpowiedź serwera, jeśli to konieczne
+          console.log(xhr.responseText);
+          alert("Formularz został wysłany."); // Powiadom użytkownika
+        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+          // Obsłuż błąd
+          console.error("Wystąpił błąd podczas przetwarzania formularza.");
+          alert("Wystąpił błąd podczas przetwarzania formularza.");
+        }
+      };
+
+      xhr.send(formData);
+    });
   });
 }
 
-handleForm('form', 'sendform.php');
-handleForm('form3', 'getconsultation3.php');
+
 
 });
+
+
