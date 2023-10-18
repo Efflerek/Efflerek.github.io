@@ -38,9 +38,7 @@ function toggleMenu() {
 const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
-document.addEventListener('DOMContentLoaded', function () {
-  
-  const form = document.getElementById("form3");
+const form = document.getElementById("form3");
   const submitButton = form.querySelector(".cons-sub");
 
 submitButton.addEventListener("click", function (event) {
@@ -82,6 +80,8 @@ function submitForm3() {
     };
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
