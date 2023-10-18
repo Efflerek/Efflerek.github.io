@@ -38,8 +38,99 @@ function toggleMenu() {
 const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
+// Funkcja obsługująca formularz form3
+function onSubmitForm3(event) {
+  event.preventDefault(); // Zatrzymujemy domyślne działanie przycisku submit
+  // Pobieramy dane z formularza
+  const form = event.target.closest('form');
+  const name = form.querySelector('[name="name"]').value;
+  const email = form.querySelector('[name="email"]').value;
+  const phone = form.querySelector('[name="phone"]').value;
+  // Sprawdzamy, czy reCAPTCHA została zweryfikowana
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG', { action: 'submit' }).then(function(token) {
+          // Wysyłamy dane na serwer
+          fetch('getconsultation3.php', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: new URLSearchParams({
+                  'name': name,
+                  'email': email,
+                  'phone': phone,
+                  'token': token
+              }),
+          }).then(function(response) {
+              if (response.ok) {
+                  // Wyświetlamy komunikat o sukcesie
+                  alert('Formularz wysłany pomyślnie!');
+                  // Możesz też wyczyścić pola formularza
+                  form.reset();
+              } else {
+                  // Wyświetlamy komunikat o błędzie
+                  alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
+              }
+          }).catch(function(error) {
+              // Wyświetlamy komunikat o błędzie
+              alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
+          });
+      });
+  });
+}
+
+// Funkcja obsługująca formularz form
+function onSubmitForm(event) {
+  event.preventDefault(); // Zatrzymujemy domyślne działanie przycisku submit
+  // Pobieramy dane z formularza
+  const form = event.target.closest('form');
+  const name = form.querySelector('[name="name"]').value;
+  const email = form.querySelector('[name="email"]').value;
+  const phone = form.querySelector('[name="phone"]').value;
+  const userMessage = form.querySelector('[name="userMessage"]').value;
+  // Sprawdzamy, czy reCAPTCHA została zweryfikowana
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG', { action: 'submit' }).then(function(token) {
+          // Wysyłamy dane na serwer
+          fetch('sendform.php', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: new URLSearchParams({
+                  'name': name,
+                  'email': email,
+                  'phone': phone,
+                  'userMessage': userMessage,
+                  'token': token
+              }),
+          }).then(function(response) {
+              if (response.ok) {
+                  // Wyświetlamy komunikat o sukcesie
+                  alert('Formularz wysłany pomyślnie!');
+                  // Możesz też wyczyścić pola formularza
+                  form.reset();
+              } else {
+                  // Wyświetlamy komunikat o błędzie
+                  alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
+              }
+          }).catch(function(error) {
+              // Wyświetlamy komunikat o błędzie
+              alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
+          });
+      });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+
+  // Znajdź przyciski i przypisz do nich odpowiednie funkcje
+  const formButton = document.querySelector('#form button');
+  const form3Button = document.querySelector('#form3 button');
   
+  formButton.addEventListener('click', onSubmitForm);
+  form3Button.addEventListener('click', onSubmitForm3);
+
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 
