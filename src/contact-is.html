@@ -60,15 +60,15 @@
                     skaltu sleppa okkur upplýsingum þínum. Við höfum samband við þig innan næstu tveimur dögum. </p>
                 <form id="form3" class="contact-form" action="#">
                     <div class="form-floating">
-                        <input type="text" name="name" placeholder=" " required>
+                        <input type="text" name="name" placeholder=" " id="name" required>
                         <label for="name">Nafn</label>
                     </div>
                     <div class="form-floating">
-                        <input type="email" name="email" placeholder=" " required>
+                        <input type="email" name="email" placeholder=" " id="email" required>
                         <label for="email">Netfang</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" name="phone" placeholder=" " required>
+                        <input type="tel" name="phone" placeholder=" " id="phone" required>
                         <label for="phone">Símanúmer</label>
                     </div>
                     <div class="checkbox">
@@ -344,10 +344,10 @@
                 </div>
                 <form id="form" method="post" action="#">
                     <p class="text white">*Áskilið</p>
-                    <input type="text" placeholder="Nafn *" name="name" required />
-                    <input type="email" placeholder="Netfang *" name="email" required />
-                    <input type="tel" placeholder="Símanúmer" name="phone" />
-                    <textarea rows="4" placeholder="Skilaboð" name="userMessage"></textarea>
+                    <input type="text" placeholder="Nafn *" name="name" id="name" required />
+                    <input type="email" placeholder="Netfang *" name="email" id="email" required />
+                    <input type="tel" placeholder="Símanúmer" name="phone" id="phone" />
+                    <textarea rows="4" placeholder="Skilaboð" name="userMessage" id="userMessage"></textarea>
                     <div class="checkbox">
                         <div class="checkbox-cell">
                             <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
