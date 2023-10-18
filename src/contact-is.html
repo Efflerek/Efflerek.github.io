@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script
-        src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 </head>
 
@@ -79,8 +79,7 @@
                                 <label for="privacy-policy" class="text">Ég samþyki persónuverndar- og vafrakökuvernd vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
                             </div>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></div>
-                        <button class="cons-sub" type="button" name="submit" onclick="submitForm3()">Fá ráðgjöf</button>
+                        <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="submitForm3" data-action="submit" type="button" name="submit">Fá ráðgjöf</button>
                     </form>
             </div>
         </div>
