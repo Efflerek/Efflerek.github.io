@@ -38,7 +38,6 @@ function toggleMenu() {
 const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
-// Funkcja obsługująca formularz form3
 function onSubmitForm3(event) {
   event.preventDefault(); // Zatrzymujemy domyślne działanie przycisku submit
   // Pobieramy dane z formularza
@@ -46,43 +45,40 @@ function onSubmitForm3(event) {
   const name = form.querySelector('[name="name"]').value;
   const email = form.querySelector('[name="email"]').value;
   const phone = form.querySelector('[name="phone"]').value;
-  // Sprawdzamy, czy reCAPTCHA została zweryfikowana
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG', { action: 'submit' }).then(function(token) {
-      // Wysyłamy dane na serwer
-      fetch('getconsultation3.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          'name': name,
-          'email': email,
-          'phone': phone,
-          'token': token
-        }),
-      }).then(function(response) {
-        if (response.ok) {
-          // Wyświetlamy komunikat o sukcesie
-          alert('Formularz wysłany pomyślnie!');
-          // Możesz też wyczyścić pola formularza
-          form.reset();
-        } else {
-          // Wyświetlamy komunikat o błędzie
-          alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
-        }
-      }).catch(function(error) {
-        // Wyświetlamy komunikat o błędzie
-        alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
-      });
-    });
+  // Pobierz także wartość token z reCAPTCHA, jeśli ją potrzebujesz
+  // const token = 'twój_token';
+
+  // Wysyłamy dane na serwer
+  fetch('getconsultation3.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      'name': name,
+      'email': email,
+      'phone': phone,
+      // 'token': token // Jeśli potrzebujesz tokenu reCAPTCHA
+    }),
+  }).then(function(response) {
+    if (response.ok) {
+      // Wyświetlamy komunikat o sukcesie
+      alert('Formularz wysłany pomyślnie!');
+      // Możesz też wyczyścić pola formularza
+      form.reset();
+    } else {
+      // Wyświetlamy komunikat o błędzie
+      alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
+    }
+  }).catch(function(error) {
+    // Wyświetlamy komunikat o błędzie
+    alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
   });
 }
 
 // Nasłuchuj zdarzenia submit na formularzu form3
 const form3 = document.querySelector('#form3');
 form3.addEventListener('submit', onSubmitForm3);
-
 
 document.addEventListener('DOMContentLoaded', function () {
   // Pobierz wszystkie tabcardy
