@@ -38,32 +38,49 @@ function toggleMenu() {
 const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
-const form3 = document.querySelector('#form3');
-
-form3.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  
-  const form = event.target.closest('form');
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch('getconsultation3.php', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (response.ok) {
-      alert('Formularz wysłany pomyślnie!');
-      form.reset();
-    } else {
-      alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
-    }
-  } catch (error) {
-    alert('Wysłanie formularza nie powiodło się. Spróbuj ponownie.');
-  }
-});
-
 document.addEventListener('DOMContentLoaded', function () {
+  
+  const form = document.getElementById("form3");
+  form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Zatrzymaj domyślne zachowanie formularza
+
+      submitForm3(); // Wywołaj funkcję do obsługi formularza
+  });
+
+  function submitForm3() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const privacyPolicy = document.getElementById("privacy-policy").checked;
+    const recaptchaResponse = grecaptcha.getResponse();
+  
+    if (!name || !email || !phone || !privacyPolicy || recaptchaResponse.length === 0) {
+        alert("Please fill in all fields and complete the reCAPTCHA.");
+        return;
+    }
+  
+    // Send the form data to the server using AJAX
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("privacy-policy", privacyPolicy);
+    formData.append("recaptchaResponse", recaptchaResponse);
+  
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "getconsultation3.php"); // Two-way communication with the server
+    xhr.send(formData);
+  
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert("Form submitted successfully.");
+            // You can redirect the user to a "Thank you" page here if needed.
+        } else {
+            alert("Form submission failed. Please try again later.");
+        }
+    };
+  }
+
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
 

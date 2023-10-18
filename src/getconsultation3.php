@@ -1,32 +1,48 @@
 <?php
-error_log(print_r($_POST, true));
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Pobierz dane z formularza (zmień nazwy pól, jeśli to konieczne)
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $privacyPolicy = $_POST["privacy-policy"];
+    $recaptchaResponse = $_POST["recaptchaResponse"];
 
-    // Adres docelowy
-    $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
+    if ($recaptchaResponse) {
+        // Verify reCAPTCHA response using Google's reCAPTCHA API (https://developers.google.com/recaptcha)
+        $recaptchaSecretKey = "YOUR_SECRET_KEY"; // Replace with your actual secret key
+        $recaptchaVerifyUrl = "https://www.google.com/recaptcha/api/siteverify";
+        $data = [
+            "secret" => $recaptchaSecretKey,
+            "response" => $recaptchaResponse,
+        ];
 
-    // Temat wiadomości
-    $subject = "Contact/Shop:Formularz konsultacyjny od $name (form3)";
+        $options = [
+            "http" => [
+                "method" => "POST",
+                "header" => "Content-Type: application/x-www-form-urlencoded",
+                "content" => http_build_query($data),
+            ],
+        ];
 
-    // Treść wiadomości
-    $message = "Imię: $name\n";
-    $message .= "Email: $email\n";
-    $message .= "Telefon: $phone";
+        $context = stream_context_create($options);
+        $recaptchaResult = file_get_contents($recaptchaVerifyUrl, false, $context);
+        $recaptchaResult = json_decode($recaptchaResult);
 
-    // Nagłówki e-maila
-    $headers = "From: $email" . "\r\n" .
-               "Reply-To: $email" . "\r\n";
+        if ($recaptchaResult->success) {
+            // Send email with the form data
+            $to = "support@easymotionskin.is";
+            $subject = "New Form Submission";
+            $message = "Name: $name\nEmail: $email\nPhone: $phone\nPrivacy Policy Accepted: $privacyPolicy";
+            $headers = "From: $email";
 
-    // Wyślij e-mail
-    mail($to, $subject, $message, $headers);
-
-    // Zwróć potwierdzenie sukcesu
-    echo "Formularz został wysłany.";
+            mail($to, $subject, $message, $headers);
+            echo "Form submitted successfully.";
+        } else {
+            echo "reCAPTCHA verification failed.";
+        }
+    } else {
+        echo "reCAPTCHA verification failed.";
+    }
 } else {
-    // Zabezpiecz przed bezpośrednim dostępem
-    echo "Nieprawidłowe żądanie.";
+    echo "Invalid request.";
 }
+?>
