@@ -41,24 +41,25 @@ menuToggle.addEventListener('click', toggleMenu);
 document.addEventListener('DOMContentLoaded', function () {
   
   const form = document.getElementById("form3");
-  form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Zatrzymaj domyślne zachowanie formularza
+  const submitButton = form.querySelector(".cons-sub");
 
-      submitForm3(); // Wywołaj funkcję do obsługi formularza
-  });
+submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    submitForm3();
+});
 
-  function submitForm3() {
+function submitForm3() {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const privacyPolicy = document.getElementById("privacy-policy").checked;
     const recaptchaResponse = grecaptcha.getResponse();
-  
+
     if (!name || !email || !phone || !privacyPolicy || recaptchaResponse.length === 0) {
         alert("Please fill in all fields and complete the reCAPTCHA.");
         return;
     }
-  
+
     // Send the form data to the server using AJAX
     const formData = new FormData();
     formData.append("name", name);
@@ -66,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function () {
     formData.append("phone", phone);
     formData.append("privacy-policy", privacyPolicy);
     formData.append("recaptchaResponse", recaptchaResponse);
-  
+
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "getconsultation3.php"); // Two-way communication with the server
     xhr.send(formData);
-  
+
     xhr.onload = function () {
         if (xhr.status === 200) {
             alert("Form submitted successfully.");
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Form submission failed. Please try again later.");
         }
     };
-  }
+}
 
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
