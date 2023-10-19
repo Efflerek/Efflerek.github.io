@@ -125,17 +125,17 @@
             <div class="consultation-form">
                 <h2>Panta Búnað Hér</h2>
                 <p>Fylltu út formið og við svarum þér eins fljótt og mögulegt er.</p>
-                <form id="form3" class="contact-form" action="#">
+                <form id="form3" class="contact-form" action="#" method="POST">
                     <div class="form-floating">
-                        <input type="text" name="name" placeholder=" " required>
+                        <input type="text" name="name" placeholder=" " id="name" required>
                         <label for="name">Nafn</label>
                     </div>
                     <div class="form-floating">
-                        <input type="email" name="email" placeholder=" " required>
+                        <input type="email" name="email" placeholder=" " id="email" required>
                         <label for="email">Netfang</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" name="phone" placeholder=" " required>
+                        <input type="tel" name="phone" placeholder=" " id="phone" required>
                         <label for="phone">Símanúmer</label>
                     </div>
                     <div class="checkbox">
@@ -145,8 +145,8 @@
                         <div class="checkbox-cell">
                             <label for="privacy-policy" class="text">Ég samþyki persónuverndar- og vafrakökuvernd vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
                         </div>
-                    </div>                    
-                    <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="onSubmitForm2('form2')" data-action="submit" type="submit" name="submit">Fá ráðgjöf</button>
+                    </div>
+                    <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="submitForm3" data-action="submit" type="button" name="submit">Fá ráðgjöf</button>
                 </form>
             </div>
         </div>
