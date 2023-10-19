@@ -84,7 +84,7 @@ function submitForm3() {
 
 /*Obsługa id="form"*/
 const myForm = document.getElementById("form");
-    const mySubmitButton = myForm.querySelector(".cons-sub");
+    const mySubmitButton = myForm.querySelector(".submit");
 
     mySubmitButton.addEventListener("click", function (event) {
         event.preventDefault();
