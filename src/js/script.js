@@ -38,6 +38,8 @@ function toggleMenu() {
 const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
+/*Obsługa id="form3" */
+
 const form = document.getElementById("form3");
   const submitButton = form.querySelector(".cons-sub");
 
@@ -79,6 +81,50 @@ function submitForm3() {
         }
     };
 }
+
+/*Obsługa id="form"*/
+const myForm = document.getElementById("form");
+    const mySubmitButton = myForm.querySelector(".cons-sub");
+
+    mySubmitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        submitForm();
+    });
+
+    function submitForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const userMessage = document.getElementById("userMessage").value;
+        const privacyPolicy = document.getElementById("privacy-policy").checked;
+        const recaptchaResponse = grecaptcha.getResponse();
+
+        if (!name || !email || !phone || !privacyPolicy || recaptchaResponse.length === 0) {
+            alert("Please fill in all fields and complete the reCAPTCHA.");
+            return;
+        }
+
+        // Send the form data to the server using AJAX
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("phone", phone);
+        formData.append("userMessage", userMessage);
+        formData.append("privacy-policy", privacyPolicy);
+        formData.append("recaptchaResponse", recaptchaResponse);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "sendform.php");
+        xhr.send(formData);
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                alert("Form submitted successfully.");
+            } else {
+                alert("Form submission failed. Please try again later.");
+            }
+        };
+    }
 
 document.addEventListener('DOMContentLoaded', function () {
   

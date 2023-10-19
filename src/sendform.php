@@ -1,35 +1,50 @@
-<?php
-error_log(print_r($_POST, true));
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Pobierz dane z formularza
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $userMessage = $_POST['userMessage']; // Zmieniłem nazwę zmiennej na userMessage
+<?php 
 
-    // Adres docelowy
-    $to = "support@easymotionskin.is"; // Zaktualizowano adres e-mail
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $userMessage = $_POST["userMessage"];
+    $privacyPolicy = $_POST["privacy-policy"];
+    $recaptchaResponse = $_POST["recaptchaResponse"];
 
-    // Temat wiadomości
-    $subject = "Stopka: Formularz kontaktowy od $name";
+    if ($recaptchaResponse) {
+        // Verify reCAPTCHA response using Google's reCAPTCHA API (https://developers.google.com/recaptcha)
+        $recaptchaSecretKey = "6LeYvIsoAAAAAMW0Q82IiRD7PTBCuQRD9TC22GNv"; // Replace with your actual secret key
+        $recaptchaVerifyUrl = "https://www.google.com/recaptcha/api/siteverify";
+        $data = [
+            "secret" => $recaptchaSecretKey,
+            "response" => $recaptchaResponse,
+        ];
 
-    // Treść wiadomości
-    $message = "Imię: $name\n";
-    $message .= "Email: $email\n";
-    $message .= "Telefon: $phone\n";
-    $message .= "Wiadomość: $userMessage"; // Użyj zmiennej $userMessage
+        $options = [
+            "http" => [
+                "method" => "POST",
+                "header" => "Content-Type: application/x-www-form-urlencoded",
+                "content" => http_build_query($data),
+            ],
+        ];
 
-    // Nagłówki e-maila
-    $headers = "From: $email" . "\r\n" .
-               "Reply-To: $email" . "\r\n";
+        $context = stream_context_create($options);
+        $recaptchaResult = file_get_contents($recaptchaVerifyUrl, false, $context);
+        $recaptchaResult = json_decode($recaptchaResult);
 
-    // Wyślij e-mail
-    mail($to, $subject, $message, $headers);
+        if ($recaptchaResult->success) {
+            // Send email with the form data
+            $to = "support@easymotionskin.is";
+            $subject = "New Form Submission";
+            $message = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $userMessage\nPrivacy Policy Accepted: $privacyPolicy";
+            $headers = "From: $email";
 
-    // Zwróć potwierdzenie sukcesu
-    echo "Formularz został wysłany.";
+            mail($to, $subject, $message, $headers);
+            echo "Form submitted successfully.";
+        } else {
+            echo "reCAPTCHA verification failed.";
+        }
+    } else {
+        echo "reCAPTCHA verification failed.";
+    }
 } else {
-    // Zabezpiecz przed bezpośrednim dostępem
-    echo "Nieprawidłowe żądanie.";
+    echo "Invalid request.";
 }
 ?>
