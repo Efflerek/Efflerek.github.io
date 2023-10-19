@@ -177,21 +177,29 @@
                 <p id="consultation-form-p">Do You have questions about EMS Suit? You want to see the EasyMotionSkin in action? If the
                     answer is
                     yes, feel free to leave Your data. We will contact You in the next 2 days. </p>
-                <form class="contact-form">
-                    <div class="form-floating">
-                        <input type="text" id="name" placeholder=" " required>
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="email" id="email" placeholder=" " required>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="tel" id="phone" placeholder=" " required>
-                        <label for="phone">Phone Number</label>
-                    </div>
-                    <button class="cons-sub" type="submit">Get Consultation</button>
-                </form>
+                    <form id="form3" class="contact-form" action="#" method="POST">
+                        <div class="form-floating">
+                            <input type="text" name="name" placeholder=" " id="name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="email" name="email" placeholder=" " id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="tel" name="phone" placeholder=" " id="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        <div class="checkbox">
+                            <div class="checkbox-cell">
+                                <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+                            </div>
+                            <div class="checkbox-cell">
+                                <label for="privacy-policy" class="text">I consent to the privacy and cookie policy of the website and the processing of personal data to send me offers.</label>
+                            </div>
+                        </div>
+                        <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="submitForm3" data-action="submit" type="button" name="submit">Get Consultation</button>
+                    </form>
             </div>
         </div>
         <div id="hiw-consultation-text" class="get-consultation-text">

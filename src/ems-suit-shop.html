@@ -127,17 +127,17 @@
             <div class="consultation-form">
                 <h2>Order Suit Here</h2>
                 <p>Fill-up the form and We will respond You as soon as possible.</p>
-                <form id="form3" class="contact-form" action="#">
+                <form id="form3" class="contact-form" action="#" method="POST">
                     <div class="form-floating">
-                        <input type="text" name="name" placeholder=" " required>
+                        <input type="text" name="name" placeholder=" " id="name" required>
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating">
-                        <input type="email" name="email" placeholder=" " required>
+                        <input type="email" name="email" placeholder=" " id="email" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" name="phone" placeholder=" " required>
+                        <input type="tel" name="phone" placeholder=" " id="phone" required>
                         <label for="phone">Phone Number</label>
                     </div>
                     <div class="checkbox">
@@ -148,7 +148,7 @@
                             <label for="privacy-policy" class="text">I consent to the privacy and cookie policy of the website and the processing of personal data to send me offers.</label>
                         </div>
                     </div>
-                    <button class="cons-sub g-recaptcha" data-callback="onSubmitForm3('form3')" data-action="submit" type="submit">Get Consultation</button>
+                    <button class="cons-sub g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="submitForm3" data-action="submit" type="button" name="submit">Get Consultation</button>
                 </form>
             </div>
         </div>
