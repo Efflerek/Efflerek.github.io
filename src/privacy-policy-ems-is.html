@@ -13,7 +13,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 </head>
 
@@ -23,21 +24,21 @@
             <div class="menu-wrapper">
                 <div id="toggle" class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
                     <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <a href="index-is.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
             </div>
-            <a href="index-is.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
-        </div>
 
-        <div class="nav-wrapper">
-            <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
-                <ul>
-                    <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
-                    <li><a href="ems-suit-shop-is.html">Búð</a></li>
-                    <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
-                    <li><a href="ems-blog-is.html">Blogg</a></li>
-                    <li><a href="contact-is.html">Stuðningur</a></li>
-                </ul>
-            </nav>
-   
+            <div class="nav-wrapper">
+                <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+                    <ul>
+                        <li><a href="how-ems-works-is.html">Hvernig virkar þetta?</a></li>
+                        <li><a href="ems-suit-shop-is.html">Búð</a></li>
+                        <li><a href="home-edition-is.html">Heimilisútgáfa</a></li>
+                        <li><a href="ems-blog-is.html">Blogg</a></li>
+                        <li><a href="contact-is.html">Stuðningur</a></li>
+                    </ul>
+                </nav>
+
                 <div class="switch">
                     <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
                     <label for="language-toggle"></label>
@@ -50,7 +51,7 @@
         </div>
     </header>
 
-   
+
     <div id="blog-text" class="blog-text-pp">
         <h1>Privacy Policy</h1>
         <p>Updated at 2023-10-02</p>
@@ -489,18 +490,24 @@
                 <div class="contact-table">
                     <div class="contact-row">
                         <div class="contact-icon"><i class="icon fas fa-envelope"></i></div>
-                        <div class="contact-data"> <h3>Netfang</h3>
-                            <span>support@easymotionskin.is</span></div>
+                        <div class="contact-data">
+                            <h3>Netfang</h3>
+                            <span>support@easymotionskin.is</span>
+                        </div>
                     </div>
                     <div class="contact-row">
                         <div class="contact-icon"><i class="icon fas fa-phone"></i></div>
-                        <div class="contact-data"><h3>Simi</h3>
-                            <span>7850527</span></div>
+                        <div class="contact-data">
+                            <h3>Simi</h3>
+                            <span>7850527</span>
+                        </div>
                     </div>
                     <div class="contact-row">
                         <div class="contact-icon"><i class="icon fas fa-map-marker-alt"></i></div>
-                        <div class="contact-data"><h3>Staðsetning</h3>
-                            <span>Lyngás 11, 210 Garðabær</span></div>
+                        <div class="contact-data">
+                            <h3>Staðsetning</h3>
+                            <span>Lyngás 11, 210 Garðabær</span>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -532,29 +539,32 @@
 
             <div class="right-content contact-div">
                 <div>
-                    <h2 class="white">Write to Us</h2>
+                    <h2 class="white">Skrifaðu okkur</h2>
                 </div>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <form id="form" method="post" action="#">
+                <form id="form" action="#" method="POST">
                     <p class="text white">*Áskilið</p>
-                    <input type="text" placeholder="Nafn *" name="name" required />
-                    <input type="email" placeholder="Netfang *" name="email" required />
-                    <input type="tel" placeholder="Símanúmer" name="phone" />
-                    <textarea rows="4" placeholder="Skilaboð" name="userMessage"></textarea>
+                    <input type="text" id="name" placeholder="Nafn *" name="name" required />
+                    <input type="email" id="email" placeholder="Netfang *" name="email" required />
+                    <input type="tel" id="phone" placeholder="Símanúmer" name="phone" />
+                    <textarea rows="4" id="userMessage" placeholder="Skilaboð" name="userMessage"></textarea>
                     <div class="checkbox">
                         <div class="checkbox-cell">
                             <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
                         </div>
                         <div class="checkbox-cell">
-                            <label for="privacy-policy" class="text white">Ég samþykk persónuverndar- og vafrakökustefnu vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
+                            <label for="privacy-policy" class="text white">Ég samþykk persónuverndar- og vafrakökustefnu
+                                vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
                         </div>
                     </div>
                     <div class="actions">
-                        <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmitForm' data-action='submit' type="submit" name="submit">Senda</button>
+                        <button class="sign-up submit g-recaptcha"
+                            data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="submitForm"
+                            data-action="submit" type="button" name="submit">Senda</button>
                     </div>
                 </form>
             </div>

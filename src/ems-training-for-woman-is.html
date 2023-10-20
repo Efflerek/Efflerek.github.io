@@ -234,22 +234,25 @@
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <form id="form" method="post" action="#">
+                    <form id="form" action="#" method="POST">
                         <p class="text white">*Áskilið</p>
-                        <input type="text" placeholder="Nafn *" name="name" required />
-                        <input type="email" placeholder="Netfang *" name="email" required />
-                        <input type="tel" placeholder="Símanúmer" name="phone" />
-                        <textarea rows="4" placeholder="Skilaboð" name="userMessage"></textarea>
+                        <input type="text" id="name" placeholder="Nafn *" name="name" required />
+                        <input type="email" id="email" placeholder="Netfang *" name="email" required />
+                        <input type="tel" id="phone" placeholder="Símanúmer" name="phone" />
+                        <textarea rows="4" id="userMessage" placeholder="Skilaboð" name="userMessage"></textarea>
                         <div class="checkbox">
                             <div class="checkbox-cell">
                                 <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
                             </div>
                             <div class="checkbox-cell">
-                                <label for="privacy-policy" class="text white">Ég samþykk persónuverndar- og vafrakökustefnu vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
+                                <label for="privacy-policy" class="text white">Ég samþykk persónuverndar- og vafrakökustefnu
+                                    vefsíðunnar og vinnslu persónuupplýsinga til að senda mér tilboð.</label>
                             </div>
                         </div>
                         <div class="actions">
-                            <button class="sign-up submit g-recaptcha" data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback='onSubmitForm' data-action='submit' type="submit" name="submit">Senda</button>
+                            <button class="sign-up submit g-recaptcha"
+                                data-sitekey="6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG" data-callback="submitForm"
+                                data-action="submit" type="button" name="submit">Senda</button>
                         </div>
                     </form>
                 </div>
