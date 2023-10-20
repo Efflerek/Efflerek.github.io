@@ -81,6 +81,8 @@ function submitForm3() {
     }
   };
 }
+
+// Kod obsługi id="form"
 const myForm = document.getElementById("form");
 console.log(myForm);
 const mySubmitButton = myForm.querySelector(".submit");
@@ -89,32 +91,33 @@ console.log(mySubmitButton);
 mySubmitButton.addEventListener("click", function (event) {
   event.preventDefault();
   grecaptcha.ready(function() {
-    submitForm();
+    grecaptcha.execute('6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt', { action: 'submit' }).then(function (token) {
+      submitForm(token);
+    });
   });
   console.log(submitForm);
 });
 
-function submitForm() {
+function submitForm(recaptchaToken) {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
   const userMessage = document.getElementById("userMessage").value;
   const privacyPolicy = document.getElementById("privacy-policy").checked;
-  const recaptchaResponse = grecaptcha.getResponse();
 
-  if (!name || !email || !phone || !privacyPolicy || recaptchaResponse.length === 0) {
-    alert("Please fill in all fields and complete the reCAPTCHA.");
+  if (!name || !email || !phone || !privacyPolicy) {
+    alert("Please fill in all fields.");
     return;
   }
 
-  // Send the form data to the server using AJAX
+  // Send the form data along with the reCAPTCHA token to the server using AJAX
   const formData2 = new FormData();
   formData2.append("name", name);
   formData2.append("email", email);
   formData2.append("phone", phone);
   formData2.append("userMessage", userMessage);
   formData2.append("privacy-policy", privacyPolicy);
-  formData2.append("recaptchaResponse", recaptchaResponse);
+  formData2.append("recaptchaToken", recaptchaToken);
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "sendform.php");
@@ -122,12 +125,13 @@ function submitForm() {
 
   xhr.onload = function () {
     if (xhr.status === 200) {
-      alert("Thank You for submit the form!");
+      alert("Thank You for submitting the form!");
     } else {
       alert("Form submission failed. Please try again later.");
     }
   };
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
