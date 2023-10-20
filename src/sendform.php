@@ -1,16 +1,16 @@
-<?php 
+<?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $userMessage = $_POST["userMessage"];
-    $privacyPolicy = $_POST["privacy-policy"];
-    $recaptchaResponse = $_POST["recaptchaResponse"];
+    $name2 = $_POST["name2"];
+    $email2 = $_POST["email2"];
+    $phone2 = $_POST["phone2"];
+    $userMessage2 = $_POST["userMessage2"];
+    $privacyPolicy2 = $_POST["privacy-policy2"];
+    $recaptchaResponse = $_POST["recaptchaToken"]; // Zmieniłem to, aby używać jednego klucza reCAPTCHA dla obu formularzy
 
     if ($recaptchaResponse) {
         // Verify reCAPTCHA response using Google's reCAPTCHA API (https://developers.google.com/recaptcha)
-        $recaptchaSecretKey = "6Lc56bcoAAAAAONksT6kzzCcPbfKZxP_zT7mS7ZE"; // Replace with your actual secret key
+        $recaptchaSecretKey = "6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt"; // Klucz reCAPTCHA dla formularza form2
         $recaptchaVerifyUrl = "https://www.google.com/recaptcha/api/siteverify";
         $data = [
             "secret" => $recaptchaSecretKey,
@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Send email with the form data
             $to = "support@easymotionskin.is";
             $subject = "Form submission - footer";
-            $message = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $userMessage\nPrivacy Policy Accepted: $privacyPolicy";
-            $headers = "From: $email";
+            $message = "Name: $name2\nEmail: $email2\nPhone: $phone2\nMessage: $userMessage2\nPrivacy Policy Accepted: $privacyPolicy2";
+            $headers = "From: $email2";
 
             mail($to, $subject, $message, $headers);
             echo "Form submitted successfully.";

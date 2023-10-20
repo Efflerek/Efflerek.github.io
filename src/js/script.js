@@ -87,43 +87,40 @@ function submitForm3(recaptchaToken) {
 
 // Kod obsługi id="form2"
 const myForm = document.getElementById("form2");
-console.log(myForm);
-const mySubmitButton = myForm.querySelector(".submit");
-console.log(mySubmitButton);
+const mySubmitButton2 = myForm.querySelector(".submit");
 
-mySubmitButton.addEventListener("click", function (event) {
+mySubmitButton2.addEventListener("click", function (event) {
   event.preventDefault();
   grecaptcha.ready(function() {
     grecaptcha.execute('6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt', { action: 'submit' }).then(function (token) {
-      submitForm(token);
+      submitForm2(token);
     });
   });
-  console.log(submitForm);
 });
 
-function submitForm(recaptchaToken) {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const userMessage = document.getElementById("userMessage").value;
-  const privacyPolicy = document.getElementById("privacy-policy").checked;
+function submitForm2(recaptchaToken) {
+  const name2 = document.getElementById("name2").value;
+  const email2 = document.getElementById("email2").value;
+  const phone2 = document.getElementById("phone2").value;
+  const userMessage2 = document.getElementById("userMessage2").value;
+  const privacyPolicy2 = document.getElementById("privacy-policy2").checked;
 
-  if (!name || !email || !phone || !privacyPolicy) {
+  if (!name2 || !email2 || !phone2 || !privacyPolicy2) {
     alert("Please fill in all fields.");
     return;
   }
 
   // Send the form data along with the reCAPTCHA token to the server using AJAX
   const formData2 = new FormData();
-  formData2.append("name", name);
-  formData2.append("email", email);
-  formData2.append("phone", phone);
-  formData2.append("userMessage", userMessage);
-  formData2.append("privacy-policy", privacyPolicy);
+  formData2.append("name2", name2);
+  formData2.append("email2", email2);
+  formData2.append("phone2", phone2);
+  formData2.append("userMessage2", userMessage2);
+  formData2.append("privacy-policy2", privacyPolicy2);
   formData2.append("recaptchaToken", recaptchaToken);
 
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "sendform.php");
+  xhr.open("POST", "sendform2.php"); // Zmieniłem na "sendform2.php" dla rozróżnienia pliku PHP.
   xhr.send(formData2);
 
   xhr.onload = function () {
