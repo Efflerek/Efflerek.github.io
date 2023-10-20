@@ -120,7 +120,7 @@ function submitForm2(recaptchaToken) {
   formData2.append("recaptchaToken", recaptchaToken);
 
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "sendform2.php"); // Zmieniłem na "sendform2.php" dla rozróżnienia pliku PHP.
+  xhr.open("POST", "sendform.php"); // Zmieniłem na "sendform2.php" dla rozróżnienia pliku PHP.
   xhr.send(formData2);
 
   xhr.onload = function () {
