@@ -38,25 +38,28 @@ function toggleMenu() {
 const menuToggle = document.getElementById('#toggle');
 menuToggle.addEventListener('click', toggleMenu);
 
-/*Obsługa id="form3" */
+/* Obsługa id="form3" */
 
-const form = document.getElementById("form3");
-const submitButton = form.querySelector(".cons-sub");
+const form3 = document.getElementById("form3");
+const submitButton3 = form3.querySelector(".cons-sub");
 
-submitButton.addEventListener("click", function (event) {
+submitButton3.addEventListener("click", function (event) {
   event.preventDefault();
-  submitForm3();
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG', { action: 'submit' }).then(function (token) {
+      submitForm3(token);
+    });
+  });
 });
 
-function submitForm3() {
+function submitForm3(recaptchaToken) {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
   const privacyPolicy = document.getElementById("privacy-policy").checked;
-  const recaptchaResponse = grecaptcha.getResponse();
 
-  if (!name || !email || !phone || !privacyPolicy || recaptchaResponse.length === 0) {
-    alert("Please fill in all fields and complete the reCAPTCHA.");
+  if (!name || !email || !phone || !privacyPolicy) {
+    alert("Please fill in all fields.");
     return;
   }
 
@@ -66,10 +69,10 @@ function submitForm3() {
   formData.append("email", email);
   formData.append("phone", phone);
   formData.append("privacy-policy", privacyPolicy);
-  formData.append("recaptchaResponse", recaptchaResponse);
+  formData.append("recaptchaToken", recaptchaToken);
 
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "getconsultation3.php"); // Two-way communication with the server
+  xhr.open("POST", "getconsultation3.php");
   xhr.send(formData);
 
   xhr.onload = function () {
