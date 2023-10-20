@@ -85,8 +85,8 @@ function submitForm3(recaptchaToken) {
   };
 }
 
-// Kod obsługi id="form"
-const myForm = document.getElementById("form");
+// Kod obsługi id="form2"
+const myForm = document.getElementById("form2");
 console.log(myForm);
 const mySubmitButton = myForm.querySelector(".submit");
 console.log(mySubmitButton);
