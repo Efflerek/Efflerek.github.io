@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($recaptchaResponse) {
         // Verify reCAPTCHA response using Google's reCAPTCHA API (https://developers.google.com/recaptcha)
-        $recaptchaSecretKey = "6LeYvIsoAAAAAMW0Q82IiRD7PTBCuQRD9TC22GNv"; // Replace with your actual secret key
+        $recaptchaSecretKey = "6Lc56bcoAAAAAONksT6kzzCcPbfKZxP_zT7mS7ZE"; // Replace with your actual secret key
         $recaptchaVerifyUrl = "https://www.google.com/recaptcha/api/siteverify";
         $data = [
             "secret" => $recaptchaSecretKey,
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($recaptchaResult->success) {
             // Send email with the form data
             $to = "support@easymotionskin.is";
-            $subject = "New Form Submission";
+            $subject = "Form submission - footer";
             $message = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $userMessage\nPrivacy Policy Accepted: $privacyPolicy";
             $headers = "From: $email";
 

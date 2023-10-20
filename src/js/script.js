@@ -84,13 +84,14 @@ function submitForm3() {
 
 /*Obsługa id="form"*/
 const myForm = document.getElementById("form");
+console.log(myForm);
     const mySubmitButton = myForm.querySelector(".submit");
-    console.log(mySubmitButton)
+    console.log(mySubmitButton);
 
     mySubmitButton.addEventListener("click", function (event) {
         event.preventDefault();
         submitForm();
-        console.log(submitForm)
+        console.log(submitForm);
     });
 
     function submitForm() {
