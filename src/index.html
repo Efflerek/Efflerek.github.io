@@ -2,6 +2,16 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N7JX3SXX');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="ZL95FzI-xNX_Oj7Zc5s3AnrOGA18EsYfnGiEQu3Vuyc">
@@ -14,48 +24,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG"></script>
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 </head>
 
 <body>
-        <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7JX3SXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7JX3SXX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     <header>
         <div id="top-menu" class="top-menu">
             <div class="menu-wrapper">
                 <div id="toggle" class="menu-toggle" onclick="toggleMenu()"> <!-- Call toggleMenu() function -->
-                  <i class="fa fa-bars fa-2x"></i>
-              </div>
-              <a href="index.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <a href="index.html"><img src="/src/images/ems-logo.png" alt="EasyMotion Skin" class="logo"></a>
             </div>
-        
-            <div class="nav-wrapper">
-              <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
-                <ul>
-                  <li><a href="how-ems-works.html">How it works?</a></li>
-                  <li><a href="ems-suit-shop.html">Shop</a></li>
-                  <li><a href="home-edition.html">Home Edition</a></li>
-                  <li><a href="ems-blog.html">Blog</a></li>
-                  <li><a href="contact.html">Support</a></li>
-                </ul>
-              </nav>
 
-            <div class="switch">
-              <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-              <label for="language-toggle"></label>
-              <span class="off">IS</span>
-              <span class="on">EN</span>
+            <div class="nav-wrapper">
+                <nav id="nav-menu" class="menu-menu"> <!-- Updated class name -->
+                    <ul>
+                        <li><a href="how-ems-works.html">How it works?</a></li>
+                        <li><a href="ems-suit-shop.html">Shop</a></li>
+                        <li><a href="home-edition.html">Home Edition</a></li>
+                        <li><a href="ems-blog.html">Blog</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </nav>
+
+                <div class="switch">
+                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <label for="language-toggle"></label>
+                    <span class="off">IS</span>
+                    <span class="on">EN</span>
+                </div>
             </div>
-          </div>
-          <div class="menu-bg" id="menu-bg"></div>
+            <div class="menu-bg" id="menu-bg"></div>
         </div>
-      </header>
+    </header>
 
 
     <div id="Welcome" class="diagonal index">
@@ -71,8 +83,9 @@
             </div>
         </div>
         <div id="model3d" class="right-content">
-            <model-viewer class="model3D" src="src/images/motionskin_web-1.glb" ar ar-modes="webxr scene-viewer quick-look"
-                camera-controls poster="src/images/suite_3_1920x1920.png" shadow-intensity="1" autoplay>
+            <model-viewer class="model3D" src="src/images/motionskin_web-1.glb" ar
+                ar-modes="webxr scene-viewer quick-look" camera-controls poster="src/images/suite_3_1920x1920.png"
+                shadow-intensity="1" autoplay>
                 <div class="progress-bar hide" slot="progress-bar">
                 </div>
             </model-viewer>
@@ -90,7 +103,7 @@
             </iframe>
         </div>
 
-        <div id="hiw-video"class="right-content">
+        <div id="hiw-video" class="right-content">
             <p class="tagline white">How the EMS Suit works?</p>
             <h2>What is EMS Training?</h2>
             <p class="text white">The most important thing about EMS training is that thanks to muscle
@@ -243,7 +256,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="testimonials-headline">
         <p class="tagline">Check what others say</p>
         <h2>Opinions of Our Clients</h2>
@@ -331,24 +344,30 @@
                 <h2 class="white">Let's Chat</h2>
                 <p class="text white">Whether you have a question, want to start a project, or simply want to
                     connect.</br>Feel free to send me a message in the contact form</p>
-                    <div class="contact-table">
-                        <div class="contact-row">
-                            <div class="contact-icon"><i class="icon fas fa-envelope"></i></div>
-                            <div class="contact-data"> <h3>Email</h3>
-                                <span>support@easymotionskin.is</span></div>
-                        </div>
-                        <div class="contact-row">
-                            <div class="contact-icon"><i class="icon fas fa-phone"></i></div>
-                            <div class="contact-data"><h3>Phone</h3>
-                                <span>7850527</span></div>
-                        </div>
-                        <div class="contact-row">
-                            <div class="contact-icon"><i class="icon fas fa-map-marker-alt"></i></div>
-                            <div class="contact-data"><h3>Location</h3>
-                                <span>Lyngás 11, 210 Garðabær</span></div>
+                <div class="contact-table">
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="icon fas fa-envelope"></i></div>
+                        <div class="contact-data">
+                            <h3>Email</h3>
+                            <span>support@easymotionskin.is</span>
                         </div>
                     </div>
-                    <div class="contact-info">
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="icon fas fa-phone"></i></div>
+                        <div class="contact-data">
+                            <h3>Phone</h3>
+                            <span>7850527</span>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="icon fas fa-map-marker-alt"></i></div>
+                        <div class="contact-data">
+                            <h3>Location</h3>
+                            <span>Lyngás 11, 210 Garðabær</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
                     <div class="tabcard">
                         <i class="icon fas fa-envelope"></i>
                         <div id="email" class="tab-content">
@@ -374,30 +393,35 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="right-content contact-div">
                 <div>
                     <h2 class="white">Write to Us</h2>
                 </div>
                 <div class="social-container">
-                    <a href="https://www.facebook.com/profile.php?id=61552528493990" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/easymotionskin.iceland?igshid=MzRlODBiNWFlZA==" class="social"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61552528493990" class="social"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/easymotionskin.iceland?igshid=MzRlODBiNWFlZA==" class="social"><i
+                            class="fab fa-instagram"></i></a>
                 </div>
                 <form id="form2" action="#" method="POST">
                     <input type="text" id="name2" placeholder="Name" name="name2" required />
                     <input type="email" id="email2" placeholder="Email" name="email2" required />
                     <input type="tel" id="phone2" placeholder="Phone" name="phone2" />
-                    <textarea rows="4" id="userMessage2" placeholder="Message" name="userMessage2" required ></textarea>
+                    <textarea rows="4" id="userMessage2" placeholder="Message" name="userMessage2" required></textarea>
                     <div class="checkbox">
                         <div class="checkbox-cell">
                             <input type="checkbox" id="privacy-policy2" name="privacy-policy2" required />
                         </div>
                         <div class="checkbox-cell">
-                            <label for="privacy-policy2" class="text white">I consent to the privacy and cookie policy of the website and the processing of personal data to send me offers.</label>
+                            <label for="privacy-policy2" class="text white">I consent to the privacy and cookie policy
+                                of the website and the processing of personal data to send me offers.</label>
                         </div>
                     </div>
                     <div class="actions">
-                        <button class="sign-up submit g-recaptcha" data-sitekey="6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt" data-callback="submitForm2" data-action="submit" type="button" name="submit">Send It</button>
+                        <button class="sign-up submit g-recaptcha"
+                            data-sitekey="6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt" data-callback="submitForm2"
+                            data-action="submit" type="button" name="submit">Send It</button>
                     </div>
                 </form>
             </div>
@@ -409,8 +433,10 @@
     <footer>
         <div class="footer">
             <div class="footer-row">
-                <a href="https://www.facebook.com/profile.php?id=61552528493990" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/easymotionskin.iceland?igshid=MzRlODBiNWFlZA==" class="social"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61552528493990" class="social"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/easymotionskin.iceland?igshid=MzRlODBiNWFlZA==" class="social"><i
+                        class="fab fa-instagram"></i></a>
             </div>
 
             <div class="footer-row">
