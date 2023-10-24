@@ -973,6 +973,11 @@ textarea:focus {
   margin-top: 2rem;
 }
 
+.linear-gradient {
+  background: #4D77FF;
+  background-image: linear-gradient(90deg, #4D77FF 0%, var(--e-global-color-9c764db) 100%);
+}
+
 .ems-blog-div.bckg.blue {
   display: flex;
   flex-direction: column;
@@ -2174,7 +2179,7 @@ input.check-toggle-round-flat:checked+label:after {
 
   #video-first,
   #hiw-video {
-    margin: 0 1rem;
+    margin: 0 0rem;
     padding: 1rem;
     /* Adjust padding for mobile view */
     justify-content: center;
