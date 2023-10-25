@@ -1749,7 +1749,7 @@ input.check-toggle-round-flat:checked+label:after {
 /*Cookies*/
 #cookie-popup {
   position: fixed;
-  z-index: 6;
+  z-index: 11;
   right: 30px;
   bottom: 30px;
   width: 330px;
