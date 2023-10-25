@@ -1,5 +1,39 @@
 "use strict";
 
+  // COOKIE POPUP
+  if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
+    const isIcelandicVersion = window.location.pathname.endsWith('-is.html');
+    const cookiePopup = document.createElement('div');
+    cookiePopup.id = 'cookie-popup';
+
+    if (isIcelandicVersion) {
+      cookiePopup.innerHTML = `
+          <p>Vafrakökurstefna</p>
+          <p>Þessi vefsíða notar vafrakökur til að auka upplifun þína. Með því að halda áfram samþykkir þú stefnu okkar um vafrakökur.
+            <br><a href="cookie-policy-ems-is.html" class="link">LINK &#10148;</a>
+          </p>
+          <button class="cookie-popup__button">OK</button>
+        `;
+    } else {
+      cookiePopup.innerHTML = `
+          <p>Cookie Policy</p>
+          <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
+            <br><a href="cookie-policy-ems.html" class="link">LINK &#10148;</a>
+          </p>
+          <button class="cookie-popup__button">OK</button>
+        `;
+    }
+
+    document.body.appendChild(cookiePopup);
+
+    const cookieButton = document.querySelector('#cookie-popup button');
+    cookieButton.addEventListener('click', function () {
+      document.cookie = 'cookiePolicyAccepted=true; path=/';
+      cookiePopup.style.display = 'none';
+    });
+  }
+
+
 // SWITCHER JĘZYKOWY
 const switcher = document.getElementById('language-toggle');
 
@@ -45,7 +79,7 @@ const submitButton3 = form3.querySelector(".cons-sub");
 
 submitButton3.addEventListener("click", function (event) {
   event.preventDefault();
-  grecaptcha.ready(function() {
+  grecaptcha.ready(function () {
     grecaptcha.execute('6LeYvIsoAAAAAOsWBgeYrMeldkRxNYQ0P6PWGMpG', { action: 'submit' }).then(function (token) {
       submitForm3(token);
     });
@@ -91,7 +125,7 @@ const mySubmitButton2 = myForm.querySelector(".submit");
 
 mySubmitButton2.addEventListener("click", function (event) {
   event.preventDefault();
-  grecaptcha.ready(function() {
+  grecaptcha.ready(function () {
     grecaptcha.execute('6Lc56bcoAAAAAOcFwapxTrthsqj86QsAn3vtplxt', { action: 'submit' }).then(function (token) {
       submitForm2(token);
     });
@@ -134,39 +168,6 @@ function submitForm2(recaptchaToken) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    // COOKIE POPUP
-    if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
-      const isIcelandicVersion = window.location.pathname.endsWith('-is.html');
-      const cookiePopup = document.createElement('div');
-      cookiePopup.id = 'cookie-popup';
-  
-      if (isIcelandicVersion) {
-        cookiePopup.innerHTML = `
-          <p>Vafrakökurstefna</p>
-          <p>Þessi vefsíða notar vafrakökur til að auka upplifun þína. Með því að halda áfram samþykkir þú stefnu okkar um vafrakökur.
-            <br><a href="cookie-policy-ems-is.html" class="link">LINK &#10148;</a>
-          </p>
-          <button class="cookie-popup__button">OK</button>
-        `;
-      } else {
-        cookiePopup.innerHTML = `
-          <p>Cookie Policy</p>
-          <p>This website uses cookies to enhance your experience. By continuing, you agree to our cookie policy.
-            <br><a href="cookie-policy-ems.html" class="link">LINK &#10148;</a>
-          </p>
-          <button class="cookie-popup__button">OK</button>
-        `;
-      }
-  
-      document.body.appendChild(cookiePopup);
-  
-      const cookieButton = document.querySelector('#cookie-popup button');
-      cookieButton.addEventListener('click', function () {
-        document.cookie = 'cookiePolicyAccepted=true; path=/';
-        cookiePopup.style.display = 'none';
-      });
-    }
 
   // Pobierz wszystkie tabcardy
   const tabcards = document.querySelectorAll('.tabcard');
@@ -214,5 +215,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-
-
