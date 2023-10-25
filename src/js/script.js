@@ -132,27 +132,6 @@ function submitForm2(recaptchaToken) {
   };
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Pobierz wszystkie tabcardy
-  const tabcards = document.querySelectorAll('.tabcard');
-
-  tabcards.forEach(function (tabcard) {
-    tabcard.addEventListener('click', function () {
-      const tabContent = tabcard.querySelector('.tab-content span');
-      const textToCopy = tabContent.textContent;
-
-      navigator.clipboard.writeText(textToCopy)
-        .then(function () {
-          alert('Skopiowano do schowka: ' + textToCopy);
-        })
-        .catch(function (err) {
-          console.error('Błąd kopiowania do schowka: ', err);
-        });
-    });
-  });
-
   // COOKIE POPUP
   if (document.cookie.indexOf('cookiePolicyAccepted=true') === -1) {
     const isIcelandicVersion = window.location.pathname.endsWith('-is.html');
@@ -185,6 +164,26 @@ document.addEventListener('DOMContentLoaded', function () {
       cookiePopup.style.display = 'none';
     });
   }
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Pobierz wszystkie tabcardy
+  const tabcards = document.querySelectorAll('.tabcard');
+
+  tabcards.forEach(function (tabcard) {
+    tabcard.addEventListener('click', function () {
+      const tabContent = tabcard.querySelector('.tab-content span');
+      const textToCopy = tabContent.textContent;
+
+      navigator.clipboard.writeText(textToCopy)
+        .then(function () {
+          alert('Skopiowano do schowka: ' + textToCopy);
+        })
+        .catch(function (err) {
+          console.error('Błąd kopiowania do schowka: ', err);
+        });
+    });
+  });
 
   // MODEL 3D
   const modelViewers = document.querySelectorAll('model-viewer');
